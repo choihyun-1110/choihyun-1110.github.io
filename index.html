@@ -44,7 +44,7 @@ layout: null
 
         <div class="column is-4">
           <figure class="image portrait">
-            <img src="{{ '/images/portrait.jpg' | relative_url }}" />
+            <img src="{{ '/images/portrait.jpeg' | relative_url }}" />
           </figure>
         </div>
 
@@ -60,20 +60,14 @@ layout: null
                 <span>CV</span>
               </a>
 
-              <a class="external-link button is-light"
-                href="https://scholar.google.com/citations?user={{ site.google_scholar }}">
-                <span class="icon"><i class="ai ai-google-scholar"></i></span>
-                <span>Scholar</span>
-              </a>
-
               <a class="external-link button is-light" href="https://github.com/{{ site.github_username }}">
                 <span class="icon"><i class="fab fa-github"></i></span>
                 <span>Github</span>
               </a>
 
-              <a class="external-link button is-light" href="https://twitter.com/{{ site.twitter_username }}">
-                <span class="icon"><i class="fab fa-twitter"></i></span>
-                <span>Twitter</span>
+              <a class="external-link button is-light" href="https://linkedin.com/in/{{ site.linkedin }}">
+                <span class="icon"><i class="fab fa-linkedin"></i></span>
+                <span>LinkedIn</span>
               </a>
             </div>
 
@@ -212,17 +206,17 @@ layout: null
 
   <footer class="footer">
     <div class="container">
-      <div class="content footer-links has-text-centered">
-        <a href="mailto:{{ site.email }}">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a class="external-link" href="https://github.com/{{ site.github_username }}">
-          <i class="fab fa-github"></i>
-        </a>
-        <a class="external-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}">
-          <i class="ai ai-google-scholar"></i>
-        </a>
-      </div>
+             <div class="content footer-links has-text-centered">
+         <a href="mailto:{{ site.email }}">
+           <i class="fas fa-envelope"></i>
+         </a>
+         <a class="external-link" href="https://github.com/{{ site.github_username }}">
+           <i class="fab fa-github"></i>
+         </a>
+         <a class="external-link" href="https://linkedin.com/in/{{ site.linkedin }}">
+           <i class="fab fa-linkedin"></i>
+         </a>
+       </div>
       <div class="columns is-centered has-text-centered">
         <div class="column is-8">
           <div class="content">
