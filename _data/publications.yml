@@ -14,18 +14,18 @@
   arxiv: ""
   github: ""
 
-- title: "NextGen Intelligent Drone Maintenance System"
-  authors: ["choi_hyun"]
-  venue: "KG KAIROS Industry-Academic Project"
-  description: "Industry-academic collaborative project focusing on intelligent drone maintenance. Designed and operated AGV system for transporting drones to maintenance stations."
-  project_page: "https://disco-candy-c65.notion.site/AGV-389624f2efac475a89e166a4d94b3c10"
+- title: "SAM Fine-tuning for Medical Imaging"
+  authors: ["choi_hyun", "yoonhee_uhm"]
+  venue: "Genoray FlexLab Internship Project"
+  description: "Fine-tuned Segment Anything Model (SAM) for dental X-ray segmentation using LoRA-based tuning strategies. Joint first authorship with Yoonhee Uhm."
+  project_page: "#"
   arxiv: ""
   github: ""
 
-- title: "CV-based Object Sorting Robot System"
+- title: "Collaborative Robot System"
   authors: ["choi_hyun"]
-  venue: "Personal Project"
-  description: "End-to-end pipeline: OpenCV detection + color/orientation classification; PLC conveyor (Modbus RTU) + MyCobot grasp/stack. Angle-aware grasping via HSV segmentation and contour geometry."
-  project_page: "https://disco-candy-c65.notion.site/1ec2d399f911805f85eff13c9392050b"
+  venue: "Robotics Course Project"
+  description: "Human-robot collaboration system with safety features and intuitive control interface."
+  project_page: "#"
   arxiv: ""
   github: ""

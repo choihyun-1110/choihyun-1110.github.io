@@ -9,3 +9,14 @@ choi_hyun:
   github: "choihyun-1110"
   linkedin: "hyun1110"
 
+yoonhee_uhm:
+  first_name: "Yoonhee"
+  middle_name: ""
+  last_name: "Uhm"
+  is_me: false
+  website: "#"
+  description: "Research collaborator on SAM fine-tuning project"
+  email: ""
+  github: ""
+  linkedin: ""
+
