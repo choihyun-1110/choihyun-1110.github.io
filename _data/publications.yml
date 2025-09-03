@@ -5,6 +5,7 @@
   project_page: "https://www.notion.so/CIFAR-100-Long-Tail-Classification-Project-23f2d399f9118066b2dad938f1925249"
   arxiv: ""
   github: ""
+  image: "cifar100.jpeg"
 
 - title: "Speed Estimation from Road Scene Sequences"
   authors: ["choi_hyun"]
@@ -13,6 +14,7 @@
   project_page: "https://disco-candy-c65.notion.site/AI-1ec2d399f911802d9954c1662a5e78d0"
   arxiv: ""
   github: ""
+  image: "speed.jpeg"
 
 - title: "SAM Fine-tuning for Medical Imaging"
   authors: ["choi_hyun", "yoonhee_uhm"]
@@ -21,6 +23,7 @@
   project_page: "#"
   arxiv: ""
   github: ""
+  image: "AGV.jpeg"
 
 - title: "Collaborative Robot System"
   authors: ["choi_hyun"]
@@ -29,3 +32,4 @@
   project_page: "#"
   arxiv: ""
   github: ""
+  image: "cobot.jpeg"

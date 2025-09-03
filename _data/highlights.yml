@@ -1,9 +1,9 @@
 - title: "SAM Fine-tuning for Medical Imaging"
   description: "Fine-tuned Segment Anything Model (SAM) for dental X-ray segmentation using LoRA-based tuning strategies. Joint first authorship with Yoonhee Uhm."
-  image: "sam_finetuning.webp"
+  image: "sam_finetuning.jpeg"
   url: "#"
 
 - title: "AGV Navigation System"
   description: "Autonomous Guided Vehicle navigation system with computer vision and path planning algorithms."
-  image: "AGV.webp"
+  image: "AGV.jpeg"
   url: "#"
