@@ -13,14 +13,14 @@ layout: null
   <link href="../css/fontawesome.all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
   <link href="../css/bulma.min.css" rel="stylesheet">
-  <link href="../css/cv.css" rel="stylesheet">
+  <link href="../css/index.css" rel="stylesheet">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script defer src="../js/fontawesome.all.min.js"></script>
 </head>
 
 <body>
-  <section>
+  <section class="section">
     <div class="container is-max-desktop">
       <!-- Navigation -->
       <div class="columns is-vcentered mb-6">
@@ -33,44 +33,43 @@ layout: null
       </div>
 
       <!-- Project Header -->
-      <div class="columns is-vcentered">
-        <div class="column is-two-thirds">
-          <h1 class="title is-2">Speed Estimation from Road Scene Sequences</h1>
-          <h2 class="subtitle is-4">Introduction to Artificial Intelligence Course Project</h2>
-          <div class="tags">
-            <span class="tag is-primary">Computer Vision</span>
-            <span class="tag is-info">3D-CNN</span>
-            <span class="tag is-success">LSTM</span>
-            <span class="tag is-warning">Autonomous Driving</span>
+      <div class="publication-block columns">
+        <div class="column is-2">
+          <div class="publication-image">
+            <img alt="Speed Estimation from Road Scene Sequences" src="../images/speed.jpeg" />
           </div>
         </div>
-        <div class="column is-one-third has-text-right">
-          <figure class="image is-128x128 is-inline-block">
-            <img src="../images/speed.jpeg" alt="Speed Estimation Project">
-          </figure>
-        </div>
-      </div>
 
-      <div class="content">
-        <!-- Authors -->
-        <h3>Author</h3>
-        <div class="columns">
-          <div class="column">
-            <div class="author-block author-me">
-              <strong>H. Choi</strong>
+        <div class="column">
+          <div class="content">
+            <h3 class="publication-title">Speed Estimation from Road Scene Sequences</h3>
+            <div class="publication-authors">
+              <span class="author-block author-me">
+                <strong>H. Choi</strong>
+              </span>
+            </div>
+            <div class="publication-venue">
+              <span>Introduction to Artificial Intelligence Course Project</span>
+            </div>
+            <p class="publication-description">
+              This project focuses on estimating vehicle speed from sequential road scene images using a combination 
+              of 3D-CNN and LSTM architectures. The model processes 6-frame sequences to predict speed with high accuracy, 
+              incorporating various optimization techniques including dropout, learning rate schedulers, and test-time normalization.
+            </p>
+            
+            <!-- Project Links -->
+            <div class="publication-links buttons field has-addons">
+              <a class="external-link button is-small is-ghost" href="https://disco-candy-c65.notion.site/AI-1ec2d399f911802d9954c1662a5e78d0" target="_blank">
+                <span class="icon"><i class="fas fa-globe-asia"></i></span>
+                <span>Project Page</span>
+              </a>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Abstract -->
-        <h3>Abstract</h3>
-        <p>
-          This project focuses on estimating vehicle speed from sequential road scene images using a combination 
-          of 3D-CNN and LSTM architectures. The model processes 6-frame sequences to predict speed with high accuracy, 
-          incorporating various optimization techniques including dropout, learning rate schedulers, and test-time normalization.
-        </p>
-
-        <!-- Architecture -->
+      <!-- Additional Details -->
+      <div class="content mt-6">
         <h3>Model Architecture</h3>
         <ul>
           <li><strong>3D-CNN:</strong> Spatial-temporal feature extraction from 6-frame sequences</li>
@@ -79,7 +78,6 @@ layout: null
           <li><strong>Output:</strong> Speed estimation (regression)</li>
         </ul>
 
-        <!-- Optimization Techniques -->
         <h3>Optimization Techniques</h3>
         <ul>
           <li>Dropout regularization</li>
@@ -88,24 +86,12 @@ layout: null
           <li>Data augmentation</li>
         </ul>
 
-        <!-- Results -->
         <h3>Performance</h3>
-        <div class="box">
-          <ul>
-            <li><strong>Mean Absolute Error (MAE):</strong> 1.82</li>
-            <li>Effective spatiotemporal feature learning</li>
-            <li>Robust performance across different road conditions</li>
-          </ul>
-        </div>
-
-        <!-- Links -->
-        <h3>Project Links</h3>
-        <div class="buttons">
-          <a class="button is-primary" href="https://disco-candy-c65.notion.site/AI-1ec2d399f911802d9954c1662a5e78d0" target="_blank">
-            <span class="icon"><i class="fas fa-globe"></i></span>
-            <span>Project Page</span>
-          </a>
-        </div>
+        <ul>
+          <li><strong>Mean Absolute Error (MAE):</strong> 1.82</li>
+          <li>Effective spatiotemporal feature learning</li>
+          <li>Robust performance across different road conditions</li>
+        </ul>
       </div>
     </div>
   </section>

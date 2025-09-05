@@ -13,14 +13,14 @@ layout: null
   <link href="../css/fontawesome.all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
   <link href="../css/bulma.min.css" rel="stylesheet">
-  <link href="../css/cv.css" rel="stylesheet">
+  <link href="../css/index.css" rel="stylesheet">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script defer src="../js/fontawesome.all.min.js"></script>
 </head>
 
 <body>
-  <section>
+  <section class="section">
     <div class="container is-max-desktop">
       <!-- Navigation -->
       <div class="columns is-vcentered mb-6">
@@ -33,47 +33,50 @@ layout: null
       </div>
 
       <!-- Project Header -->
-      <div class="columns is-vcentered">
-        <div class="column is-two-thirds">
-          <h1 class="title is-2">SAM Fine-tuning for Medical Imaging</h1>
-          <h2 class="subtitle is-4">Genoray FlexLab Internship Project</h2>
-          <div class="tags">
-            <span class="tag is-primary">Computer Vision</span>
-            <span class="tag is-info">Medical AI</span>
-            <span class="tag is-success">Fine-tuning</span>
-            <span class="tag is-warning">LoRA</span>
+      <div class="publication-block columns">
+        <div class="column is-2">
+          <div class="publication-image">
+            <img alt="SAM Fine-tuning for Medical Imaging" src="../images/sam_finetuning.jpeg" />
           </div>
         </div>
-        <div class="column is-one-third has-text-right">
-          <figure class="image is-128x128 is-inline-block">
-            <img src="../images/sam_finetuning.jpeg" alt="SAM Fine-tuning Project">
-          </figure>
+
+        <div class="column">
+          <div class="content">
+            <h3 class="publication-title">SAM Fine-tuning for Medical Imaging</h3>
+            <div class="publication-authors">
+              <span class="author-block author-me">
+                <strong>H. Choi</strong> (Joint First Author)
+              </span>
+              <span class="author-block">
+                <strong>Y. Uhm</strong> (Joint First Author)
+              </span>
+            </div>
+            <div class="publication-venue">
+              <span>Genoray FlexLab Internship Project</span>
+            </div>
+            <p class="publication-description">
+              This project focuses on fine-tuning the Segment Anything Model (SAM) for dental X-ray segmentation tasks. 
+              We employed LoRA (Low-Rank Adaptation) based tuning strategies to adapt the pre-trained SAM model 
+              for medical imaging applications, specifically targeting dental X-ray analysis.
+            </p>
+            
+            <!-- Project Links -->
+            <div class="publication-links buttons field has-addons">
+              <a class="external-link button is-small is-ghost" href="#" disabled>
+                <span class="icon"><i class="fas fa-globe-asia"></i></span>
+                <span>Project Page (Coming Soon)</span>
+              </a>
+              <a class="external-link button is-small is-ghost" href="#" disabled>
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code (Coming Soon)</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="content">
-        <!-- Authors -->
-        <h3>Authors</h3>
-        <div class="columns">
-          <div class="column">
-            <div class="author-block author-me">
-              <strong>H. Choi</strong> (Joint First Author)
-            </div>
-            <div class="author-block">
-              <strong>Y. Uhm</strong> (Joint First Author)
-            </div>
-          </div>
-        </div>
-
-        <!-- Abstract -->
-        <h3>Abstract</h3>
-        <p>
-          This project focuses on fine-tuning the Segment Anything Model (SAM) for dental X-ray segmentation tasks. 
-          We employed LoRA (Low-Rank Adaptation) based tuning strategies to adapt the pre-trained SAM model 
-          for medical imaging applications, specifically targeting dental X-ray analysis.
-        </p>
-
-        <!-- Methodology -->
+      <!-- Additional Details -->
+      <div class="content mt-6">
         <h3>Methodology</h3>
         <ul>
           <li><strong>Base Model:</strong> Segment Anything Model (SAM)</li>
@@ -82,7 +85,6 @@ layout: null
           <li><strong>Task:</strong> Medical image segmentation</li>
         </ul>
 
-        <!-- Results -->
         <h3>Key Results</h3>
         <ul>
           <li>Successfully adapted SAM for medical imaging domain</li>
@@ -90,19 +92,6 @@ layout: null
           <li>Parameter-efficient fine-tuning using LoRA</li>
           <li>Joint first authorship with Yoonhee Uhm</li>
         </ul>
-
-        <!-- Links -->
-        <h3>Project Links</h3>
-        <div class="buttons">
-          <a class="button is-primary" href="#" disabled>
-            <span class="icon"><i class="fas fa-globe"></i></span>
-            <span>Project Page (Coming Soon)</span>
-          </a>
-          <a class="button is-light" href="#" disabled>
-            <span class="icon"><i class="fab fa-github"></i></span>
-            <span>Code (Coming Soon)</span>
-          </a>
-        </div>
       </div>
     </div>
   </section>

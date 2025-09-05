@@ -13,14 +13,14 @@ layout: null
   <link href="../css/fontawesome.all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
   <link href="../css/bulma.min.css" rel="stylesheet">
-  <link href="../css/cv.css" rel="stylesheet">
+  <link href="../css/index.css" rel="stylesheet">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script defer src="../js/fontawesome.all.min.js"></script>
 </head>
 
 <body>
-  <section>
+  <section class="section">
     <div class="container is-max-desktop">
       <!-- Navigation -->
       <div class="columns is-vcentered mb-6">
@@ -33,53 +33,56 @@ layout: null
       </div>
 
       <!-- Project Header -->
-      <div class="columns is-vcentered">
-        <div class="column is-two-thirds">
-          <h1 class="title is-2">차세대 지능형 드론 정비 시스템</h1>
-          <h2 class="subtitle is-4">Next-Generation Intelligent Drone Maintenance System</h2>
-          <div class="tags">
-            <span class="tag is-primary">Robotics</span>
-            <span class="tag is-info">AI Diagnostics</span>
-            <span class="tag is-success">Automation</span>
-            <span class="tag is-warning">Computer Vision</span>
+      <div class="publication-block columns">
+        <div class="column is-2">
+          <div class="publication-image">
+            <img alt="차세대 지능형 드론 정비 시스템" src="../images/AGV.jpeg" />
           </div>
         </div>
-        <div class="column is-one-third has-text-right">
-          <figure class="image is-128x128 is-inline-block">
-            <img src="../images/AGV.jpeg" alt="Drone Maintenance System">
-          </figure>
+
+        <div class="column">
+          <div class="content">
+            <h3 class="publication-title">차세대 지능형 드론 정비 시스템</h3>
+            <div class="publication-authors">
+              <span class="author-block author-me">
+                <strong>H. Choi</strong> (최현)
+              </span>
+              <span class="author-block">
+                <strong>S. Seo</strong> (서승혁)
+              </span>
+              <span class="author-block">
+                <strong>D. Kim</strong> (김동혁)
+              </span>
+              <span class="author-block">
+                <strong>S. Lee</strong> (이승진)
+              </span>
+            </div>
+            <div class="publication-venue">
+              <span>Robotics Course Project</span>
+            </div>
+            <p class="publication-description">
+              This project presents a next-generation intelligent drone maintenance system that leverages AI-powered 
+              diagnostics and automated repair capabilities. The system combines computer vision, machine learning, 
+              and robotics to provide comprehensive maintenance solutions for drone fleets.
+            </p>
+            
+            <!-- Project Links -->
+            <div class="publication-links buttons field has-addons">
+              <a class="external-link button is-small is-ghost" href="#" disabled>
+                <span class="icon"><i class="fas fa-globe-asia"></i></span>
+                <span>Project Page (Coming Soon)</span>
+              </a>
+              <a class="external-link button is-small is-ghost" href="#" disabled>
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code (Coming Soon)</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="content">
-        <!-- Authors -->
-        <h3>Team Members</h3>
-        <div class="columns">
-          <div class="column">
-            <div class="author-block author-me">
-              <strong>H. Choi</strong> (최현)
-            </div>
-            <div class="author-block">
-              <strong>S. Seo</strong> (서승혁)
-            </div>
-            <div class="author-block">
-              <strong>D. Kim</strong> (김동혁)
-            </div>
-            <div class="author-block">
-              <strong>S. Lee</strong> (이승진)
-            </div>
-          </div>
-        </div>
-
-        <!-- Abstract -->
-        <h3>Abstract</h3>
-        <p>
-          This project presents a next-generation intelligent drone maintenance system that leverages AI-powered 
-          diagnostics and automated repair capabilities. The system combines computer vision, machine learning, 
-          and robotics to provide comprehensive maintenance solutions for drone fleets.
-        </p>
-
-        <!-- System Overview -->
+      <!-- Additional Details -->
+      <div class="content mt-6">
         <h3>System Overview</h3>
         <ul>
           <li><strong>AI-Powered Diagnostics:</strong> Automated fault detection and analysis</li>
@@ -88,7 +91,6 @@ layout: null
           <li><strong>Predictive Maintenance:</strong> Proactive maintenance scheduling</li>
         </ul>
 
-        <!-- Key Features -->
         <h3>Key Features</h3>
         <ul>
           <li>Real-time drone health monitoring</li>
@@ -98,29 +100,12 @@ layout: null
           <li>Performance optimization recommendations</li>
         </ul>
 
-        <!-- Technology Stack -->
         <h3>Technology Stack</h3>
-        <div class="tags">
-          <span class="tag is-light">Python</span>
-          <span class="tag is-light">OpenCV</span>
-          <span class="tag is-light">TensorFlow/PyTorch</span>
-          <span class="tag is-light">ROS</span>
-          <span class="tag is-light">Computer Vision</span>
-          <span class="tag is-light">Machine Learning</span>
-        </div>
-
-        <!-- Links -->
-        <h3>Project Links</h3>
-        <div class="buttons">
-          <a class="button is-primary" href="#" disabled>
-            <span class="icon"><i class="fas fa-globe"></i></span>
-            <span>Project Page (Coming Soon)</span>
-          </a>
-          <a class="button is-light" href="#" disabled>
-            <span class="icon"><i class="fab fa-github"></i></span>
-            <span>Code (Coming Soon)</span>
-          </a>
-        </div>
+        <ul>
+          <li>Python, OpenCV, TensorFlow/PyTorch</li>
+          <li>ROS (Robot Operating System)</li>
+          <li>Computer Vision and Machine Learning</li>
+        </ul>
       </div>
     </div>
   </section>

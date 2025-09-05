@@ -13,14 +13,14 @@ layout: null
   <link href="../css/fontawesome.all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
   <link href="../css/bulma.min.css" rel="stylesheet">
-  <link href="../css/cv.css" rel="stylesheet">
+  <link href="../css/index.css" rel="stylesheet">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script defer src="../js/fontawesome.all.min.js"></script>
 </head>
 
 <body>
-  <section>
+  <section class="section">
     <div class="container is-max-desktop">
       <!-- Navigation -->
       <div class="columns is-vcentered mb-6">
@@ -33,44 +33,47 @@ layout: null
       </div>
 
       <!-- Project Header -->
-      <div class="columns is-vcentered">
-        <div class="column is-two-thirds">
-          <h1 class="title is-2">Collaborative Robot System</h1>
-          <h2 class="subtitle is-4">Human-Robot Collaboration with Safety Features</h2>
-          <div class="tags">
-            <span class="tag is-primary">Robotics</span>
-            <span class="tag is-info">Human-Robot Interaction</span>
-            <span class="tag is-success">Safety Systems</span>
-            <span class="tag is-warning">Control Interface</span>
+      <div class="publication-block columns">
+        <div class="column is-2">
+          <div class="publication-image">
+            <img alt="Collaborative Robot System" src="../images/cobot.jpeg" />
           </div>
         </div>
-        <div class="column is-one-third has-text-right">
-          <figure class="image is-128x128 is-inline-block">
-            <img src="../images/cobot.jpeg" alt="Collaborative Robot System">
-          </figure>
-        </div>
-      </div>
 
-      <div class="content">
-        <!-- Authors -->
-        <h3>Author</h3>
-        <div class="columns">
-          <div class="column">
-            <div class="author-block author-me">
-              <strong>H. Choi</strong>
+        <div class="column">
+          <div class="content">
+            <h3 class="publication-title">Collaborative Robot System</h3>
+            <div class="publication-authors">
+              <span class="author-block author-me">
+                <strong>H. Choi</strong>
+              </span>
+            </div>
+            <div class="publication-venue">
+              <span>Robotics Course Project</span>
+            </div>
+            <p class="publication-description">
+              This project presents a collaborative robot system designed for safe human-robot interaction in shared workspaces. 
+              The system incorporates advanced safety features and an intuitive control interface to enable seamless collaboration 
+              between humans and robots in industrial and service applications.
+            </p>
+            
+            <!-- Project Links -->
+            <div class="publication-links buttons field has-addons">
+              <a class="external-link button is-small is-ghost" href="#" disabled>
+                <span class="icon"><i class="fas fa-globe-asia"></i></span>
+                <span>Project Page (Coming Soon)</span>
+              </a>
+              <a class="external-link button is-small is-ghost" href="#" disabled>
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code (Coming Soon)</span>
+              </a>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Abstract -->
-        <h3>Abstract</h3>
-        <p>
-          This project presents a collaborative robot system designed for safe human-robot interaction in shared workspaces. 
-          The system incorporates advanced safety features and an intuitive control interface to enable seamless collaboration 
-          between humans and robots in industrial and service applications.
-        </p>
-
-        <!-- System Features -->
+      <!-- Additional Details -->
+      <div class="content mt-6">
         <h3>Key Features</h3>
         <ul>
           <li><strong>Safety Systems:</strong> Collision detection and avoidance</li>
@@ -79,7 +82,6 @@ layout: null
           <li><strong>Adaptive Behavior:</strong> Dynamic response to human actions</li>
         </ul>
 
-        <!-- Technical Components -->
         <h3>Technical Components</h3>
         <ul>
           <li>Computer vision for human detection</li>
@@ -89,7 +91,6 @@ layout: null
           <li>Safety protocols and emergency stops</li>
         </ul>
 
-        <!-- Applications -->
         <h3>Applications</h3>
         <ul>
           <li>Manufacturing assembly lines</li>
@@ -97,19 +98,6 @@ layout: null
           <li>Service robotics</li>
           <li>Healthcare assistance</li>
         </ul>
-
-        <!-- Links -->
-        <h3>Project Links</h3>
-        <div class="buttons">
-          <a class="button is-primary" href="#" disabled>
-            <span class="icon"><i class="fas fa-globe"></i></span>
-            <span>Project Page (Coming Soon)</span>
-          </a>
-          <a class="button is-light" href="#" disabled>
-            <span class="icon"><i class="fab fa-github"></i></span>
-            <span>Code (Coming Soon)</span>
-          </a>
-        </div>
       </div>
     </div>
   </section>
