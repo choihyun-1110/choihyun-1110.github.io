@@ -1,0 +1,106 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>CIFAR-100 Long-Tail Classification - {{ site.name }}</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="../css/fontawesome.all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
+  <link href="../css/bulma.min.css" rel="stylesheet">
+  <link href="../css/cv.css" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script defer src="../js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section>
+    <div class="container is-max-desktop">
+      <!-- Navigation -->
+      <div class="columns is-vcentered mb-6">
+        <div class="column">
+          <a href="../index.html" class="button is-light">
+            <span class="icon"><i class="fas fa-arrow-left"></i></span>
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Header -->
+      <div class="columns is-vcentered">
+        <div class="column is-two-thirds">
+          <h1 class="title is-2">CIFAR-100 Long-Tail Classification Project</h1>
+          <h2 class="subtitle is-4">Deep Learning Lab Course Project</h2>
+          <div class="tags">
+            <span class="tag is-primary">Deep Learning</span>
+            <span class="tag is-info">Long-Tail Learning</span>
+            <span class="tag is-success">Classification</span>
+            <span class="tag is-warning">LDAM</span>
+          </div>
+        </div>
+        <div class="column is-one-third has-text-right">
+          <figure class="image is-128x128 is-inline-block">
+            <img src="../images/cifar100.jpeg" alt="CIFAR-100 Project">
+          </figure>
+        </div>
+      </div>
+
+      <div class="content">
+        <!-- Authors -->
+        <h3>Author</h3>
+        <div class="columns">
+          <div class="column">
+            <div class="author-block author-me">
+              <strong>H. Choi</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Abstract -->
+        <h3>Abstract</h3>
+        <p>
+          This project addresses the long-tail classification problem on CIFAR-100 dataset. We built a hierarchical 
+          scheme clustering 100 classes into 20 superclasses and applied a two-stage retraining approach with 
+          class-balanced sampling and LDAM (Large Margin Cosine Loss) to improve performance on tail classes.
+        </p>
+
+        <!-- Methodology -->
+        <h3>Methodology</h3>
+        <ul>
+          <li><strong>Hierarchical Clustering:</strong> 100 classes → 20 superclasses</li>
+          <li><strong>Loss Function:</strong> L_class + α·L_superclass</li>
+          <li><strong>Two-stage Training:</strong> Class-balanced sampling + LDAM</li>
+          <li><strong>Dataset:</strong> CIFAR-100 with long-tail distribution</li>
+        </ul>
+
+        <!-- Results -->
+        <h3>Key Results</h3>
+        <div class="box">
+          <ul>
+            <li><strong>Overall Top-1 Accuracy:</strong> 48.8% → 75.7% (+26.9%)</li>
+            <li><strong>Tail Classes Performance:</strong> 36.6% → 70.3% (+33.7%)</li>
+            <li>Significant improvement in tail class recognition</li>
+            <li>Effective hierarchical learning approach</li>
+          </ul>
+        </div>
+
+        <!-- Links -->
+        <h3>Project Links</h3>
+        <div class="buttons">
+          <a class="button is-primary" href="https://www.notion.so/CIFAR-100-Long-Tail-Classification-Project-23f2d399f9118066b2dad938f1925249" target="_blank">
+            <span class="icon"><i class="fas fa-globe"></i></span>
+            <span>Project Page</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

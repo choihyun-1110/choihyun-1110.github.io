@@ -2,7 +2,7 @@
   authors: ["choi_hyun"]
   venue: "Deep Learning Lab Course Project"
   description: "Built hierarchical scheme clustering 100 classes into 20 superclasses with L_class + α·L_superclass. Applied two-stage retraining with class-balanced sampling and LDAM. Results: Overall Top-1 48.8% → 75.7%, Tail 36.6% → 70.3%."
-  project_page: "https://www.notion.so/CIFAR-100-Long-Tail-Classification-Project-23f2d399f9118066b2dad938f1925249"
+  project_page: "projects/cifar100.html"
   arxiv: ""
   github: ""
   image: "cifar100.jpeg"
@@ -11,7 +11,7 @@
   authors: ["choi_hyun"]
   venue: "Introduction to Artificial Intelligence Course Project"
   description: "3D-CNN + LSTM model for 6-frame sequences; ablations on dropout, LR schedulers, test-time normalization; MAE = 1.82."
-  project_page: "https://disco-candy-c65.notion.site/AI-1ec2d399f911802d9954c1662a5e78d0"
+  project_page: "projects/speed-estimation.html"
   arxiv: ""
   github: ""
   image: "speed.jpeg"
@@ -20,7 +20,7 @@
   authors: ["choi_hyun", "yoonhee_uhm"]
   venue: "Genoray FlexLab Internship Project"
   description: "Fine-tuned Segment Anything Model (SAM) for dental X-ray segmentation using LoRA-based tuning strategies. Joint first authorship with Yoonhee Uhm."
-  project_page: "#"
+  project_page: "projects/sam-finetuning.html"
   arxiv: ""
   github: ""
   image: "sam_finetuning.jpeg"
@@ -29,7 +29,7 @@
   authors: ["choi_hyun", "seunghyuk_Seo", "donghyuk_kim", "seungjin_lee"]
   venue: "Robotics Course Project"
   description: "Next-generation intelligent drone maintenance system with AI-powered diagnostics and automated repair capabilities."
-  project_page: "#"
+  project_page: "projects/drone-maintenance.html"
   arxiv: ""
   github: ""
   image: "AGV.jpeg"
@@ -38,7 +38,7 @@
   authors: ["choi_hyun"]
   venue: "Robotics Course Project"
   description: "Human-robot collaboration system with safety features and intuitive control interface."
-  project_page: "#"
+  project_page: "projects/collaborative-robot.html"
   arxiv: ""
   github: ""
   image: "cobot.jpeg"

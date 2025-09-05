@@ -1,9 +1,9 @@
 - title: "SAM Fine-tuning for Medical Imaging"
   description: "Fine-tuned Segment Anything Model (SAM) for dental X-ray segmentation using LoRA-based tuning strategies. Joint first authorship with Yoonhee Uhm."
   image: "sam_finetuning.jpeg"
-  url: "#"
+  url: "projects/sam-finetuning.html"
 
 - title: "차세대 지능형 드론 정비 시스템"
   description: "Next-generation intelligent drone maintenance system with AI-powered diagnostics and automated repair capabilities."
   image: "AGV.jpeg"
-  url: "#"
+  url: "projects/drone-maintenance.html"
