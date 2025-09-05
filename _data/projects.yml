@@ -25,10 +25,10 @@
   github: ""
   image: "sam_finetuning.jpeg"
 
-- title: "AGV Navigation System"
-  authors: ["choi_hyun"]
+- title: "차세대 지능형 드론 정비 시스템"
+  authors: ["choi_hyun", "seunghyuk_seo", "donghyuk_kim", "seungjin_lee"]
   venue: "Robotics Course Project"
-  description: "Autonomous Guided Vehicle navigation system with computer vision and path planning algorithms."
+  description: "Next-generation intelligent drone maintenance system with AI-powered diagnostics and automated repair capabilities."
   project_page: "#"
   arxiv: ""
   github: ""

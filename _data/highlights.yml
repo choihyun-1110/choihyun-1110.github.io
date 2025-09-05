@@ -3,7 +3,7 @@
   image: "sam_finetuning.jpeg"
   url: "#"
 
-- title: "AGV Navigation System"
-  description: "Autonomous Guided Vehicle navigation system with computer vision and path planning algorithms."
+- title: "차세대 지능형 드론 정비 시스템"
+  description: "Next-generation intelligent drone maintenance system with AI-powered diagnostics and automated repair capabilities."
   image: "AGV.jpeg"
   url: "#"

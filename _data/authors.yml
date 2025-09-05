@@ -20,3 +20,36 @@ yoonhee_uhm:
   github: ""
   linkedin: ""
 
+seunghyuk_Seo:
+  first_name: "Seunghyuk"
+  middle_name: ""
+  last_name: "Seo"
+  is_me: false
+  website: "#"
+  description: "Team member on drone maintenance system project"
+  email: ""
+  github: ""
+  linkedin: ""
+
+donghyuk_kim:
+  first_name: "Donghyuk"
+  middle_name: ""
+  last_name: "Kim"
+  is_me: false
+  website: "#"
+  description: "Team member on drone maintenance system project"
+  email: ""
+  github: ""
+  linkedin: ""
+
+seungjin_lee:
+  first_name: "Seungjin"
+  middle_name: ""
+  last_name: "Lee"
+  is_me: false
+  website: "#"
+  description: "Team member on drone maintenance system project"
+  email: ""
+  github: ""
+  linkedin: ""
+
