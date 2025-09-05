@@ -104,14 +104,14 @@ layout: null
         </div>
         {% endfor %}
 
-        <h2>Publications</h2>
+        <h2>Projects</h2>
 
-        {% for publication in site.data.publications %}
+        {% for project in site.data.projects %}
         <div class="columns">
           <div class="column is-four-fifths">
-            <a href="{{ publication.project_page }}"><b>{{ publication.title }}</b></a>
-            <div class="publication-authors">
-              {% for author_id in publication.authors %}
+            <a href="{{ project.project_page }}"><b>{{ project.title }}</b></a>
+            <div class="project-authors">
+              {% for author_id in project.authors %}
               {% assign author = site.data.authors[author_id] %}
               <span class="author-block {% if author.is_me %}author-me{% endif %}">
                 {% if author.is_me %}
@@ -124,10 +124,10 @@ layout: null
               </span>
               {% endfor %}
             </div>
-            {{ publication.description }}
+            {{ project.description }}
           </div>
           <div class="column is-one-fifths has-text-right">
-            {{ publication.venue }}
+            {{ project.venue }}
           </div>
         </div>
         {% endfor %}

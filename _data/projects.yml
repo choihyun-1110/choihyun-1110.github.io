@@ -23,6 +23,15 @@
   project_page: "#"
   arxiv: ""
   github: ""
+  image: "sam_finetuning.jpeg"
+
+- title: "AGV Navigation System"
+  authors: ["choi_hyun"]
+  venue: "Robotics Course Project"
+  description: "Autonomous Guided Vehicle navigation system with computer vision and path planning algorithms."
+  project_page: "#"
+  arxiv: ""
+  github: ""
   image: "AGV.jpeg"
 
 - title: "Collaborative Robot System"
