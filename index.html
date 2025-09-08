@@ -168,6 +168,12 @@ layout: null
             </div>
             <div class="project-venue">
               <span>{{ project.venue }}</span>
+              {% if project.status == "in_progress" %}
+              <span class="tag is-warning is-light ml-2">
+                <span class="icon"><i class="fas fa-hammer"></i></span>
+                <span>작성 중</span>
+              </span>
+              {% endif %}
               {% for award in project.awards %}
               <span class="project-venue-emph">{{ award }}<span>
                   {% endfor %}

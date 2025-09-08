@@ -33,6 +33,7 @@
   arxiv: ""
   github: ""
   image: "AGV.jpeg"
+  status: "in_progress"
 
 - title: "Collaborative Robot System"
   authors: ["choi_hyun"]
