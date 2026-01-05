@@ -3,7 +3,8 @@ title: Hyun Choi
 name: Hyun Choi
 position: Undergraduate Student · Yonsei University
 email: chlgusla1@yonsei.ac.kr
-description: "I am interested in structurally analyzing the bottlenecks that arise when multimodal AI systems are deployed in physical environments, and in addressing them from algorithmic, system-level, and hardware perspectives."
+description: |
+I am interested in structurally analyzing the bottlenecks that arise when multimodal AI systems are deployed in physical environments, and in addressing them from algorithmic, system-level, and hardware perspectives.
 baseurl: "" # leave empty since this is a user site
 url: "https://choihyun-1110.github.io" # your GitHub Pages URL
 

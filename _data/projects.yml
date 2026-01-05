@@ -3,7 +3,7 @@
   venue: "Meta x Llama Academy Final Project"
   description: "🏆 1st Place Winner! MCP and LangGraph-based AI agent orchestration system for centralized personal work information management with automated daily briefing."
   project_page: "projects/ai-agent-orchestrator.html"
-  arxiv: ""
+  slides: "files/Meta Llama Academy PPT.pdf"
   github: "https://github.com/UpstageAI/edu-usecase/pull/6"
   image: "Meta_Llama_Academy.png"
   image_mouseover: "Meta_demo.mp4"
