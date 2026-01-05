@@ -6,6 +6,7 @@
   arxiv: ""
   github: "https://github.com/UpstageAI/edu-usecase/pull/6"
   image: "Meta_Llama_Academy.png"
+  image_mouseover: "Meta_demo.mp4"
   date: "2025.09-10"
   awards: ["🥇 1st Place Winner"]
 
@@ -37,6 +38,7 @@
   arxiv: ""
   github: ""
   image: "AGV.jpeg"
+  image_mouseover: "프로젝트_1분티저.mp4"
   date: "2024.06"
   awards: ["🥈 우수상 (43개 팀 중 2등)"]
 

@@ -1,6 +1,7 @@
 - title: "🏆 AI Agent Orchestrator System - 1st Place Winner"
   description: "🥇 Meta x Llama Academy Final Project 1st Place! MCP and LangGraph-based AI agent orchestration system for centralized personal work information management with automated daily briefing."
   image: "Meta_Llama_Academy.png"
+  video: "Meta_demo.mp4"
   url: "projects/ai-agent-orchestrator.html"
 
 - title: "SAM Fine-tuning for Medical Imaging"
@@ -11,4 +12,5 @@
 - title: "🏆 드론 자동 정비 시스템 - 우수상 수상"
   description: "🥈 43개 팀 중 2등! MFC 내 드론 자동 정비 시스템 PoC 구현. Elephant Robotics의 MyAGV2023와 Cobot320을 활용한 Smart Factory 및 CMMS 구축."
   image: "AGV.jpeg"
+  video: "프로젝트_1분티저.mp4"
   url: "projects/drone-maintenance.html"
