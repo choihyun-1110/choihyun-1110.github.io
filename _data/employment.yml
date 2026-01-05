@@ -1,0 +1,21 @@
+- company: Genoray FlexLab (Medical Imaging Company)
+  description: >-
+    AI Intern - Fine-tuned Segment Anything Model (SAM) for dental X-ray segmentation. 
+    Developed LoRA-based tuning strategies and integrated results into a semi-automatic labeling tool.
+  dates: "Jun 2025 - Aug 2025"
+  location: Seoul, Korea
+
+- company: Reinforcement Learning Tutoring
+  description: Tutor at Yonsei University covering key reinforcement learning algorithms and implementation techniques
+  dates: "Mar 2025 - Jun 2025"
+  location: Yonsei University
+
+- company: SK hynix Volunteer Program
+  description: Mentored middle and high school students in basic Python programming and algorithmic thinking
+  dates: "May 2024 - Dec 2024"
+  location: Seoul, Korea
+
+- company: Math Academy
+  description: Assistant Teacher supporting teaching and student management in high school math curriculum
+  dates: "Jan 2020 - Jun 2021, Jan 2023 - Dec 2023"
+  location: Seoul, Korea

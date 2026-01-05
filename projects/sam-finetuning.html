@@ -1,0 +1,189 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>SAM Fine-tuning for Medical Imaging - {{ site.name }}</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="../css/fontawesome.all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
+  <link href="../css/bulma.min.css" rel="stylesheet">
+  <link href="../css/index.css" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script defer src="../js/fontawesome.all.min.js"></script>
+  
+  <script>
+    function showEmail(email) {
+      alert('Contact: ' + email);
+    }
+  </script>
+  
+  <style>
+    .image-block {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .image-block img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .caption {
+      font-style: italic;
+      color: #666;
+      margin-top: 0.5rem;
+      font-size: 0.9em;
+    }
+    .content h3 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Navigation -->
+      <div class="columns is-vcentered mb-6">
+        <div class="column">
+          <a href="../index.html" class="button is-light">
+            <span class="icon"><i class="fas fa-arrow-left"></i></span>
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Header -->
+      <div class="publication-block columns">
+        <div class="column is-2">
+          <div class="publication-image">
+            <img alt="SAM Fine-tuning for Medical Imaging" src="../images/sam_finetuning.jpeg" />
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <h3 class="publication-title">SAM Fine-tuning for Medical Imaging</h3>
+            <div class="publication-authors">
+              <span class="author-block author-me">
+                <strong>H. Choi</strong> (Joint First Author)
+              </span>
+              <span class="author-block">
+                <strong><a href="#" onclick="showEmail('uyh0331@yonsei.ac.kr'); return false;" style="color: #000; text-decoration: underline; cursor: pointer;">Y. Uhm</a></strong> (Joint First Author)
+              </span>
+            </div>
+            <div class="publication-venue">
+              <span>Genoray FlexLab Internship Project (2025)</span>
+            </div>
+            <p class="publication-description">
+              This project focused on customizing the Segment Anything Model (SAM) and enhancing its performance 
+              for <strong>dental panoramic X-ray segmentation</strong>. We combined <em>LoRA-based fine-tuning</em> 
+              with an <em>iterative prompt refinement strategy</em>, and also developed user-friendly labeling tool 
+              features to improve both segmentation accuracy and clinical usability.
+            </p>
+            
+            <!-- Project Links -->
+            <div class="publication-links buttons field has-addons">
+              <a class="external-link button is-small is-ghost" href="#" disabled>
+                <span class="icon"><i class="fas fa-globe-asia"></i></span>
+                <span>Project Page (Coming Soon)</span>
+              </a>
+              <a class="external-link button is-small is-ghost" href="#" disabled>
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code (Coming Soon)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Content -->
+      <div class="content mt-6">
+        <h3>1. Background</h3>
+        <p>
+          Dentists often face difficulties identifying subtle lesions in panoramic X-rays. 
+          However, the available dataset was limited (~2,000 images) and of inconsistent quality, 
+          leading to segmentation errors and unreliable training. 
+          To overcome this, we designed a dual approach:
+        </p>
+        <ul>
+          <li>Enhance segmentation AI through <strong>SAM-HQ + LoRA</strong> fine-tuning</li>
+          <li>Improve the labeling tool with <strong>brush correction</strong> and <strong>mask transparency adjustment</strong></li>
+        </ul>
+
+        <h3>2. Methodology</h3>
+        <ul>
+          <li><strong>Base Model:</strong> SAM-HQ (Meta AI)</li>
+          <li><strong>Tuning Strategy:</strong> Parameter-Efficient Fine-Tuning (LoRA)</li>
+          <li><strong>Prompting:</strong> From simple center-point prompts → to iterative correction prompts (up to 11 iterations)</li>
+          <li><strong>Dataset:</strong> 2,392 training + 269 test X-ray images, plus 10 challenging "bad-case" images</li>
+        </ul>
+        <div class="image-block">
+          <img src="../images/methodology_prompt.png" alt="Iterative Prompt Strategy" />
+          <p class="caption">Iterative prompt refinement for correcting under-/over-segmentation</p>
+        </div>
+
+        <h3>3. Results</h3>
+        <ul>
+          <li>SAM-HQ baseline Dice score: <strong>0.748</strong></li>
+          <li>SAM-HQ + LoRA + iterative prompts: <strong>0.914</strong></li>
+          <li>Decoder-only and HQ-module-only LoRA also improved, but <em>Encoder+Decoder LoRA</em> gave best results</li>
+        </ul>
+        <div class="image-block">
+          <div class="columns is-multiline">
+            <div class="column is-6">
+              <img src="../images/result_comparison_1.png" alt="Result Comparison 1" />
+              <p class="caption">Root segmentation improvement in low-quality and boundary-ambiguous environments</p>
+            </div>
+            <div class="column is-6">
+              <img src="../images/result_comparison_2.png" alt="Result Comparison 2" />
+              <p class="caption">Blurred region segmentation comparison</p>
+            </div>
+            <div class="column is-6">
+              <img src="../images/result_comparison_3.png" alt="Result Comparison 3" />
+              <p class="caption">Overlapped structure segmentation</p>
+            </div>
+            <div class="column is-6">
+              <img src="../images/result_comparison_4.png" alt="Result Comparison 4" />
+              <p class="caption">Artifact-heavy region handling</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>4. Tool Customization</h3>
+        <ul>
+          <li><strong>Brush Tool:</strong> Enables intuitive "paint-and-erase" correction of masks</li>
+          <li><strong>Transparency Control:</strong> Adjustable mask overlay opacity for clearer boundary distinction</li>
+          <li><strong>Impact:</strong> Labeling time reduced by ~32% (250s → 170s per case)</li>
+        </ul>
+        <div class="image-block">
+          <video controls width="100%" style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" preload="metadata">
+            <source src="../images/tool_demo.mp4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="caption">Tool customization demonstration: brush correction and transparency control features</p>
+        </div>
+
+        <h3>5. Conclusion</h3>
+        <p>
+          Through efficient fine-tuning and practical tool enhancements, we demonstrated that SAM can be 
+          effectively adapted to the medical imaging domain with limited data. This project lays the 
+          groundwork for <strong>lesion detection AI models</strong> in dental practice, while also highlighting 
+          the importance of usability for clinical adoption.
+        </p>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

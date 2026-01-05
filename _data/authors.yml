@@ -1,0 +1,55 @@
+choi_hyun:
+  first_name: "Hyun"
+  middle_name: ""
+  last_name: "Choi"
+  is_me: true
+  website: "https://choihyun-1110.github.io"
+  description: "Undergraduate student at Yonsei University studying Electrical and Electronic Engineering with focus on AI, computer vision, and reinforcement learning"
+  email: "chlgusla1@gmail.com"
+  github: "choihyun-1110"
+  linkedin: "hyun1110"
+
+yoonhee_uhm:
+  first_name: "Yoonhee"
+  middle_name: ""
+  last_name: "Uhm"
+  is_me: false
+  website: "#"
+  description: "Research collaborator on SAM fine-tuning project"
+  email: "uyh0331@yonsei.ac.kr"
+  github: ""
+  linkedin: ""
+
+seunghyuk_Seo:
+  first_name: "Seunghyuk"
+  middle_name: ""
+  last_name: "Seo"
+  is_me: false
+  website: "#"
+  description: "Team member on drone maintenance system project"
+  email: ""
+  github: ""
+  linkedin: ""
+
+donghyuk_kim:
+  first_name: "Donghyuk"
+  middle_name: ""
+  last_name: "Kim"
+  is_me: false
+  website: "#"
+  description: "Team member on drone maintenance system project"
+  email: ""
+  github: ""
+  linkedin: ""
+
+seungjin_lee:
+  first_name: "Seungjin"
+  middle_name: ""
+  last_name: "Lee"
+  is_me: false
+  website: "#"
+  description: "Team member on drone maintenance system project"
+  email: ""
+  github: ""
+  linkedin: ""
+

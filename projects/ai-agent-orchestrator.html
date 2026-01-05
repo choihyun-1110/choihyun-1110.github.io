@@ -1,0 +1,236 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>AI Agent Orchestrator System - {{ site.name }}</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="../css/fontawesome.all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
+  <link href="../css/bulma.min.css" rel="stylesheet">
+  <link href="../css/index.css" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script defer src="../js/fontawesome.all.min.js"></script>
+  
+  <style>
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+    .demo-video {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      margin: 2rem 0;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-left: 4px solid #667eea;
+    }
+    .tech-badge {
+      display: inline-block;
+      background: #f0f0f0;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      margin: 0.25rem;
+      font-size: 0.9rem;
+    }
+    .sponsor-section {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .sponsor-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .sponsor-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="container">
+      <div class="columns is-vcentered mb-6">
+        <div class="column">
+          <a href="../index.html" class="button is-light">
+            <span class="icon"><i class="fas fa-arrow-left"></i></span>
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
+      
+      <h1 class="hero-title">AI Agent Orchestrator System</h1>
+      <p class="hero-subtitle">Personal Work Information Centralization Without Complex Integration</p>
+      
+      <div class="sponsor-section">
+        <div style="background: linear-gradient(45deg, #FFD700, #FFA500); padding: 1rem; border-radius: 10px; margin-bottom: 1rem; color: #333;">
+          <h3 style="font-size: 1.5rem; margin: 0; text-align: center;">🏆 1st Place Winner 🏆</h3>
+          <p style="margin: 0.5rem 0 0 0; text-align: center; font-weight: bold;">Meta x Llama Academy Final Project</p>
+        </div>
+        <div class="sponsor-logos">
+          <div class="sponsor-logo">Meta</div>
+          <div class="sponsor-logo">Upstage AI</div>
+        </div>
+      </div>
+      
+      <!-- Demo Video -->
+      <video class="demo-video" controls>
+        <source src="../images/Meta_demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Authors -->
+      <div class="content has-text-centered mb-6">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 15px; margin-bottom: 1rem;">
+          <h2 style="color: white; margin-bottom: 0.5rem;">🥇 1st Place Winner Team</h2>
+          <h3 style="color: white; margin: 0;">Team: 너도 할수있어 (You Can Do It)</h3>
+        </div>
+        <p>
+          <strong>H. Choi</strong> (Agent) • 
+          <strong>S. Bae</strong> (기획자) • 
+          <strong>J. Lee</strong>, <strong>J. Lee</strong> (MCP Server) • 
+          <strong>J. Hwang</strong> (Backoffice)
+        </p>
+        <p><em>September 30 - October 2, 2025 • Meta x Llama Academy</em></p>
+      </div>
+
+      <!-- Abstract -->
+      <div class="content">
+        <h2>Abstract</h2>
+        <p>
+          Existing methods for personal work information management typically require complex integrations and manual data entry across multiple AI tools, messengers, and document applications. This leads to scattered information, difficulty in priority management, and repetitive context explanations. In this work, we propose a simpler approach: we first collect all work-related conversations and data using the Model Context Protocol (MCP), then orchestrate intelligent agents using LangGraph to automatically process, summarize, and provide daily briefings. We demonstrate that this strategy achieves seamless integration across multiple AI clients (ChatGPT Desktop, Claude Desktop/CODE, Cursor) and productivity tools (Gmail, Slack, Notion) while maintaining 3D consistency in data flow and user experience.
+        </p>
+      </div>
+
+      <!-- How It Works -->
+      <div class="content">
+        <h2>How It Works</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h4>1. Data Collection</h4>
+            <p>MCP protocol automatically captures conversations from AI clients and productivity tools into our Context Registry database.</p>
+          </div>
+          <div class="feature-card">
+            <h4>2. Agent Orchestration</h4>
+            <p>LangGraph StateGraph manages the workflow: plan → cr_read → summarize → cr_write for intelligent processing.</p>
+          </div>
+          <div class="feature-card">
+            <h4>3. Daily Briefing</h4>
+            <p>Automated collection of Gmail, Slack, and Notion data, processed by AI models and delivered as structured Notion pages.</p>
+          </div>
+          <div class="feature-card">
+            <h4>4. Backoffice Interface</h4>
+            <p>Web-based management interface for viewing registry data, monitoring agent flows, and scheduling background jobs.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Features -->
+      <div class="content">
+        <h2>Key Features</h2>
+        <ul>
+          <li><strong>Multi-AI Client Support:</strong> Seamless integration with ChatGPT Desktop, Claude Desktop/CODE, Cursor, and Notion</li>
+          <li><strong>Real-time Conversation Logging:</strong> Automatic recording through standardized MCP communication</li>
+          <li><strong>LangGraph-based Workflow:</strong> Intelligent agent orchestration with plan → cr_read → summarize → cr_write process</li>
+          <li><strong>Context Registry:</strong> Lightweight SQLite database for permanent storage and retrieval</li>
+          <li><strong>Automated Daily Briefing:</strong> AI-powered summarization and Notion page generation at 07:00 KST daily</li>
+          <li><strong>Backoffice Web Interface:</strong> Registry Viewer, Agent Flow Monitor, and Background Job scheduling</li>
+        </ul>
+      </div>
+
+      <!-- Technical Stack -->
+      <div class="content">
+        <h2>Technical Stack</h2>
+        <div class="columns">
+          <div class="column">
+            <h4>Backend</h4>
+            <span class="tech-badge">Python 3.10+</span>
+            <span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">LangGraph</span>
+            <span class="tech-badge">SQLite</span>
+            <span class="tech-badge">MCP Protocol</span>
+          </div>
+          <div class="column">
+            <h4>AI & ML</h4>
+            <span class="tech-badge">Ollama + LLaMA 3.2</span>
+            <span class="tech-badge">Upstage Solar</span>
+            <span class="tech-badge">OpenAI API</span>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <h4>Frontend</h4>
+            <span class="tech-badge">Jinja2</span>
+            <span class="tech-badge">HTML/CSS/JS</span>
+            <span class="tech-badge">Bulma CSS</span>
+          </div>
+          <div class="column">
+            <h4>DevOps & Tools</h4>
+            <span class="tech-badge">uv</span>
+            <span class="tech-badge">APScheduler</span>
+            <span class="tech-badge">aiohttp</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="content has-text-centered">
+        <h2>Links</h2>
+        <div class="buttons is-centered">
+          <a class="button is-primary" href="https://github.com/UpstageAI/edu-usecase/pull/6" target="_blank">
+            <span class="icon"><i class="fab fa-github"></i></span>
+            <span>GitHub PR</span>
+          </a>
+          <a class="button is-info" href="../files/Meta Llama Academy PPT.pdf" target="_blank">
+            <span class="icon"><i class="fas fa-file-powerpoint"></i></span>
+            <span>Presentation Slides</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

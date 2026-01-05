@@ -1,0 +1,52 @@
+- title: "AI Agent Orchestrator System"
+  authors: ["choi_hyun", "seunghwan_bae", "jimin_lee", "jaebeom_lee", "jungwon_hwang"]
+  venue: "Meta x Llama Academy Final Project"
+  description: "🏆 1st Place Winner! MCP and LangGraph-based AI agent orchestration system for centralized personal work information management with automated daily briefing."
+  project_page: "projects/ai-agent-orchestrator.html"
+  arxiv: ""
+  github: "https://github.com/UpstageAI/edu-usecase/pull/6"
+  image: "Meta_Llama_Academy.png"
+  date: "2025.09-10"
+  awards: ["🥇 1st Place Winner"]
+
+- title: "SAM Fine-tuning for Medical Imaging"
+  authors: ["choi_hyun", "yoonhee_uhm"]
+  venue: "Genoray FlexLab Internship Project"
+  description: "Fine-tuned Segment Anything Model (SAM) for dental X-ray segmentation using LoRA-based tuning strategies. Joint first authorship with Yoonhee Uhm."
+  project_page: "projects/sam-finetuning.html"
+  arxiv: ""
+  github: ""
+  image: "sam_finetuning.jpeg"
+  date: "2025.06-08"
+
+- title: "CIFAR-100 Long-Tail Classification Project"
+  authors: ["choi_hyun"]
+  venue: "Deep Learning Lab Course Project"
+  description: "Built hierarchical scheme clustering 100 classes into 20 superclasses with L_class + α·L_superclass. Applied two-stage retraining with class-balanced sampling and LDAM. Results: Overall Top-1 48.8% → 75.7%, Tail 36.6% → 70.3%."
+  project_page: "projects/cifar100.html"
+  arxiv: ""
+  github: ""
+  image: "cifar100.jpeg"
+  date: "2025.05-06"
+
+- title: "차세대 지능형 드론 정비 시스템"
+  authors: ["choi_hyun", "seunghyuk_Seo", "donghyuk_kim", "seungjin_lee"]
+  venue: "Robotics Course Project"
+  description: "🏆 우수상 수상 (43개 팀 중 2등)! MFC 내 드론 자동 정비 시스템 PoC 구현. Elephant Robotics의 MyAGV2023와 Cobot320을 활용한 Smart Factory 및 CMMS 구축."
+  project_page: "projects/drone-maintenance.html"
+  arxiv: ""
+  github: ""
+  image: "AGV.jpeg"
+  date: "2024.06"
+  awards: ["🥈 우수상 (43개 팀 중 2등)"]
+
+- title: "Speed Estimation from Road Scene Sequences"
+  authors: ["choi_hyun"]
+  venue: "Introduction to Artificial Intelligence Course Project"
+  description: "3D-CNN + LSTM model for 6-frame sequences; ablations on dropout, LR schedulers, test-time normalization; MAE = 1.82."
+  project_page: "projects/speed-estimation.html"
+  arxiv: ""
+  github: ""
+  image: "speed.jpeg"
+  date: "2024.11"
+
