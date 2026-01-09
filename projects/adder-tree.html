@@ -1,0 +1,255 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Adder Tree (12-input → 4-bit) - {{ site.name }}</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="../css/fontawesome.all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
+  <link href="../css/bulma.min.css" rel="stylesheet">
+  <link href="../css/index.css" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script defer src="../js/fontawesome.all.min.js"></script>
+  
+  <style>
+    .tech-badge {
+      display: inline-block;
+      background: #f0f0f0;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      margin: 0.25rem;
+      font-size: 0.9rem;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      margin: 0.25rem;
+    }
+    .status-passed {
+      background: #d4edda;
+      color: #155724;
+    }
+    .status-failed {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    .code-block {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-radius: 5px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Navigation -->
+      <div class="columns is-vcentered mb-6">
+        <div class="column">
+          <a href="../index.html" class="button is-light">
+            <span class="icon"><i class="fas fa-arrow-left"></i></span>
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Header -->
+      <div class="publication-block columns">
+        <div class="column is-2">
+          <div class="publication-image">
+            <img alt="Adder Tree Project" src="../images/cobot.jpeg" />
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <h3 class="publication-title">Adder Tree (12-input → 4-bit) — Schematic-to-Layout Integration Attempt</h3>
+            <div class="publication-authors">
+              <span class="author-block author-me">
+                <strong>H. Choi</strong>
+              </span>
+            </div>
+            <div class="publication-venue">
+              <span>Digital Circuit Design Course Project</span>
+            </div>
+            <p class="publication-description">
+              This project documents the design and integration attempt of a <strong>tree-based compressor</strong> that reduces 
+              <strong>12 one-bit inputs (XT0–XT11)</strong> into a <strong>4-bit output (bS0–bS3)</strong> using a hierarchy of 
+              <strong>Full Adders (FA: 3:2 compressor)</strong> and <strong>Half Adders (HA: 2:2 compressor)</strong>.
+            </p>
+            
+            <div style="margin: 1rem 0;">
+              <span class="status-badge status-passed">DRC PASSED</span>
+              <span class="status-badge status-failed">Hierarchical LVS NOT CLOSED</span>
+            </div>
+            
+            <!-- Project Links -->
+            <div class="publication-links buttons field has-addons">
+              <a class="external-link button is-small is-ghost" href="#">
+                <span class="icon"><i class="fas fa-globe-asia"></i></span>
+                <span>Project Page</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Content -->
+      <div class="content mt-6">
+        <h2>Overview</h2>
+        <ul>
+          <li><strong>Technology:</strong> FreePDK45 (45nm educational PDK)</li>
+          <li><strong>Tools:</strong> KLayout, ngspice</li>
+          <li><strong>Flow:</strong> Cell design (FA/HA) → Cell DRC/LVS → Tree schematic → Tree layout (hierarchical) → Tree DRC → Tree LVS (not closed)</li>
+        </ul>
+
+        <h2>1. Motivation</h2>
+        <p>
+          A straightforward Ripple-Carry style accumulation of 12 inputs would introduce long carry propagation. 
+          Instead, this design adopts a <strong>Tree-based Compression (Compressor Tree)</strong> to reduce critical path length 
+          toward <strong>O(log N)</strong> behavior.
+        </p>
+        <p><strong>Key goals:</strong></p>
+        <ul>
+          <li>Minimize worst-case delay (<strong>T_worst</strong>) of the overall tree</li>
+          <li>Reduce total dynamic energy (<strong>E_total</strong>) and physical area via cell sizing and placement strategy</li>
+          <li>Validate correctness and feasibility through a full schematic-to-layout verification flow</li>
+        </ul>
+
+        <h2>2. Architecture Overview (Compressor Tree)</h2>
+        <h3>2.1 Design Rationale</h3>
+        <p>The compressor tree was selected for:</p>
+        <ul>
+          <li><strong>Speed:</strong> parallel reduction reduces sequential carry chain length</li>
+          <li><strong>Compression efficiency:</strong> staged reduction using FA (3:2) and HA (2:2)</li>
+          <li><strong>Modularity:</strong> bottom-up approach (verify FA/HA first, then integrate)</li>
+        </ul>
+        <p>
+          However, this bottom-up strategy also exposed a classic physical design tradeoff:
+          aggressive per-cell transistor sizing improved local delay, but <strong>hurt standard-cell regularity</strong> 
+          (mismatched cell heights / irregular pin locations), increasing routing complexity and making hierarchical LVS closure harder.
+        </p>
+
+        <h3>2.2 Functional Correctness (Schematic Level)</h3>
+        <p>
+          A full tree schematic was built using exported symbols from the chosen FA/HA cells.
+          Schematic simulations confirmed output bits match expected arithmetic results with full swing observed on outputs.
+        </p>
+
+        <h2>3. Cell Selection (FA / HA)</h2>
+        <h3>3.1 Full Adder: FA_36p</h3>
+        <p>
+          Multiple FA topologies were evaluated. The final tree uses <strong>FA_36p</strong>, which reduces transistor count by using:
+        </p>
+        <ul>
+          <li><strong>MUX-based logic decomposition</strong></li>
+          <li><strong>CMOS Transmission Gate (CMOSTG)</strong> blocks</li>
+        </ul>
+        <p><strong>Final sizing (best observed delay point):</strong></p>
+        <ul>
+          <li>PMOS W ≈ 100 nm</li>
+          <li>NMOS W ≈ 120 nm</li>
+        </ul>
+
+        <h3>3.2 Half Adder: HA2 (XOR + NAND + inverter)</h3>
+        <p>
+          HA2 uses XOR + NAND structure with inverter for signal restoration. 
+          Best performance in tree was obtained by <strong>differentiated sizing per block</strong>:
+        </p>
+        <ul>
+          <li>inverter ≈ 300 nm</li>
+          <li>XOR ≈ 100 nm</li>
+          <li>NAND ≈ 180 nm</li>
+        </ul>
+
+        <h2>4. Delay & Energy Measurement</h2>
+        <h3>4.1 Results Summary (Schematic-Level Tree)</h3>
+        <ul>
+          <li><strong>T_worst ≈ 384 ps</strong> (dominant worst delay in first rising transition)</li>
+          <li><strong>E_total ≈ 4.29 × 10⁻¹⁴ J</strong></li>
+          <li><strong>T_worst × E_total ≈ 1.65 × 10⁻²³ (J·s)</strong></li>
+        </ul>
+        <p>
+          Contrary to initial hypothesis, worst delay was <strong>not always the falling transition</strong>.
+        </p>
+
+        <h2>5. Layout Strategy (Cell → Tree Integration)</h2>
+        <h3>5.1 Cell Layout Summary (Completed)</h3>
+        <p>Both FA and HA cells were designed with shared diffusion maximization and consistent power rail placement.</p>
+        <ul>
+          <li><strong>FA_36p:</strong> 3130 nm × 1445 nm (DRC/LVS PASSED)</li>
+          <li><strong>HA2:</strong> 1945 nm × 1695 nm (DRC/LVS PASSED)</li>
+        </ul>
+
+        <h3>5.2 Tree Layout (Hierarchical Assembly)</h3>
+        <ul>
+          <li>Tree area: <strong>29230 nm × 1695 nm</strong></li>
+          <li><strong>DRC: PASSED</strong></li>
+          <li><strong>LVS: NOT PASSED</strong></li>
+        </ul>
+
+        <h2>6. LVS Status: Root Cause Analysis</h2>
+        <p>Even though individual cells passed LVS, the <strong>top-level hierarchical LVS did not close</strong>.</p>
+        <p><strong>Primary suspected causes:</strong></p>
+        <ol>
+          <li><strong>Incomplete physical connectivity at top level</strong> - Some intended schematic connections were represented by labels/pins, but not fully realized as continuous metal routing</li>
+          <li><strong>Power net naming / consistency issues (VDD/VSS/GND)</strong> - Inconsistent naming/connection conventions across hierarchy levels</li>
+          <li><strong>Pin definition and net management ambiguity</strong> - Top-level pins not mapped consistently to subcell pins</li>
+          <li><strong>Hierarchy handling (flatten vs. hierarchical LVS)</strong> - LVS flows sensitive to hierarchy mismatches</li>
+        </ol>
+
+        <h2>7. Improvement Plan (How to Close LVS Next Time)</h2>
+        <p><strong>Concrete next steps to achieve LVS closure:</strong></p>
+        <ul>
+          <li><strong>(A) Enforce explicit top-level metal routing</strong> for all subcell interconnects (avoid relying on label-only "virtual" connections)</li>
+          <li><strong>(B) Unify global nets:</strong> standardize to <strong>VDD / GND</strong> naming across schematic, extracted netlists, and layout texts</li>
+          <li><strong>(C) Define pins unambiguously:</strong> ensure each subcell uses consistent pin shapes/layers expected by LVS extraction rules</li>
+          <li><strong>(D) Consider flattening:</strong> perform LVS on a flattened version of the tree to remove hierarchical ambiguity</li>
+          <li><strong>(E) Standard-cell regularity:</strong> constrain FA/HA cell height and rail alignment even at the cost of minor cell-level delay, improving routability and integration stability</li>
+        </ul>
+        <div style="background: #f8f9fa; border-left: 4px solid #2c3e50; padding: 1.5rem; border-radius: 5px; margin: 2rem 0;">
+          <p style="margin: 0; font-style: italic;">
+            <strong>Key takeaway:</strong> In physical design, <strong>local cell-level optimization</strong> must be balanced with 
+            <strong>system-level regularity and routability</strong>.
+          </p>
+        </div>
+
+        <h2>8. What This Project Demonstrates</h2>
+        <ul>
+          <li>Built a non-trivial <strong>compressor tree</strong> from verified transistor-level cells</li>
+          <li>Performed <strong>delay/energy</strong> extraction based on transition-level measurements</li>
+          <li>Implemented <strong>full-custom layout</strong> with DRC-clean results at top level</li>
+          <li>Encountered and analyzed a real-world integration challenge: <strong>hierarchical LVS closure</strong></li>
+          <li>Extracted actionable next steps reflecting a system-level physical design perspective</li>
+        </ul>
+
+        <h2>9. Technical Stack</h2>
+        <div style="margin: 1rem 0;">
+          <span class="tech-badge">FreePDK45</span>
+          <span class="tech-badge">KLayout</span>
+          <span class="tech-badge">ngspice</span>
+          <span class="tech-badge">Full Custom Layout</span>
+          <span class="tech-badge">DRC/LVS Verification</span>
+          <span class="tech-badge">Transistor-Level Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
+
