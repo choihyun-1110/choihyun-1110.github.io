@@ -58,6 +58,6 @@
   description: "Tree-based compressor reducing 12 one-bit inputs to 4-bit output using Full Adders and Half Adders. FreePDK45 technology with KLayout/ngspice. DRC PASSED, hierarchical LVS analyzed with improvement plan."
   project_page: "projects/adder-tree.html"
   github: ""
-  image: "cobot.jpeg"
+  image: "Tree_arch.png"
   date: "2024"
 
