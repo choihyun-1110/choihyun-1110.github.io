@@ -4,7 +4,7 @@
   description: "Tree-based compressor reducing 12 one-bit inputs to 4-bit output using Full Adders and Half Adders. FreePDK45 technology with KLayout/ngspice. DRC PASSED, hierarchical LVS analyzed with improvement plan."
   project_page: "projects/adder-tree.html"
   github: ""
-  image: "Tree_arch.png"
+  image: "Tree_arch.jpg"
   date: "2025.11"
  - title: "AI Agent Orchestrator System"
   authors: ["choi_hyun", "seunghwan_bae", "jimin_lee", "jaebeom_lee", "jungwon_hwang"]
