@@ -4,7 +4,8 @@
   description: "PDF 보고서를 포트폴리오용 마크다운으로 재작성하고 Notion에 한 번에 저장하는 에이전트. Upstage Document Parse + Solar LLM, Streamlit UI, Notion API 연동."
   project_page: "projects/rewrite-my-report.html"
   github: "https://github.com/choihyun-1110/rewrite-my-report"
-  image: ""
+  image: "업스_대표이미지.jpg"
+  image_mouseover: "데모영상.mp4"
   date: "2025"
 - title: "Adder Tree (12-input → 4-bit) — Schematic-to-Layout Integration"
   authors: ["choi_hyun"]
