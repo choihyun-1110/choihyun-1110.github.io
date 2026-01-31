@@ -139,6 +139,7 @@ layout: null
 
         <div class="column is-2">
           <div class="project-image {% if project.image_mouseover %}project-mousecell{% endif %}">
+            {% if project.image %}
             {% if project.image_mouseover contains "mp4" %}
             <video autoplay preload playsinline class="" height="100%" loop muted width="100%">
               <source src="./images/{{ project.image_mouseover }}" type="video/mp4">
@@ -146,6 +147,9 @@ layout: null
             </video>
             {% endif %}
             <img alt="{{ project.title }}" src="./images/{{ project.image }}" />
+            {% else %}
+            <div class="project-image-placeholder" style="min-height: 120px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.85rem;">이미지 추가 예정</div>
+            {% endif %}
           </div>
         </div>
 
