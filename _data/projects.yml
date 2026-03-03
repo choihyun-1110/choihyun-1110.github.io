@@ -6,7 +6,7 @@
   github: "https://github.com/choihyun-1110/rewrite-my-report"
   image: "업스_대표이미지.jpg"
   image_mouseover: "데모영상.mp4"
-  date: "2025"
+  date: "2026.01"
 - title: "Adder Tree (12-input → 4-bit) — Schematic-to-Layout Integration"
   authors: ["choi_hyun"]
   venue: "Digital Circuit Design Course Project"

@@ -1,0 +1,11 @@
+{
+  "name": "choihyun-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio and resume tools",
+  "scripts": {
+    "resume:docx": "node resume-to-docx.js"
+  },
+  "dependencies": {
+    "docx": "^9.5.0"
+  }
+}

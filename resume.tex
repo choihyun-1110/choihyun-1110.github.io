@@ -1,0 +1,191 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Thanks : Rishi Shah 's Contribution
+% inspired by his awesome contribution:
+% https://www.overleaf.com/articles/rishi-shahs-resume/vgxvkmxktyxn
+% Author : Allianzcortex
+% contact me : github.com/Allianzcortex
+% email : iamwanghz#gmail.com
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+% Last updated; synced with portfolio data.
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.40in,top=0.3in,right=0.75in,bottom=0.1in]{geometry} % Document margins
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\usepackage{times}
+\usepackage{amsmath}
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+\name{Choi Hyun} % Your name 
+
+\address{\faEnvelope{ chlgusla1@gmail.com} \, \faPhone \, +82-10-5575-7049}
+\address{\faMapMarker{ 20, Hanbit-ro, Paju-si, Gyeonggi-do, Republic of Korea (Current) }}
+\address{\faGlobe \, \href{https://choihyun-1110.github.io}{choihyun-1110.github.io} \, | \, \href{https://velog.io/@choihyun-1110/posts}{Velog (Blog)}}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+{\bf Yonsei University, Seoul, Korea } \hfill {\em Mar 2020 - Present} 
+\\Candidate for B.S in  Electrical and Electronic Engineering \hfill {\em Expected graduation date: Aug 2026}
+%\\Cumulative GPA: 3.76 / 4.5
+
+\end{rSection}
+
+\begin{rSection}{Research Interests}
+
+I am interested in structurally analyzing the bottlenecks that arise when multimodal AI systems are deployed in physical environments, and in addressing them from algorithmic, system-level, and hardware perspectives.
+
+\end{rSection}
+
+\begin{rSection}{Relevant Coursework}
+
+\textbf{Completed:}
+Deep Learning Lab (A+);
+NLP and ChatGPT (A+);
+Intro to Deep Learning and Applications (A+);
+AI and Financial Engineering (A+);
+Reinforcement Learning (A-);
+Data Structures and Algorithms (A-);
+Understanding and Applications of AI (A-);
+Introduction to Statistics (A0);
+Generative Models (P)
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Work Experience}
+
+\href{https://genoray.com/?Lang=KR}{\bf AI Intern, Genoray FlexLab (Medical Imaging Company)} \hfill {\em Jun 2025 -- Aug 2025} \\
+- Fine-tuned \href{https://disco-candy-c65.notion.site/SAM-HQ-Conv_LoRA-2582d399f9118056977fe4d4a6b6f7c0?source=copy_link}{Segment Anything Model (SAM)} for dental X-ray segmentation.
+- Developed LoRA-based tuning strategies and integrated results into a semi-automatic labeling tool.  
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Projects}
+
+{\bf Portfolio Migration Agent (rewrite-my-report)} \hfill {\em Jan 2026}  
+\\{\textit{Personal Project – \href{https://github.com/choihyun-1110/rewrite-my-report}{GitHub}}}  
+\\- Agent that rewrites PDF reports into portfolio-style markdown and saves to Notion in one shot.
+\\- Upstage Document Parse + Solar LLM, Streamlit UI, Notion API integration.
+\\
+
+{\bf AI Agent Orchestrator System} \hfill {\em Sep 2025 – Oct 2025}  
+\\{\textit{Meta x Llama Academy Final Project – \href{https://github.com/UpstageAI/edu-usecase/pull/6}{GitHub PR}}}  
+\\- \textbf{1st Place Winner.} MCP and LangGraph-based AI agent orchestration for centralized personal work information management with automated daily briefing.
+\\
+
+\href{https://choihyun-1110.github.io/projects/adder-tree.html}{\bf Adder Tree (12-input $\rightarrow$ 4-bit) — Schematic-to-Layout Integration} \hfill {\em Nov 2025}  
+\\{\textit{Digital Circuit Design Course Project – \href{https://choihyun-1110.github.io/projects/adder-tree.html}{Project Page}}}  
+\\- Tree-based compressor reducing 12 one-bit inputs to 4-bit output using Full Adders and Half Adders.
+\\- FreePDK45 technology with KLayout/ngspice. DRC PASSED, hierarchical LVS analyzed with improvement plan.
+\\
+
+{\bf CIFAR-100 Long-Tail Classification Project} \hfill {\em Jun 2025 – Jul 2025}  
+\\{\textit{Course Project – \href{https://www.notion.so/CIFAR-100-Long-Tail-Classification-Project-23f2d399f9118066b2dad938f1925249}{DL project}}}  
+\\- Built a hierarchical scheme clustering 100 classes into 20 superclasses with $L_{\text{class}} + \alpha \cdot L_{\text{superclass}}$.  
+\\- Applied two-stage retraining with class-balanced sampling and LDAM.
+\\
+  \textit{Results:} Overall Top-1 48.8\% $\rightarrow$ 75.7\%, Tail 36.6\% $\rightarrow$ 70.3\%.
+\\- Introduced a hierarchical loss formulation: $L_{\text{class}} + \alpha \cdot L_{\text{superclass}}$ to stabilize tail-class learning.
+
+{\bf Speed Estimation from Road Scene Sequences} \hfill {\em Nov 2024} 
+\\{\textit{Course Project – \href{https://disco-candy-c65.notion.site/AI-1ec2d399f911802d9954c1662a5e78d0?pvs=74}{Introduction to Artificial Intelligence, Yonsei University}}}
+\\- 3D-CNN + LSTM model for 6-frame sequences; ablations on dropout, LR schedulers, test-time normalization; \textit{MAE} = 1.82.
+\\
+
+{\bf Next-Gen Intelligent Drone Maintenance System} \hfill {\em Apr 2024 – Jun 2024} 
+\\{\textit{Project Member – \href{https://disco-candy-c65.notion.site/AGV-389624f2efac475a89e166a4d94b3c10?pvs=4}{KG KAIROS}}}
+\\- Industry-academic collaborative project: intelligent drone maintenance; PoC for in-facility automated drone maintenance system.
+\\- Responsible for designing and operating an AGV (Automated Guided Vehicle) for transporting drones to maintenance stations.
+\\- Contributed to system integration between the AGV and drone diagnostic modules for efficient maintenance workflow.
+\\
+
+{\bf CV-based Object Sorting Robot System} \hfill {\em Apr 2024} 
+\\{\textit{Personal Project – \href{https://disco-candy-c65.notion.site/1ec2d399f911805f85eff13c9392050b?pvs=74}{Vision-Guided Robotic Conveyor System}}}
+\\- End-to-end pipeline: OpenCV detection + color/orientation classification; PLC conveyor (Modbus RTU) + MyCobot grasp/stack. \\
+- Angle-aware grasping via HSV segmentation and contour geometry. 
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	AWARD & SCHOLARSHIP
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Award \& Scholarship}
+
+- \textbf{1st Place Winner} – Meta x Llama Academy Final Project \\
+\hspace{1em}\textit{AI Agent Orchestrator System}, Sep--Oct 2025
+
+- Team Project Excellence Award – KG KAIROS \\
+\hspace{1em}Awarded 2nd place out of 43 teams in the industry-academic challenge for the project \\
+\hspace{1em}\textit{``Next-Gen Intelligent Drone Maintenance System''}, Jun 2024
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS & PROFICIENCY
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Skills \& Proficiency}
+\textbf{Programming:} Python (Advanced) \\
+\textbf{ML/DL:} PyTorch (Advanced), LLM Agents, LangGraph, MCP, LoRA \\
+\textbf{Tools:} Linux, Notion, LaTeX \\
+\textbf{Languages:} English (Advanced; TOEIC Speaking IH, Aug 2024), Korean (Native)
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EXTRA-CURRICULAR
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Extra-Curricular} \itemsep -3pt
+
+- \href{https://www.instagram.com/yonsei_judo}{Yonsei Judo} \hfill {\em Mar 2024 -- Present} \\
+\hspace{1em}Club member; ongoing.
+
+- \href{https://www.instagram.com/yonsei._.rrc}{Yonsei Recreation Research Club} \hfill {\em Sep 2024 -- Present} \\
+\hspace{1em}Member (Sep 2024 -- Present); Treasurer (Accounting Director), Jan 2025 -- Jun 2025.
+
+- Reinforcement Learning Tutoring (Yonsei University) \hfill Mar 2025 -- Jun 2025 \\
+Received tutoring covering key reinforcement learning algorithms and implementation techniques.
+
+- SK hynix Volunteer Program \hfill {\em May 2024 – Dec 2024} \\
+\hspace{1em}Mentored middle and high school students in basic Python programming and algorithmic thinking.
+
+- Assistant Teacher at a Math Academy \hfill {\em Jan 2020 – Jun 2021, Jan 2023 – Dec 2023} \\
+\hspace{1em}Supported teaching and student management in high school math curriculum.
+
+\end{rSection}
+
+\end{document}
