@@ -1,3 +1,21 @@
+- title: "AI Career Advisor (Upstage AI Ambassador 2nd Cohort)"
+  authors: ["choi_hyun"]
+  venue: "Upstage AI Ambassador Mission"
+  description: "Developed an AI Career Advisor leveraging n8n no-code workflows and Upstage Solar LLM API to automate personalized career guidance from a single PDF upload."
+  project_page: "https://velog.io/@choihyun-1110/posts"
+  github: "https://github.com/choihyun-1110/upstage-ai-ambassador"
+  image: "n8n 구조.png"
+  date: "2026.03 - Present"
+
+- title: "Korean LLM Quantization Pipeline Builder"
+  authors: ["choi_hyun"]
+  venue: "Independent Research / Study"
+  description: "Built a complete environment and pipeline for quantizing Korean LLMs (EXAONE-3.5, SOLAR-10.7B). Designed a morphology-aware calibration set algorithm and integrated AutoGPTQ and lm-evaluation-harness."
+  project_page: ""
+  github: ""
+  image: "LLM_quant.png"
+  date: "2025.12 - Present"
+
 - title: "Portfolio Migration Agent (rewrite-my-report)"
   authors: ["choi_hyun"]
   venue: "Personal Project"

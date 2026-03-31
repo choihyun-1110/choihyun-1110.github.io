@@ -59,6 +59,12 @@ layout: null
               {{ site.github_username }}
             </a>
           </p>
+          <p>
+            <a target="_blank" href="https://velog.io/@{{ site.velog_username }}">
+              <i class="fas fa-blog"></i>
+              Velog
+            </a>
+          </p>
                                            <p>
               <a href="https://linkedin.com/in/{{ site.linkedin }}">
                 <i class="fab fa-linkedin"></i>
@@ -127,7 +133,10 @@ layout: null
             {{ project.description }}
           </div>
           <div class="column is-one-fifths has-text-right">
-            {{ project.venue }}
+            {{ project.venue }}<br/>
+            {% if project.date %}
+            <span style="font-size: 0.9em; color: #666;">{{ project.date }}</span>
+            {% endif %}
           </div>
         </div>
         {% endfor %}
