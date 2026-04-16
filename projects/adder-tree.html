@@ -79,7 +79,7 @@ layout: null
 
         <div class="column">
           <div class="content">
-            <h3 class="publication-title">Adder Tree (12-input → 4-bit) — Schematic-to-Layout Integration Attempt</h3>
+            <h3 class="publication-title">Adder Tree (12-input → 4-bit) — Schematic-to-Layout Integration</h3>
             <div class="publication-authors">
               <span class="author-block author-me">
                 <strong>H. Choi</strong>
@@ -96,7 +96,7 @@ layout: null
             
             <div style="margin: 1rem 0;">
               <span class="status-badge status-passed">DRC PASSED</span>
-              <span class="status-badge status-failed">Hierarchical LVS NOT CLOSED</span>
+              <span class="status-badge status-passed">LVS PASSED</span>
             </div>
             
             <!-- Project Links -->
@@ -116,7 +116,7 @@ layout: null
         <ul>
           <li><strong>Technology:</strong> FreePDK45 (45nm educational PDK)</li>
           <li><strong>Tools:</strong> KLayout, ngspice</li>
-          <li><strong>Flow:</strong> Cell design (FA/HA) → Cell DRC/LVS → Tree schematic → Tree layout (hierarchical) → Tree DRC → Tree LVS (not closed)</li>
+          <li><strong>Flow:</strong> Cell design (FA/HA) → Cell DRC/LVS → Tree schematic → Tree layout (hierarchical) → Tree DRC → Tree LVS (PASSED)</li>
         </ul>
 
         <h2>1. Motivation</h2>
@@ -209,45 +209,25 @@ layout: null
         <ul>
           <li>Tree area: <strong>29230 nm × 1695 nm</strong></li>
           <li><strong>DRC: PASSED</strong></li>
-          <li><strong>LVS: NOT PASSED</strong></li>
+          <li><strong>LVS: PASSED</strong></li>
         </ul>
-
-        <h2>6. LVS Status: Root Cause Analysis</h2>
-        <p>Even though individual cells passed LVS, the <strong>top-level hierarchical LVS did not close</strong>.</p>
-        <p><strong>Primary suspected causes:</strong></p>
-        <ol>
-          <li><strong>Incomplete physical connectivity at top level</strong> - Some intended schematic connections were represented by labels/pins, but not fully realized as continuous metal routing</li>
-          <li><strong>Power net naming / consistency issues (VDD/VSS/GND)</strong> - Inconsistent naming/connection conventions across hierarchy levels</li>
-          <li><strong>Pin definition and net management ambiguity</strong> - Top-level pins not mapped consistently to subcell pins</li>
-          <li><strong>Hierarchy handling (flatten vs. hierarchical LVS)</strong> - LVS flows sensitive to hierarchy mismatches</li>
-        </ol>
-
-        <h2>7. Improvement Plan (How to Close LVS Next Time)</h2>
-        <p><strong>Concrete next steps to achieve LVS closure:</strong></p>
-        <ul>
-          <li><strong>(A) Enforce explicit top-level metal routing</strong> for all subcell interconnects (avoid relying on label-only "virtual" connections)</li>
-          <li><strong>(B) Unify global nets:</strong> standardize to <strong>VDD / GND</strong> naming across schematic, extracted netlists, and layout texts</li>
-          <li><strong>(C) Define pins unambiguously:</strong> ensure each subcell uses consistent pin shapes/layers expected by LVS extraction rules</li>
-          <li><strong>(D) Consider flattening:</strong> perform LVS on a flattened version of the tree to remove hierarchical ambiguity</li>
-          <li><strong>(E) Standard-cell regularity:</strong> constrain FA/HA cell height and rail alignment even at the cost of minor cell-level delay, improving routability and integration stability</li>
-        </ul>
-        <div style="background: #f8f9fa; border-left: 4px solid #2c3e50; padding: 1.5rem; border-radius: 5px; margin: 2rem 0;">
+        <div style="background: #d4edda; border-left: 4px solid #155724; padding: 1.5rem; border-radius: 5px; margin: 2rem 0;">
           <p style="margin: 0; font-style: italic;">
-            <strong>Key takeaway:</strong> In physical design, <strong>local cell-level optimization</strong> must be balanced with 
-            <strong>system-level regularity and routability</strong>.
+            <strong>Full verification complete:</strong> Both DRC and hierarchical LVS passed at the top level,
+            confirming schematic-to-layout equivalence across the entire compressor tree.
           </p>
         </div>
 
-        <h2>8. What This Project Demonstrates</h2>
+        <h2>6. What This Project Demonstrates</h2>
         <ul>
           <li>Built a non-trivial <strong>compressor tree</strong> from verified transistor-level cells</li>
           <li>Performed <strong>delay/energy</strong> extraction based on transition-level measurements</li>
-          <li>Implemented <strong>full-custom layout</strong> with DRC-clean results at top level</li>
-          <li>Encountered and analyzed a real-world integration challenge: <strong>hierarchical LVS closure</strong></li>
-          <li>Extracted actionable next steps reflecting a system-level physical design perspective</li>
+          <li>Implemented <strong>full-custom layout</strong> with complete DRC and LVS sign-off at top level</li>
+          <li>Closed <strong>hierarchical LVS</strong> — resolved physical connectivity, power net naming, and pin definition issues across the full hierarchy</li>
+          <li>Demonstrated end-to-end schematic-to-layout verification flow from cell level to tree level</li>
         </ul>
 
-        <h2>9. Technical Stack</h2>
+        <h2>7. Technical Stack</h2>
         <div style="margin: 1rem 0;">
           <span class="tech-badge">FreePDK45</span>
           <span class="tech-badge">KLayout</span>

@@ -28,7 +28,7 @@
 - title: "Adder Tree (12-input → 4-bit) — Schematic-to-Layout Integration"
   authors: ["choi_hyun"]
   venue: "Digital Circuit Design Course Project"
-  description: "Tree-based compressor reducing 12 one-bit inputs to 4-bit output using Full Adders and Half Adders. FreePDK45 technology with KLayout/ngspice. DRC PASSED, hierarchical LVS analyzed with improvement plan."
+  description: "Tree-based compressor reducing 12 one-bit inputs to 4-bit output using Full Adders and Half Adders. FreePDK45 technology with KLayout/ngspice. Full verification complete: DRC PASSED, hierarchical LVS PASSED."
   project_page: "projects/adder-tree.html"
   github: ""
   image: "Tree_arch.jpg"
