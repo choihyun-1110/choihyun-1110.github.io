@@ -1,3 +1,8 @@
+- title: "LLM Quantization Pipeline for Korean Models"
+  description: "Built and documented a Korean LLM quantization project around morpheme-aware calibration data, low-bit PTQ experiments, and practical evaluation workflows."
+  image: "LLM_quant.png"
+  url: "projects/llm-quantization.html"
+
 - title: "🏆 AI Agent Orchestrator System - 1st Place Winner"
   description: "🥇 Meta x Llama Academy Final Project 1st Place! MCP and LangGraph-based AI agent orchestration system for centralized personal work information management with automated daily briefing."
   image: "Meta_Llama_Academy.png"

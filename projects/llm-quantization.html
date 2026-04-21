@@ -1,0 +1,148 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Korean LLM Quantization Pipeline Builder - {{ site.name }}</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="../css/fontawesome.all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
+  <link href="../css/bulma.min.css" rel="stylesheet">
+  <link href="../css/index.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script defer src="../js/fontawesome.all.min.js"></script>
+
+  <style>
+    .summary-box {
+      background: #f6f8fb;
+      border-left: 4px solid #3273dc;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .metric-card {
+      height: 100%;
+      padding: 1.25rem;
+      border: 1px solid #e8ecf2;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 8px 24px rgba(10, 10, 10, 0.04);
+    }
+    .metric-card h4 {
+      margin-bottom: 0.5rem;
+    }
+    .project-image {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(10, 10, 10, 0.08);
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-vcentered mb-6">
+        <div class="column">
+          <a href="../index.html" class="button is-light">
+            <span class="icon"><i class="fas fa-arrow-left"></i></span>
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="publication-block columns">
+        <div class="column is-3">
+          <div class="project-image">
+            <img alt="Korean LLM Quantization Pipeline Builder" src="../images/LLM_quant.png" />
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <h3 class="publication-title">Korean LLM Quantization Pipeline Builder</h3>
+            <div class="publication-authors">
+              <span class="author-block author-me">
+                <strong>H. Choi</strong>
+              </span>
+            </div>
+            <div class="publication-venue">
+              <span>Independent Research / Study</span>
+            </div>
+            <p class="publication-description">
+              This ongoing project focuses on morpheme-aware post-training quantization for Korean LLMs.
+              The work centers on building and documenting a practical workflow for calibration-set design,
+              low-bit PTQ experiments, and evaluation on Korean-language models.
+            </p>
+            <div class="publication-links buttons field has-addons mt-4">
+              <a class="external-link button is-small is-ghost" href="https://github.com/choihyun-1110/morpheme-aware-ptq" target="_blank" rel="noopener">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content mt-6">
+        <div class="summary-box">
+          <strong>Focus.</strong> This project explores how Korean morphological structure can be reflected in
+          calibration data for post-training quantization, with the goal of making quantization experiments more
+          language-aware and easier to analyze.
+        </div>
+
+        <h3>What I Built</h3>
+        <ul>
+          <li>Built the project around morpheme-aware calibration data for Korean LLM post-training quantization</li>
+          <li>Structured a repeatable workflow for model preparation, quantization experiments, and result comparison</li>
+          <li>Documented implementation choices and experiment setup in a public GitHub repository</li>
+          <li>Connected the project with related technical writing on Korean LLM efficiency and on-device AI</li>
+        </ul>
+
+        <h3>Key Engineering Questions</h3>
+        <div class="columns is-multiline">
+          <div class="column is-4">
+            <div class="metric-card">
+              <h4>Calibration Quality</h4>
+              <p>How should Korean prompts be curated so calibration reflects actual morphology and language usage patterns?</p>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="metric-card">
+              <h4>Evaluation Consistency</h4>
+              <p>How can quantized and original models be compared with a repeatable process instead of anecdotal prompting?</p>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="metric-card">
+              <h4>Language-Aware PTQ</h4>
+              <p>What changes when Korean-specific linguistic structure is considered during post-training quantization?</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Why It Matters</h3>
+        <p>
+          This project is part of a broader effort to turn study notes and experiments into public, reproducible work.
+          It also helps connect my interests in deep learning systems, Korean-language modeling, and engineering documentation.
+        </p>
+
+        <h3>Related Writing</h3>
+        <p>
+          I also documented the motivation behind this work in a recent Velog post about on-device AI and quantization:
+          <a href="https://velog.io/@choihyun-1110/%EC%84%B1%EB%8A%A5%EB%A7%8C-%EB%B3%B4%EB%8D%98-%EC%8B%9C%EC%84%A0%EC%97%90%EC%84%9C-On-device-AI%EC%99%80-%EC%96%91%EC%9E%90%ED%99%94%EB%A5%BC-%EB%8B%A4%EC%8B%9C-%EB%B3%B4%EA%B2%8C-%EB%90%98%EC%97%88%EB%8B%A4" target="_blank" rel="noopener">
+            성능만 보던 시선에서, On-device AI와 양자화를 다시 보게 되었다
+          </a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

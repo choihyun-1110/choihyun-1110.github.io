@@ -1,12 +1,12 @@
 - company: Upstage AI Ambassador (2nd Cohort)
-  description: Selected as an ambassador. Promoted practical AI applications by creating no-code AI workflows leveraging Solar LLM and n8n.
+  description: Selected as an ambassador. Built practical AI workflows with Solar LLM and n8n, and translated experimental ideas into user-facing automation prototypes.
   dates: "Mar 2026 - Present"
   location: Seoul, Korea
 
 - company: Genoray FlexLab (Medical Imaging Company)
   description: >-
-    AI Intern - Fine-tuned Segment Anything Model (SAM) for dental X-ray segmentation. 
-    Developed LoRA-based tuning strategies and integrated results into a semi-automatic labeling tool.
+    AI Intern - Fine-tuned Segment Anything Model (SAM) in PyTorch for dental X-ray segmentation.
+    Developed LoRA-based tuning strategies, validated model quality, and integrated outputs into a semi-automatic labeling tool.
   dates: "Jun 2025 - Aug 2025"
   location: Seoul, Korea
 

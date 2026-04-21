@@ -1,3 +1,12 @@
+- title: "Korean LLM Quantization Pipeline Builder"
+  authors: ["choi_hyun"]
+  venue: "Independent Research / Study"
+  description: "Built a morpheme-aware post-training quantization project for Korean LLMs. Organized calibration-set construction, low-bit PTQ experiments, and evaluation workflows for Korean-language models."
+  project_page: "projects/llm-quantization.html"
+  github: "https://github.com/choihyun-1110/morpheme-aware-ptq"
+  image: "LLM_quant.png"
+  date: "2025.12 - Present"
+
 - title: "AI Career Advisor (Upstage AI Ambassador 2nd Cohort)"
   authors: ["choi_hyun"]
   venue: "Upstage AI Ambassador Mission"
@@ -6,15 +15,6 @@
   github: "https://github.com/choihyun-1110/upstage-ai-ambassador"
   image: "n8n_workflow.png"
   date: "2026.03 - Present"
-
-- title: "Korean LLM Quantization Pipeline Builder"
-  authors: ["choi_hyun"]
-  venue: "Independent Research / Study"
-  description: "Built a complete environment and pipeline for quantizing Korean LLMs (EXAONE-3.5, SOLAR-10.7B). Designed a morphology-aware calibration set algorithm and integrated AutoGPTQ and lm-evaluation-harness."
-  project_page: ""
-  github: ""
-  image: "LLM_quant.png"
-  date: "2025.12 - Present"
 
 - title: "Portfolio Migration Agent (rewrite-my-report)"
   authors: ["choi_hyun"]
@@ -48,7 +48,7 @@
 - title: "SAM Fine-tuning for Medical Imaging"
   authors: ["choi_hyun", "yoonhee_uhm"]
   venue: "Genoray FlexLab Internship Project"
-  description: "Fine-tuned Segment Anything Model (SAM) for dental X-ray segmentation using LoRA-based tuning strategies. Joint first authorship with Yoonhee Uhm."
+  description: "Fine-tuned Segment Anything Model (SAM) in PyTorch for dental X-ray segmentation using LoRA-based tuning strategies. Improved accuracy and integrated the model into a semi-automatic labeling workflow. Joint first authorship with Yoonhee Uhm."
   project_page: "projects/sam-finetuning.html"
   arxiv: ""
   github: ""
