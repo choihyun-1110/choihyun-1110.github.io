@@ -1,3 +1,17 @@
+- date: "July 2026"
+  date_ko: "2026년 7월"
+  title: "Joined Hanwha Aerospace"
+  title_ko: "한화에어로스페이스 입사"
+  description: "Started as an engineer in the IPS Development Team, MRO Business Division."
+  description_ko: "MRO 사업부 IPS개발팀 엔지니어로 근무를 시작했습니다."
+
+- date: "May 2026"
+  date_ko: "2026년 5월"
+  title: "Completed Upstage AI Ambassador (2nd Cohort)"
+  title_ko: "Upstage AI Ambassador 2기 수료"
+  description: "Wrapped up the ambassador program after building practical AI workflows with Solar LLM and n8n."
+  description_ko: "Solar LLM과 n8n으로 실용적인 AI 워크플로우를 구축하며 앰배서더 활동을 마무리했습니다."
+
 - date: "June 2025"
   date_ko: "2025년 6월"
   title: "Started AI Internship at Genoray FlexLab"

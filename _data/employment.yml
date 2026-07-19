@@ -1,9 +1,18 @@
+- company: Hanwha Aerospace
+  company_ko: 한화에어로스페이스
+  description: Engineer, IPS Development Team, MRO Business Division. Working on IPS (Integrated Product Support) development for the MRO business.
+  description_ko: MRO 사업부 IPS개발팀 엔지니어. MRO 사업을 위한 IPS(종합군수지원/통합체계지원) 개발 업무를 담당하고 있습니다.
+  dates: "Jul 2026 - Present"
+  dates_ko: "2026.07 - 현재"
+  location: Korea
+  location_ko: 대한민국
+
 - company: Upstage AI Ambassador (2nd Cohort)
   company_ko: Upstage AI Ambassador 2기
   description: Selected as an ambassador. Built practical AI workflows with Solar LLM and n8n, and translated experimental ideas into user-facing automation prototypes.
   description_ko: 앰배서더로 선발되어 Solar LLM과 n8n으로 실용적인 AI 워크플로우를 구축하고, 실험적 아이디어를 사용자용 자동화 프로토타입으로 구현했습니다.
-  dates: "Mar 2026 - Present"
-  dates_ko: "2026.03 - 현재"
+  dates: "Mar 2026 - May 2026"
+  dates_ko: "2026.03 - 2026.05"
   location: Seoul, Korea
   location_ko: 서울
 
