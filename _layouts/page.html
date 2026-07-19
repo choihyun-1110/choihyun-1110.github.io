@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en" data-theme="light">
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var theme = localStorage.getItem('theme');
+      if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      var lang = localStorage.getItem('lang');
+      if (!lang) lang = (navigator.language || 'en').indexOf('ko') === 0 ? 'ko' : 'en';
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
+    })();
+  </script>
+
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="{{ '/css/fontawesome.all.min.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/page.css' | relative_url }}" rel="stylesheet">
+
+  <script defer src="{{ '/js/fontawesome.all.min.js' | relative_url }}"></script>
+  <script defer src="{{ '/js/index.js' | relative_url }}"></script>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">{{ site.name }}</a>
+      <nav class="topnav">
+        <a href="{{ '/#news' | relative_url }}"><span class="l-en">News</span><span class="l-ko">소식</span></a>
+        <a href="{{ '/#highlights' | relative_url }}"><span class="l-en">Highlights</span><span class="l-ko">하이라이트</span></a>
+        <a href="{{ '/#projects' | relative_url }}"><span class="l-en">Projects</span><span class="l-ko">프로젝트</span></a>
+        <a href="{{ '/cv.html' | relative_url }}">CV</a>
+      </nav>
+      <div class="controls">
+        <button id="lang-toggle" class="control-btn" type="button" aria-label="Switch language">
+          <span class="l-en">한국어</span><span class="l-ko">EN</span>
+        </button>
+        <button id="theme-toggle" class="control-btn icon-btn" type="button" aria-label="Toggle dark mode">
+          <i class="fas fa-moon theme-icon-dark"></i>
+          <i class="fas fa-sun theme-icon-light"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page wrap">
+    {{ content }}
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-links">
+        <a href="mailto:{{ site.email }}" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a target="_blank" href="https://velog.io/@{{ site.velog_username }}" aria-label="Velog"><i class="fas fa-blog"></i></a>
+        <a href="https://linkedin.com/in/{{ site.linkedin }}" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p class="footer-note">© {{ site.name }} · <span class="l-en">Built with Jekyll</span><span class="l-ko">Jekyll로 제작</span></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

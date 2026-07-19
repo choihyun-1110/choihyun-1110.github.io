@@ -1,160 +1,131 @@
 ---
-layout: null
+layout: page
+title: Portfolio Migration Agent (rewrite-my-report)
 ---
-<!DOCTYPE html>
-<html lang="ko">
 
-<head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>Portfolio Migration Agent (rewrite-my-report) - {{ site.name }}</title>
-  
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link href="../css/fontawesome.all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
-  <link href="../css/bulma.min.css" rel="stylesheet">
-  <link href="../css/index.css" rel="stylesheet">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script defer src="../js/fontawesome.all.min.js"></script>
-  
-  <style>
-    .image-block { text-align: center; margin: 2rem 0; }
-    .image-block img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    .caption { font-style: italic; color: #666; margin-top: 0.5rem; font-size: 0.9em; }
-    .content h3 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 0.5rem; margin-top: 2rem; }
-    .tech-badge { display: inline-block; background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px; margin: 0.25rem; font-size: 0.9rem; }
-    .placeholder-media { min-height: 200px; background: #f5f5f5; border: 2px dashed #ddd; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #999; margin: 2rem 0; }
-  </style>
-</head>
+<a href="{{ '/' | relative_url }}" class="back-link"><i class="fas fa-arrow-left"></i><span class="l-en">Back to Home</span><span class="l-ko">홈으로</span></a>
 
-<body>
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Navigation -->
-      <div class="columns is-vcentered mb-6">
-        <div class="column">
-          <a href="../index.html" class="button is-light">
-            <span class="icon"><i class="fas fa-arrow-left"></i></span>
-            <span>Back to Home</span>
-          </a>
-        </div>
-      </div>
+<div class="page-hero">
+  <p class="page-eyebrow"><span class="l-en">Personal Project</span><span class="l-ko">개인 프로젝트</span></p>
+  <h1 class="page-title">
+    <span class="l-en">Portfolio Migration Agent (rewrite-my-report)</span>
+    <span class="l-ko">포트폴리오 마이그레이션 에이전트 (rewrite-my-report)</span>
+  </h1>
+  <p class="page-meta"><span class="author-me">H. Choi</span></p>
+  <p class="page-summary l-en">
+    <strong>An agent that rewrites PDF reports into portfolio-ready markdown and saves them to Notion in one step.</strong>
+    Upload a coursework or lab report PDF, and it is rewritten into a recruiting/portfolio structure
+    (Title, One-line Summary, What I Built, Key Results, Representative Visuals, Tech Stack, etc.),
+    with web preview and Notion DB saving handled in one flow.
+  </p>
+  <p class="page-summary l-ko">
+    <strong>PDF 보고서를 포트폴리오용 마크다운으로 바꾸고, Notion에 한 번에 저장하는 에이전트</strong>입니다.
+    과제/실험 보고서 PDF를 업로드하면, 채용·포트폴리오용 구조(Title, One-line Summary, What I Built, Key Results,
+    Representative Visuals, Tech Stack 등)로 재작성하고, 웹 미리보기와 Notion DB 저장까지 한 번에 처리합니다.
+  </p>
+  <div class="page-links">
+    <a class="pill" href="https://github.com/choihyun-1110/rewrite-my-report" target="_blank"><i class="fab fa-github"></i><span>GitHub</span></a>
+  </div>
+</div>
 
-      <!-- Project Header -->
-      <div class="publication-block columns">
-        <div class="column">
-          <div class="content">
-            <h3 class="publication-title">Portfolio Migration Agent (rewrite-my-report)</h3>
-            <div class="publication-authors">
-              <span class="author-block author-me"><strong>H. Choi</strong></span>
-            </div>
-            <div class="publication-venue">
-              <span>Personal Project</span>
-            </div>
-            <p class="publication-description">
-              <strong>PDF 보고서를 포트폴리오용 마크다운으로 바꾸고, Notion에 한 번에 저장하는 에이전트</strong>입니다.
-              과제/실험 보고서 PDF를 업로드하면, 채용·포트폴리오용 구조(Title, One-line Summary, What I Built, Key Results, Representative Visuals, Tech Stack 등)로 재작성하고,
-              웹 미리보기와 Notion DB 저장까지 한 번에 처리합니다.
-            </p>
-            <div class="publication-links buttons field has-addons">
-              <a class="external-link button is-small is-ghost" href="https://github.com/choihyun-1110/rewrite-my-report" target="_blank">
-                <span class="icon"><i class="fab fa-github"></i></span>
-                <span>GitHub</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="prose">
+  <h2><span class="l-en">Demo Video / Representative Image</span><span class="l-ko">데모 영상 / 대표 이미지</span></h2>
+  <figure class="figure">
+    <video controls preload="metadata" style="max-width: 800px; width: 100%;">
+      <source src="{{ '/images/데모영상.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <figcaption class="l-en">Demo: PDF upload → conversion → preview → Notion save</figcaption>
+    <figcaption class="l-ko">데모: PDF 업로드 → 변환 → 미리보기 → Notion 저장</figcaption>
+  </figure>
+  <figure class="figure">
+    <img src="{{ '/images/업스_대표이미지.jpg' | relative_url }}" alt="Portfolio Migration Agent">
+    <figcaption class="l-en">Representative image</figcaption>
+    <figcaption class="l-ko">대표 이미지</figcaption>
+  </figure>
 
-      <!-- 데모 영상 / 대표 이미지 -->
-      <div class="content mt-6">
-        <h3>데모 영상 / 대표 이미지</h3>
-        <div class="image-block">
-          <video controls width="100%" style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" preload="metadata">
-            <source src="../images/데모영상.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p class="caption">데모: PDF 업로드 → 변환 → 미리보기 → Notion 저장</p>
-        </div>
-        <div class="image-block">
-          <img src="../images/업스_대표이미지.jpg" alt="Portfolio Migration Agent 대표 이미지" />
-          <p class="caption">대표 이미지</p>
-        </div>
-      </div>
+  <h2><span class="l-en">1. Overview</span><span class="l-ko">1. 개요</span></h2>
+  <p class="l-en">
+    Coursework and lab reports usually follow a "purpose → method → results → discussion" structure, but recruiting
+    portfolios and Notion archives fit better with formats like "one-line summary", "what I built", "key results",
+    "representative visuals", and "tech stack". This project provides a pipeline that extracts text and images from
+    PDFs with <strong>Upstage Document Parse</strong>, generates a fixed 8-section portfolio markdown with
+    <strong>Upstage Solar LLM</strong>, previews it in a <strong>Streamlit</strong> web UI, and saves it to a DB
+    via the <strong>Notion API</strong>.
+  </p>
+  <p class="l-ko">
+    과제·실험 보고서는 보통 "목적 → 방법 → 결과 → 고찰" 구조로 작성되지만, 채용 포트폴리오나 Notion 정리에는
+    "한 줄 요약", "무엇을 만들었는지", "주요 결과", "대표 시각 자료", "기술 스택" 같은 형태가 더 적합합니다.
+    이 프로젝트는 <strong>Upstage Document Parse</strong>로 PDF에서 텍스트와 이미지를 추출하고,
+    <strong>Upstage Solar LLM</strong>으로 고정 8단 구조의 포트폴리오용 마크다운을 생성한 뒤,
+    <strong>Streamlit</strong> 웹 UI에서 미리보기하고 <strong>Notion API</strong>로 DB에 저장하는 파이프라인을 제공합니다.
+  </p>
 
-      <!-- Abstract -->
-      <div class="content">
-        <h3>1. 개요</h3>
-        <p>
-          과제·실험 보고서는 보통 “목적 → 방법 → 결과 → 고찰” 구조로 작성되지만, 채용 포트폴리오나 Notion 정리에는
-          “한 줄 요약”, “무엇을 만들었는지”, “주요 결과”, “대표 시각 자료”, “기술 스택” 같은 형태가 더 적합합니다.
-          이 프로젝트는 <strong>Upstage Document Parse</strong>로 PDF에서 텍스트와 이미지를 추출하고,
-          <strong>Upstage Solar LLM</strong>으로 고정 8단 구조의 포트폴리오용 마크다운을 생성한 뒤,
-          <strong>Streamlit</strong> 웹 UI에서 미리보기하고 <strong>Notion API</strong>로 DB에 저장하는 파이프라인을 제공합니다.
-        </p>
-      </div>
+  <h2><span class="l-en">2. Key Features</span><span class="l-ko">2. 주요 기능</span></h2>
+  <ul class="l-en">
+    <li><strong>PDF Parsing:</strong> Text + image extraction with Upstage Document Parse (order preserved)</li>
+    <li><strong>Portfolio Rewriting:</strong> Fixed 8-section document generation with Solar LLM (coursework tone → recruiting/portfolio tone)</li>
+    <li><strong>Image Management:</strong> Per-document <code>assets/{doc_id}/</code> isolation, GitHub upload, then Notion image block linking</li>
+    <li><strong>Web UI:</strong> Streamlit — upload, preview (base64 images), Notion save</li>
+    <li><strong>Notion Integration:</strong> Create new DB pages or purge-and-append existing ones, up to 3 images</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>PDF 파싱:</strong> Upstage Document Parse로 텍스트 + 이미지 추출 (순서 유지)</li>
+    <li><strong>포트폴리오 재작성:</strong> Solar LLM으로 고정 8단 구조 문서 생성 (과제 톤 → 채용/포트폴리오 톤)</li>
+    <li><strong>이미지 관리:</strong> 문서별 <code>assets/{doc_id}/</code> 격리, GitHub 업로드 후 Notion 이미지 블록 연결</li>
+    <li><strong>웹 UI:</strong> Streamlit — 업로드, 미리보기(base64 이미지), Notion 저장</li>
+    <li><strong>Notion 연동:</strong> DB에 새 페이지 생성 또는 기존 페이지 purge 후 append, 이미지 최대 3장</li>
+  </ul>
 
-      <!-- Key Features -->
-      <div class="content">
-        <h3>2. 주요 기능</h3>
-        <ul>
-          <li><strong>PDF 파싱:</strong> Upstage Document Parse로 텍스트 + 이미지 추출 (순서 유지)</li>
-          <li><strong>포트폴리오 재작성:</strong> Solar LLM으로 고정 8단 구조 문서 생성 (과제 톤 → 채용/포트폴리오 톤)</li>
-          <li><strong>이미지 관리:</strong> 문서별 <code>assets/{doc_id}/</code> 격리, GitHub 업로드 후 Notion 이미지 블록 연결</li>
-          <li><strong>웹 UI:</strong> Streamlit — 업로드, 미리보기(base64 이미지), Notion 저장</li>
-          <li><strong>Notion 연동:</strong> DB에 새 페이지 생성 또는 기존 페이지 purge 후 append, 이미지 최대 3장</li>
-        </ul>
-      </div>
+  <h2><span class="l-en">3. How It Works</span><span class="l-ko">3. 동작 흐름</span></h2>
+  <ol class="l-en">
+    <li>User uploads a PDF to Streamlit</li>
+    <li><code>pipeline.py</code> flow: PDF → Upstage Parse → parsed result → portfolio markdown generation via Solar prompt</li>
+    <li>Images stored locally in <code>assets/{doc_id}/</code>, optionally uploaded to GitHub</li>
+    <li>On Notion save: create a new page or clear an existing one and append blocks; image URLs use GitHub raw links</li>
+  </ol>
+  <ol class="l-ko">
+    <li>사용자가 PDF를 Streamlit에 업로드</li>
+    <li><code>pipeline.py</code> 흐름: PDF → Upstage Parse → 파싱 결과 → Solar 프롬프트로 포트폴리오 마크다운 생성</li>
+    <li>이미지는 로컬 <code>assets/{doc_id}/</code>에 저장, 선택 시 GitHub에 업로드</li>
+    <li>Notion 저장 시: 새 페이지 생성 또는 기존 페이지 내용 비우고 블록 append, 이미지 URL은 GitHub raw 링크 사용</li>
+  </ol>
 
-      <!-- How It Works -->
-      <div class="content">
-        <h3>3. 동작 흐름</h3>
-        <ol>
-          <li>사용자가 PDF를 Streamlit에 업로드</li>
-          <li><code>pipeline.py</code> 흐름: PDF → Upstage Parse → 파싱 결과 → Solar 프롬프트로 포트폴리오 마크다운 생성</li>
-          <li>이미지는 로컬 <code>assets/{doc_id}/</code>에 저장, 선택 시 GitHub에 업로드</li>
-          <li>Notion 저장 시: 새 페이지 생성 또는 기존 페이지 내용 비우고 블록 append, 이미지 URL은 GitHub raw 링크 사용</li>
-        </ol>
-      </div>
+  <h2><span class="l-en">4. Tech Stack</span><span class="l-ko">4. 기술 스택</span></h2>
+  <div class="table-wrap l-en">
+    <table>
+      <thead><tr><th>Category</th><th>Technology</th></tr></thead>
+      <tbody>
+        <tr><td>Language</td><td>Python 3</td></tr>
+        <tr><td>UI</td><td>Streamlit</td></tr>
+        <tr><td>PDF/OCR</td><td>Upstage Document Parse API</td></tr>
+        <tr><td>LLM</td><td>Upstage Solar API</td></tr>
+        <tr><td>Storage</td><td>Notion API, GitHub (images)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrap l-ko">
+    <table>
+      <thead><tr><th>구분</th><th>기술</th></tr></thead>
+      <tbody>
+        <tr><td>언어</td><td>Python 3</td></tr>
+        <tr><td>UI</td><td>Streamlit</td></tr>
+        <tr><td>PDF/OCR</td><td>Upstage Document Parse API</td></tr>
+        <tr><td>LLM</td><td>Upstage Solar API</td></tr>
+        <tr><td>저장소</td><td>Notion API, GitHub(이미지)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tags">
+    <span class="tag">Python 3</span>
+    <span class="tag">Streamlit</span>
+    <span class="tag">Upstage Document Parse</span>
+    <span class="tag">Upstage Solar</span>
+    <span class="tag">Notion API</span>
+    <span class="tag">GitHub</span>
+  </div>
 
-      <!-- Technical Stack -->
-      <div class="content">
-        <h3>4. 기술 스택</h3>
-        <table class="table is-bordered is-striped">
-          <thead>
-            <tr><th>구분</th><th>기술</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>언어</td><td>Python 3</td></tr>
-            <tr><td>UI</td><td>Streamlit</td></tr>
-            <tr><td>PDF/OCR</td><td>Upstage Document Parse API</td></tr>
-            <tr><td>LLM</td><td>Upstage Solar API</td></tr>
-            <tr><td>저장소</td><td>Notion API, GitHub(이미지)</td></tr>
-          </tbody>
-        </table>
-        <p>
-          <span class="tech-badge">Python 3</span>
-          <span class="tech-badge">Streamlit</span>
-          <span class="tech-badge">Upstage Document Parse</span>
-          <span class="tech-badge">Upstage Solar</span>
-          <span class="tech-badge">Notion API</span>
-          <span class="tech-badge">GitHub</span>
-        </p>
-      </div>
-
-      <!-- Links -->
-      <div class="content has-text-centered">
-        <h3>5. 링크</h3>
-        <div class="buttons is-centered">
-          <a class="button is-primary" href="https://github.com/choihyun-1110/rewrite-my-report" target="_blank">
-            <span class="icon"><i class="fab fa-github"></i></span>
-            <span>GitHub Repository</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
-
-</html>
+  <h2><span class="l-en">5. Links</span><span class="l-ko">5. 링크</span></h2>
+  <div class="page-links">
+    <a class="pill" href="https://github.com/choihyun-1110/rewrite-my-report" target="_blank"><i class="fab fa-github"></i><span>GitHub Repository</span></a>
+  </div>
+</div>

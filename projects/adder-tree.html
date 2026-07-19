@@ -1,245 +1,219 @@
 ---
-layout: null
+layout: page
+title: Adder Tree (12-input → 4-bit)
 ---
-<!DOCTYPE html>
-<html lang="en-US">
 
-<head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>Adder Tree (12-input → 4-bit) - {{ site.name }}</title>
-  
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link href="../css/fontawesome.all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
-  <link href="../css/bulma.min.css" rel="stylesheet">
-  <link href="../css/index.css" rel="stylesheet">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script defer src="../js/fontawesome.all.min.js"></script>
-  
-  <style>
-    .tech-badge {
-      display: inline-block;
-      background: #f0f0f0;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      margin: 0.25rem;
-      font-size: 0.9rem;
-    }
-    .status-badge {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-weight: bold;
-      margin: 0.25rem;
-    }
-    .status-passed {
-      background: #d4edda;
-      color: #155724;
-    }
-    .status-failed {
-      background: #f8d7da;
-      color: #721c24;
-    }
-    .code-block {
-      background: #f5f5f5;
-      padding: 1rem;
-      border-radius: 5px;
-      font-family: monospace;
-      font-size: 0.9rem;
-      overflow-x: auto;
-      margin: 1rem 0;
-    }
-  </style>
-</head>
+<a href="{{ '/' | relative_url }}" class="back-link"><i class="fas fa-arrow-left"></i><span class="l-en">Back to Home</span><span class="l-ko">홈으로</span></a>
 
-<body>
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Navigation -->
-      <div class="columns is-vcentered mb-6">
-        <div class="column">
-          <a href="../index.html" class="button is-light">
-            <span class="icon"><i class="fas fa-arrow-left"></i></span>
-            <span>Back to Home</span>
-          </a>
-        </div>
-      </div>
+<div class="page-hero">
+  <p class="page-eyebrow"><span class="l-en">Digital Circuit Design Course Project</span><span class="l-ko">디지털 회로 설계 수업 프로젝트</span></p>
+  <h1 class="page-title">
+    <span class="l-en">Adder Tree (12-input → 4-bit) — Schematic-to-Layout Integration</span>
+    <span class="l-ko">Adder Tree (12-input → 4-bit) — 회로도-레이아웃 통합 설계</span>
+  </h1>
+  <p class="page-meta"><span class="author-me">H. Choi</span></p>
+  <p class="page-summary l-en">
+    This project documents the design and integration of a <strong>tree-based compressor</strong> that reduces
+    <strong>12 one-bit inputs (XT0–XT11)</strong> into a <strong>4-bit output (bS0–bS3)</strong> using a hierarchy of
+    <strong>Full Adders (FA: 3:2 compressor)</strong> and <strong>Half Adders (HA: 2:2 compressor)</strong>.
+  </p>
+  <p class="page-summary l-ko">
+    <strong>Full Adder(FA: 3:2 압축기)</strong>와 <strong>Half Adder(HA: 2:2 압축기)</strong>의 계층 구조로
+    <strong>12개의 1비트 입력(XT0–XT11)</strong>을 <strong>4비트 출력(bS0–bS3)</strong>으로 압축하는
+    <strong>트리 기반 압축기</strong>의 설계와 통합 과정을 기록한 프로젝트입니다.
+  </p>
+  <div class="tags" style="margin-top: 0.8rem;">
+    <span class="status pass"><i class="fas fa-check"></i>DRC PASSED</span>
+    <span class="status pass"><i class="fas fa-check"></i>LVS PASSED</span>
+  </div>
+  <figure class="page-figure">
+    <a href="{{ '/images/Tree_arch.jpg' | relative_url }}" target="_blank" rel="noopener">
+      <img alt="Adder Tree Architecture" src="{{ '/images/Tree_arch.jpg' | relative_url }}">
+    </a>
+  </figure>
+</div>
 
-      <!-- Project Header -->
-      <div class="publication-block columns">
-        <div class="column is-2">
-          <div class="publication-image">
-            <a href="../images/Tree_arch.jpg" target="_blank" rel="noopener">
-              <img alt="Adder Tree Project" src="../images/Tree_arch.jpg" />
-            </a>
-          </div>
-        </div>
+<div class="prose">
+  <h2><span class="l-en">Overview</span><span class="l-ko">개요</span></h2>
+  <ul class="l-en">
+    <li><strong>Technology:</strong> FreePDK45 (45nm educational PDK)</li>
+    <li><strong>Tools:</strong> KLayout, ngspice</li>
+    <li><strong>Flow:</strong> Cell design (FA/HA) → Cell DRC/LVS → Tree schematic → Tree layout (hierarchical) → Tree DRC → Tree LVS (PASSED)</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>공정:</strong> FreePDK45 (45nm 교육용 PDK)</li>
+    <li><strong>도구:</strong> KLayout, ngspice</li>
+    <li><strong>흐름:</strong> 셀 설계(FA/HA) → 셀 DRC/LVS → 트리 회로도 → 트리 레이아웃(계층적) → 트리 DRC → 트리 LVS (PASSED)</li>
+  </ul>
 
-        <div class="column">
-          <div class="content">
-            <h3 class="publication-title">Adder Tree (12-input → 4-bit) — Schematic-to-Layout Integration</h3>
-            <div class="publication-authors">
-              <span class="author-block author-me">
-                <strong>H. Choi</strong>
-              </span>
-            </div>
-            <div class="publication-venue">
-              <span>Digital Circuit Design Course Project</span>
-            </div>
-            <p class="publication-description">
-              This project documents the design and integration attempt of a <strong>tree-based compressor</strong> that reduces 
-              <strong>12 one-bit inputs (XT0–XT11)</strong> into a <strong>4-bit output (bS0–bS3)</strong> using a hierarchy of 
-              <strong>Full Adders (FA: 3:2 compressor)</strong> and <strong>Half Adders (HA: 2:2 compressor)</strong>.
-            </p>
-            
-            <div style="margin: 1rem 0;">
-              <span class="status-badge status-passed">DRC PASSED</span>
-              <span class="status-badge status-passed">LVS PASSED</span>
-            </div>
-            
-            <!-- Project Links -->
-            <div class="publication-links buttons field has-addons">
-              <a class="external-link button is-small is-ghost" href="#">
-                <span class="icon"><i class="fas fa-globe-asia"></i></span>
-                <span>Project Page</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+  <h2><span class="l-en">1. Motivation</span><span class="l-ko">1. 동기</span></h2>
+  <p class="l-en">
+    A straightforward Ripple-Carry style accumulation of 12 inputs would introduce long carry propagation.
+    Instead, this design adopts a <strong>Tree-based Compression (Compressor Tree)</strong> to reduce critical path length
+    toward <strong>O(log N)</strong> behavior.
+  </p>
+  <p class="l-ko">
+    12개 입력을 단순 Ripple-Carry 방식으로 누적하면 캐리 전파가 길어집니다.
+    대신 이 설계는 <strong>트리 기반 압축(Compressor Tree)</strong>을 채택해 크리티컬 패스 길이를
+    <strong>O(log N)</strong> 수준으로 줄였습니다.
+  </p>
+  <p><strong class="l-en">Key goals:</strong><strong class="l-ko">핵심 목표:</strong></p>
+  <ul class="l-en">
+    <li>Minimize worst-case delay (<strong>T_worst</strong>) of the overall tree</li>
+    <li>Reduce total dynamic energy (<strong>E_total</strong>) and physical area via cell sizing and placement strategy</li>
+    <li>Validate correctness and feasibility through a full schematic-to-layout verification flow</li>
+  </ul>
+  <ul class="l-ko">
+    <li>전체 트리의 최악 지연(<strong>T_worst</strong>) 최소화</li>
+    <li>셀 사이징과 배치 전략으로 총 동적 에너지(<strong>E_total</strong>)와 면적 절감</li>
+    <li>회로도-레이아웃 전체 검증 흐름으로 정확성과 실현 가능성 검증</li>
+  </ul>
 
-      <!-- Project Content -->
-      <div class="content mt-6">
-        <h2>Overview</h2>
-        <ul>
-          <li><strong>Technology:</strong> FreePDK45 (45nm educational PDK)</li>
-          <li><strong>Tools:</strong> KLayout, ngspice</li>
-          <li><strong>Flow:</strong> Cell design (FA/HA) → Cell DRC/LVS → Tree schematic → Tree layout (hierarchical) → Tree DRC → Tree LVS (PASSED)</li>
-        </ul>
+  <h2><span class="l-en">2. Architecture Overview (Compressor Tree)</span><span class="l-ko">2. 아키텍처 개요 (Compressor Tree)</span></h2>
+  <figure class="figure">
+    <a href="{{ '/images/Tree_arch.jpg' | relative_url }}" target="_blank" rel="noopener">
+      <img src="{{ '/images/Tree_arch.jpg' | relative_url }}" alt="Adder Tree Architecture">
+    </a>
+    <figcaption class="l-en">12-input → 4-bit Compressor Tree Architecture</figcaption>
+    <figcaption class="l-ko">12입력 → 4비트 압축 트리 아키텍처</figcaption>
+  </figure>
 
-        <h2>1. Motivation</h2>
-        <p>
-          A straightforward Ripple-Carry style accumulation of 12 inputs would introduce long carry propagation. 
-          Instead, this design adopts a <strong>Tree-based Compression (Compressor Tree)</strong> to reduce critical path length 
-          toward <strong>O(log N)</strong> behavior.
-        </p>
-        <p><strong>Key goals:</strong></p>
-        <ul>
-          <li>Minimize worst-case delay (<strong>T_worst</strong>) of the overall tree</li>
-          <li>Reduce total dynamic energy (<strong>E_total</strong>) and physical area via cell sizing and placement strategy</li>
-          <li>Validate correctness and feasibility through a full schematic-to-layout verification flow</li>
-        </ul>
+  <h3><span class="l-en">2.1 Design Rationale</span><span class="l-ko">2.1 설계 근거</span></h3>
+  <p class="l-en">The compressor tree was selected for:</p>
+  <p class="l-ko">압축 트리를 선택한 이유:</p>
+  <ul class="l-en">
+    <li><strong>Speed:</strong> parallel reduction reduces sequential carry chain length</li>
+    <li><strong>Compression efficiency:</strong> staged reduction using FA (3:2) and HA (2:2)</li>
+    <li><strong>Modularity:</strong> bottom-up approach (verify FA/HA first, then integrate)</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>속도:</strong> 병렬 축소로 순차적 캐리 체인 길이 감소</li>
+    <li><strong>압축 효율:</strong> FA(3:2)와 HA(2:2)를 활용한 단계적 축소</li>
+    <li><strong>모듈성:</strong> 상향식 접근 (FA/HA를 먼저 검증한 뒤 통합)</li>
+  </ul>
+  <p class="l-en">
+    However, this bottom-up strategy also exposed a classic physical design tradeoff:
+    aggressive per-cell transistor sizing improved local delay, but <strong>hurt standard-cell regularity</strong>
+    (mismatched cell heights / irregular pin locations), increasing routing complexity and making hierarchical LVS closure harder.
+  </p>
+  <p class="l-ko">
+    다만 이 상향식 전략은 전형적인 물리 설계 트레이드오프도 드러냈습니다.
+    셀별로 공격적인 트랜지스터 사이징은 국소 지연을 개선했지만 <strong>표준 셀 규칙성을 해쳐</strong>
+    (셀 높이 불일치, 불규칙한 핀 위치) 라우팅 복잡도가 커지고 계층적 LVS 클로저가 어려워졌습니다.
+  </p>
 
-        <h2>2. Architecture Overview (Compressor Tree)</h2>
-        <div style="display: flex; justify-content: center; margin: 2rem 0;">
-          <figure class="image" style="max-width: 90%; width: 100%;">
-            <a href="../images/Tree_arch.jpg" target="_blank" rel="noopener">
-              <img src="../images/Tree_arch.jpg" alt="Adder Tree Architecture" style="border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.2); max-width: 100%; width: 100%; height: auto; object-fit: contain;">
-            </a>
-            <figcaption style="text-align: center; margin-top: 0.5rem; color: #666;">12-input → 4-bit Compressor Tree Architecture</figcaption>
-          </figure>
-        </div>
-        <h3>2.1 Design Rationale</h3>
-        <p>The compressor tree was selected for:</p>
-        <ul>
-          <li><strong>Speed:</strong> parallel reduction reduces sequential carry chain length</li>
-          <li><strong>Compression efficiency:</strong> staged reduction using FA (3:2) and HA (2:2)</li>
-          <li><strong>Modularity:</strong> bottom-up approach (verify FA/HA first, then integrate)</li>
-        </ul>
-        <p>
-          However, this bottom-up strategy also exposed a classic physical design tradeoff:
-          aggressive per-cell transistor sizing improved local delay, but <strong>hurt standard-cell regularity</strong> 
-          (mismatched cell heights / irregular pin locations), increasing routing complexity and making hierarchical LVS closure harder.
-        </p>
+  <h3><span class="l-en">2.2 Functional Correctness (Schematic Level)</span><span class="l-ko">2.2 기능 정확성 (회로도 수준)</span></h3>
+  <p class="l-en">
+    A full tree schematic was built using exported symbols from the chosen FA/HA cells.
+    Schematic simulations confirmed output bits match expected arithmetic results with full swing observed on outputs.
+  </p>
+  <p class="l-ko">
+    선정된 FA/HA 셀에서 내보낸 심볼로 전체 트리 회로도를 구성했습니다.
+    회로도 시뮬레이션에서 출력 비트가 기대한 산술 결과와 일치하고 출력에서 풀 스윙이 관찰됨을 확인했습니다.
+  </p>
 
-        <h3>2.2 Functional Correctness (Schematic Level)</h3>
-        <p>
-          A full tree schematic was built using exported symbols from the chosen FA/HA cells.
-          Schematic simulations confirmed output bits match expected arithmetic results with full swing observed on outputs.
-        </p>
+  <h2><span class="l-en">3. Cell Selection (FA / HA)</span><span class="l-ko">3. 셀 선정 (FA / HA)</span></h2>
+  <h3>3.1 Full Adder: FA_36p</h3>
+  <p class="l-en">Multiple FA topologies were evaluated. The final tree uses <strong>FA_36p</strong>, which reduces transistor count by using:</p>
+  <p class="l-ko">여러 FA 토폴로지를 평가했고, 최종 트리에는 트랜지스터 수를 줄인 <strong>FA_36p</strong>를 사용했습니다:</p>
+  <ul class="l-en">
+    <li><strong>MUX-based logic decomposition</strong></li>
+    <li><strong>CMOS Transmission Gate (CMOSTG)</strong> blocks</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>MUX 기반 로직 분해</strong></li>
+    <li><strong>CMOS Transmission Gate (CMOSTG)</strong> 블록</li>
+  </ul>
+  <p><strong class="l-en">Final sizing (best observed delay point):</strong><strong class="l-ko">최종 사이징 (최적 지연 지점):</strong></p>
+  <ul>
+    <li>PMOS W ≈ 100 nm</li>
+    <li>NMOS W ≈ 120 nm</li>
+  </ul>
 
-        <h2>3. Cell Selection (FA / HA)</h2>
-        <h3>3.1 Full Adder: FA_36p</h3>
-        <p>
-          Multiple FA topologies were evaluated. The final tree uses <strong>FA_36p</strong>, which reduces transistor count by using:
-        </p>
-        <ul>
-          <li><strong>MUX-based logic decomposition</strong></li>
-          <li><strong>CMOS Transmission Gate (CMOSTG)</strong> blocks</li>
-        </ul>
-        <p><strong>Final sizing (best observed delay point):</strong></p>
-        <ul>
-          <li>PMOS W ≈ 100 nm</li>
-          <li>NMOS W ≈ 120 nm</li>
-        </ul>
+  <h3>3.2 Half Adder: HA2 (XOR + NAND + inverter)</h3>
+  <p class="l-en">
+    HA2 uses XOR + NAND structure with inverter for signal restoration.
+    Best performance in tree was obtained by <strong>differentiated sizing per block</strong>:
+  </p>
+  <p class="l-ko">
+    HA2는 신호 복원을 위한 인버터가 포함된 XOR + NAND 구조입니다.
+    <strong>블록별 차등 사이징</strong>으로 트리 내 최고 성능을 얻었습니다:
+  </p>
+  <ul class="l-en">
+    <li>inverter ≈ 300 nm</li>
+    <li>XOR ≈ 100 nm</li>
+    <li>NAND ≈ 180 nm</li>
+  </ul>
+  <ul class="l-ko">
+    <li>인버터 ≈ 300 nm</li>
+    <li>XOR ≈ 100 nm</li>
+    <li>NAND ≈ 180 nm</li>
+  </ul>
 
-        <h3>3.2 Half Adder: HA2 (XOR + NAND + inverter)</h3>
-        <p>
-          HA2 uses XOR + NAND structure with inverter for signal restoration. 
-          Best performance in tree was obtained by <strong>differentiated sizing per block</strong>:
-        </p>
-        <ul>
-          <li>inverter ≈ 300 nm</li>
-          <li>XOR ≈ 100 nm</li>
-          <li>NAND ≈ 180 nm</li>
-        </ul>
+  <h2><span class="l-en">4. Delay &amp; Energy Measurement</span><span class="l-ko">4. 지연 및 에너지 측정</span></h2>
+  <h3><span class="l-en">4.1 Results Summary (Schematic-Level Tree)</span><span class="l-ko">4.1 결과 요약 (회로도 수준 트리)</span></h3>
+  <ul>
+    <li><strong>T_worst ≈ 384 ps</strong></li>
+    <li><strong>E_total ≈ 4.29 × 10⁻¹⁴ J</strong></li>
+    <li><strong>T_worst × E_total ≈ 1.65 × 10⁻²³ (J·s)</strong></li>
+  </ul>
+  <p class="l-en">Contrary to initial hypothesis, worst delay was <strong>not always the falling transition</strong>.</p>
+  <p class="l-ko">초기 가설과 달리 최악 지연이 <strong>항상 하강 전이에서 발생하지는 않았습니다</strong>.</p>
 
-        <h2>4. Delay & Energy Measurement</h2>
-        <h3>4.1 Results Summary (Schematic-Level Tree)</h3>
-        <ul>
-          <li><strong>T_worst ≈ 384 ps</strong> (dominant worst delay in first rising transition)</li>
-          <li><strong>E_total ≈ 4.29 × 10⁻¹⁴ J</strong></li>
-          <li><strong>T_worst × E_total ≈ 1.65 × 10⁻²³ (J·s)</strong></li>
-        </ul>
-        <p>
-          Contrary to initial hypothesis, worst delay was <strong>not always the falling transition</strong>.
-        </p>
+  <h2><span class="l-en">5. Layout Strategy (Cell → Tree Integration)</span><span class="l-ko">5. 레이아웃 전략 (셀 → 트리 통합)</span></h2>
+  <h3><span class="l-en">5.1 Cell Layout Summary (Completed)</span><span class="l-ko">5.1 셀 레이아웃 요약 (완료)</span></h3>
+  <p class="l-en">Both FA and HA cells were designed with shared diffusion maximization and consistent power rail placement.</p>
+  <p class="l-ko">FA와 HA 셀 모두 공유 확산 영역 최대화와 일관된 전원 레일 배치를 적용해 설계했습니다.</p>
+  <ul>
+    <li><strong>FA_36p:</strong> 3130 nm × 1445 nm (DRC/LVS PASSED)</li>
+    <li><strong>HA2:</strong> 1945 nm × 1695 nm (DRC/LVS PASSED)</li>
+  </ul>
 
-        <h2>5. Layout Strategy (Cell → Tree Integration)</h2>
-        <h3>5.1 Cell Layout Summary (Completed)</h3>
-        <p>Both FA and HA cells were designed with shared diffusion maximization and consistent power rail placement.</p>
-        <ul>
-          <li><strong>FA_36p:</strong> 3130 nm × 1445 nm (DRC/LVS PASSED)</li>
-          <li><strong>HA2:</strong> 1945 nm × 1695 nm (DRC/LVS PASSED)</li>
-        </ul>
+  <h3><span class="l-en">5.2 Tree Layout (Hierarchical Assembly)</span><span class="l-ko">5.2 트리 레이아웃 (계층적 조립)</span></h3>
+  <ul class="l-en">
+    <li>Tree area: <strong>29230 nm × 1695 nm</strong></li>
+    <li><strong>DRC: PASSED</strong></li>
+    <li><strong>LVS: PASSED</strong></li>
+  </ul>
+  <ul class="l-ko">
+    <li>트리 면적: <strong>29230 nm × 1695 nm</strong></li>
+    <li><strong>DRC: PASSED</strong></li>
+    <li><strong>LVS: PASSED</strong></li>
+  </ul>
+  <div class="callout ok">
+    <p class="l-en">
+      <strong>Full verification complete:</strong> Both DRC and hierarchical LVS passed at the top level,
+      confirming schematic-to-layout equivalence across the entire compressor tree.
+    </p>
+    <p class="l-ko">
+      <strong>전체 검증 완료:</strong> 최상위 수준에서 DRC와 계층적 LVS를 모두 통과해,
+      전체 압축 트리의 회로도-레이아웃 등가성을 확인했습니다.
+    </p>
+  </div>
 
-        <h3>5.2 Tree Layout (Hierarchical Assembly)</h3>
-        <ul>
-          <li>Tree area: <strong>29230 nm × 1695 nm</strong></li>
-          <li><strong>DRC: PASSED</strong></li>
-          <li><strong>LVS: PASSED</strong></li>
-        </ul>
-        <div style="background: #d4edda; border-left: 4px solid #155724; padding: 1.5rem; border-radius: 5px; margin: 2rem 0;">
-          <p style="margin: 0; font-style: italic;">
-            <strong>Full verification complete:</strong> Both DRC and hierarchical LVS passed at the top level,
-            confirming schematic-to-layout equivalence across the entire compressor tree.
-          </p>
-        </div>
+  <h2><span class="l-en">6. What This Project Demonstrates</span><span class="l-ko">6. 이 프로젝트가 보여주는 것</span></h2>
+  <ul class="l-en">
+    <li>Built a non-trivial <strong>compressor tree</strong> from verified transistor-level cells</li>
+    <li>Performed <strong>delay/energy</strong> extraction based on transition-level measurements</li>
+    <li>Implemented <strong>full-custom layout</strong> with complete DRC and LVS sign-off at top level</li>
+    <li>Closed <strong>hierarchical LVS</strong> — resolved physical connectivity, power net naming, and pin definition issues across the full hierarchy</li>
+    <li>Demonstrated end-to-end schematic-to-layout verification flow from cell level to tree level</li>
+  </ul>
+  <ul class="l-ko">
+    <li>검증된 트랜지스터 수준 셀로 규모 있는 <strong>압축 트리</strong> 구축</li>
+    <li>전이 수준 측정 기반의 <strong>지연/에너지</strong> 추출 수행</li>
+    <li>최상위 DRC와 LVS 사인오프까지 완료한 <strong>풀커스텀 레이아웃</strong> 구현</li>
+    <li><strong>계층적 LVS</strong> 클로저 — 전체 계층에 걸친 물리 연결, 전원 넷 네이밍, 핀 정의 문제 해결</li>
+    <li>셀 수준부터 트리 수준까지 회로도-레이아웃 엔드투엔드 검증 흐름 시연</li>
+  </ul>
 
-        <h2>6. What This Project Demonstrates</h2>
-        <ul>
-          <li>Built a non-trivial <strong>compressor tree</strong> from verified transistor-level cells</li>
-          <li>Performed <strong>delay/energy</strong> extraction based on transition-level measurements</li>
-          <li>Implemented <strong>full-custom layout</strong> with complete DRC and LVS sign-off at top level</li>
-          <li>Closed <strong>hierarchical LVS</strong> — resolved physical connectivity, power net naming, and pin definition issues across the full hierarchy</li>
-          <li>Demonstrated end-to-end schematic-to-layout verification flow from cell level to tree level</li>
-        </ul>
-
-        <h2>7. Technical Stack</h2>
-        <div style="margin: 1rem 0;">
-          <span class="tech-badge">FreePDK45</span>
-          <span class="tech-badge">KLayout</span>
-          <span class="tech-badge">ngspice</span>
-          <span class="tech-badge">Full Custom Layout</span>
-          <span class="tech-badge">DRC/LVS Verification</span>
-          <span class="tech-badge">Transistor-Level Design</span>
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
-
-</html>
-
+  <h2><span class="l-en">7. Technical Stack</span><span class="l-ko">7. 기술 스택</span></h2>
+  <div class="tags">
+    <span class="tag">FreePDK45</span>
+    <span class="tag">KLayout</span>
+    <span class="tag">ngspice</span>
+    <span class="tag">Full Custom Layout</span>
+    <span class="tag">DRC/LVS Verification</span>
+    <span class="tag">Transistor-Level Design</span>
+  </div>
+</div>

@@ -1,42 +1,59 @@
 - title: "Korean LLM Quantization Pipeline Builder"
+  title_ko: "한국어 LLM 양자화 파이프라인 빌더"
   authors: ["choi_hyun"]
   venue: "Independent Research / Study"
+  venue_ko: "개인 연구 / 스터디"
   description: "Built a morpheme-aware post-training quantization project for Korean LLMs. Organized calibration-set construction, low-bit PTQ experiments, and evaluation workflows for Korean-language models."
+  description_ko: "한국어 LLM을 위한 형태소 인지 사후 양자화(PTQ) 프로젝트. 캘리브레이션 셋 구축, 저비트 PTQ 실험, 한국어 모델 평가 워크플로우를 정리했습니다."
   project_page: "projects/llm-quantization.html"
   github: "https://github.com/choihyun-1110/morpheme-aware-ptq"
   image: "LLM_quant.png"
   date: "2025.12 - Present"
 
 - title: "AI Career Advisor (Upstage AI Ambassador 2nd Cohort)"
+  title_ko: "AI 커리어 어드바이저 (Upstage AI Ambassador 2기)"
   authors: ["choi_hyun"]
   venue: "Upstage AI Ambassador Mission"
+  venue_ko: "Upstage AI Ambassador 미션"
   description: "Developed an AI Career Advisor leveraging n8n no-code workflows and Upstage Solar LLM API to automate personalized career guidance from a single PDF upload."
+  description_ko: "n8n 노코드 워크플로우와 Upstage Solar LLM API를 활용해 PDF 한 장 업로드만으로 맞춤형 커리어 가이드를 자동화하는 AI 커리어 어드바이저를 개발했습니다."
   project_page: "https://velog.io/@choihyun-1110/posts"
   github: "https://github.com/choihyun-1110/upstage-ai-ambassador"
   image: "n8n_workflow.png"
   date: "2026.03 - Present"
 
 - title: "Portfolio Migration Agent (rewrite-my-report)"
+  title_ko: "포트폴리오 마이그레이션 에이전트 (rewrite-my-report)"
   authors: ["choi_hyun"]
   venue: "Personal Project"
-  description: "PDF 보고서를 포트폴리오용 마크다운으로 재작성하고 Notion에 한 번에 저장하는 에이전트. Upstage Document Parse + Solar LLM, Streamlit UI, Notion API 연동."
+  venue_ko: "개인 프로젝트"
+  description: "An agent that rewrites PDF reports into portfolio-ready markdown and saves them to Notion in one step. Upstage Document Parse + Solar LLM, Streamlit UI, Notion API integration."
+  description_ko: "PDF 보고서를 포트폴리오용 마크다운으로 재작성하고 Notion에 한 번에 저장하는 에이전트. Upstage Document Parse + Solar LLM, Streamlit UI, Notion API 연동."
   project_page: "projects/rewrite-my-report.html"
   github: "https://github.com/choihyun-1110/rewrite-my-report"
   image: "업스_대표이미지.jpg"
   image_mouseover: "데모영상.mp4"
   date: "2026.01"
+
 - title: "Adder Tree (12-input → 4-bit) — Schematic-to-Layout Integration"
+  title_ko: "Adder Tree (12-input → 4-bit) — 회로도-레이아웃 통합 설계"
   authors: ["choi_hyun"]
   venue: "Digital Circuit Design Course Project"
+  venue_ko: "디지털 회로 설계 수업 프로젝트"
   description: "Tree-based compressor reducing 12 one-bit inputs to 4-bit output using Full Adders and Half Adders. FreePDK45 technology with KLayout/ngspice. Full verification complete: DRC PASSED, hierarchical LVS PASSED."
+  description_ko: "Full Adder와 Half Adder로 12개의 1비트 입력을 4비트 출력으로 압축하는 트리 구조 설계. FreePDK45 공정, KLayout/ngspice 활용. DRC PASSED, 계층적 LVS PASSED로 검증 완료."
   project_page: "projects/adder-tree.html"
   github: ""
   image: "Tree_arch.jpg"
   date: "2025.11"
+
 - title: "AI Agent Orchestrator System"
+  title_ko: "AI 에이전트 오케스트레이터 시스템"
   authors: ["choi_hyun", "seunghwan_bae", "jimin_lee", "jaebeom_lee", "jungwon_hwang"]
   venue: "Meta x Llama Academy Final Project"
+  venue_ko: "Meta x Llama Academy 파이널 프로젝트"
   description: "🏆 1st Place Winner! MCP and LangGraph-based AI agent orchestration system for centralized personal work information management with automated daily briefing."
+  description_ko: "🏆 1위 수상! MCP와 LangGraph 기반 AI 에이전트 오케스트레이션 시스템으로 개인 업무 정보를 통합 관리하고 데일리 브리핑을 자동화했습니다."
   project_page: "projects/ai-agent-orchestrator.html"
   slides: "files/Meta Llama Academy PPT.pdf"
   github: "https://github.com/UpstageAI/edu-usecase/pull/6"
@@ -44,11 +61,15 @@
   image_mouseover: "Meta_demo.mp4"
   date: "2025.09-10"
   awards: ["🥇 1st Place Winner"]
+  awards_ko: ["🥇 1위 수상"]
 
 - title: "SAM Fine-tuning for Medical Imaging"
+  title_ko: "의료 영상용 SAM 파인튜닝"
   authors: ["choi_hyun", "yoonhee_uhm"]
   venue: "Genoray FlexLab Internship Project"
+  venue_ko: "Genoray FlexLab 인턴십 프로젝트"
   description: "Fine-tuned Segment Anything Model (SAM) in PyTorch for dental X-ray segmentation using LoRA-based tuning strategies. Improved accuracy and integrated the model into a semi-automatic labeling workflow. Joint first authorship with Yoonhee Uhm."
+  description_ko: "PyTorch에서 LoRA 기반 튜닝 전략으로 치과 X-ray 세그멘테이션을 위한 SAM 파인튜닝. 정확도를 개선하고 반자동 라벨링 워크플로우에 모델을 통합했습니다. 엄윤희와 공동 1저자."
   project_page: "projects/sam-finetuning.html"
   arxiv: ""
   github: ""
@@ -56,31 +77,41 @@
   date: "2025.06-08"
 
 - title: "CIFAR-100 Long-Tail Classification Project"
+  title_ko: "CIFAR-100 롱테일 분류 프로젝트"
   authors: ["choi_hyun"]
   venue: "Deep Learning Lab Course Project"
+  venue_ko: "딥러닝 실험 수업 프로젝트"
   description: "Built hierarchical scheme clustering 100 classes into 20 superclasses with L_class + α·L_superclass. Applied two-stage retraining with class-balanced sampling and LDAM. Results: Overall Top-1 48.8% → 75.7%, Tail 36.6% → 70.3%."
+  description_ko: "100개 클래스를 20개 슈퍼클래스로 묶는 계층 구조를 설계하고 L_class + α·L_superclass 적용. 클래스 균형 샘플링과 LDAM 기반 2단계 재학습 수행. 결과: Overall Top-1 48.8% → 75.7%, Tail 36.6% → 70.3%."
   project_page: "projects/cifar100.html"
   arxiv: ""
   github: ""
   image: "cifar100.jpeg"
   date: "2025.05-06"
 
-- title: "차세대 지능형 드론 정비 시스템"
+- title: "Next-Gen Intelligent Drone Maintenance System"
+  title_ko: "차세대 지능형 드론 정비 시스템"
   authors: ["choi_hyun", "seunghyuk_Seo", "donghyuk_kim", "seungjin_lee"]
   venue: "Robotics Course Project"
-  description: "🏆 우수상 수상 (43개 팀 중 2등)! MFC 내 드론 자동 정비 시스템 PoC 구현. Elephant Robotics의 MyAGV2023와 Cobot320을 활용한 Smart Factory 및 CMMS 구축."
+  venue_ko: "로보틱스 수업 프로젝트"
+  description: "🏆 Excellence Award (2nd out of 43 teams)! PoC for an automated drone maintenance system in an MFC. Built a Smart Factory and CMMS using Elephant Robotics' MyAGV2023 and Cobot320."
+  description_ko: "🏆 우수상 수상 (43개 팀 중 2등)! MFC 내 드론 자동 정비 시스템 PoC 구현. Elephant Robotics의 MyAGV2023와 Cobot320을 활용한 Smart Factory 및 CMMS 구축."
   project_page: "projects/drone-maintenance.html"
   arxiv: ""
   github: ""
   image: "AGV.jpeg"
   image_mouseover: "프로젝트_1분티저.mp4"
   date: "2024.06"
-  awards: ["🥈 우수상 (43개 팀 중 2등)"]
+  awards: ["🥈 Excellence Award (2nd of 43 teams)"]
+  awards_ko: ["🥈 우수상 (43개 팀 중 2등)"]
 
 - title: "Speed Estimation from Road Scene Sequences"
+  title_ko: "도로 주행 영상 시퀀스 기반 속도 추정"
   authors: ["choi_hyun"]
   venue: "Introduction to Artificial Intelligence Course Project"
+  venue_ko: "인공지능 개론 수업 프로젝트"
   description: "3D-CNN + LSTM model for 6-frame sequences; ablations on dropout, LR schedulers, test-time normalization; MAE = 1.82."
+  description_ko: "6프레임 시퀀스를 위한 3D-CNN + LSTM 모델. 드롭아웃, LR 스케줄러, 테스트 타임 정규화에 대한 ablation 수행. MAE = 1.82."
   project_page: "projects/speed-estimation.html"
   arxiv: ""
   github: ""

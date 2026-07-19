@@ -1,189 +1,149 @@
 ---
-layout: null
+layout: page
+title: SAM Fine-tuning for Medical Imaging
 ---
-<!DOCTYPE html>
-<html lang="en-US">
 
-<head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>SAM Fine-tuning for Medical Imaging - {{ site.name }}</title>
-  
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link href="../css/fontawesome.all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
-  <link href="../css/bulma.min.css" rel="stylesheet">
-  <link href="../css/index.css" rel="stylesheet">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script defer src="../js/fontawesome.all.min.js"></script>
-  
-  <script>
-    function showEmail(email) {
-      alert('Contact: ' + email);
-    }
-  </script>
-  
-  <style>
-    .image-block {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .image-block img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .caption {
-      font-style: italic;
-      color: #666;
-      margin-top: 0.5rem;
-      font-size: 0.9em;
-    }
-    .content h3 {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 0.5rem;
-      margin-top: 2rem;
-    }
-  </style>
-</head>
+<a href="{{ '/' | relative_url }}" class="back-link"><i class="fas fa-arrow-left"></i><span class="l-en">Back to Home</span><span class="l-ko">홈으로</span></a>
 
-<body>
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Navigation -->
-      <div class="columns is-vcentered mb-6">
-        <div class="column">
-          <a href="../index.html" class="button is-light">
-            <span class="icon"><i class="fas fa-arrow-left"></i></span>
-            <span>Back to Home</span>
-          </a>
-        </div>
-      </div>
+<div class="page-hero">
+  <p class="page-eyebrow"><span class="l-en">Genoray FlexLab Internship Project (2025)</span><span class="l-ko">Genoray FlexLab 인턴십 프로젝트 (2025)</span></p>
+  <h1 class="page-title">
+    <span class="l-en">SAM Fine-tuning for Medical Imaging</span>
+    <span class="l-ko">의료 영상용 SAM 파인튜닝</span>
+  </h1>
+  <p class="page-meta">
+    <span class="author-me">H. Choi</span> <span class="l-en">(Joint First Author)</span><span class="l-ko">(공동 1저자)</span><span class="dot">·</span>
+    <span>Y. Uhm</span> <span class="l-en">(Joint First Author)</span><span class="l-ko">(공동 1저자)</span>
+  </p>
+  <p class="page-summary l-en">
+    This project focused on customizing the Segment Anything Model (SAM) and enhancing its performance
+    for <strong>dental panoramic X-ray segmentation</strong>. We combined <em>LoRA-based fine-tuning</em>
+    with an <em>iterative prompt refinement strategy</em>, and also developed user-friendly labeling tool
+    features to improve both segmentation accuracy and clinical usability.
+  </p>
+  <p class="page-summary l-ko">
+    <strong>치과 파노라마 X-ray 세그멘테이션</strong>을 위해 Segment Anything Model(SAM)을 커스터마이징하고
+    성능을 개선한 프로젝트입니다. <em>LoRA 기반 파인튜닝</em>과 <em>반복적 프롬프트 개선 전략</em>을 결합하고,
+    사용자 친화적인 라벨링 도구 기능도 개발해 세그멘테이션 정확도와 임상 사용성을 모두 높였습니다.
+  </p>
+  <figure class="page-figure">
+    <img alt="SAM Fine-tuning for Medical Imaging" src="{{ '/images/sam_finetuning.jpeg' | relative_url }}">
+  </figure>
+</div>
 
-      <!-- Project Header -->
-      <div class="publication-block columns">
-        <div class="column is-2">
-          <div class="publication-image">
-            <img alt="SAM Fine-tuning for Medical Imaging" src="../images/sam_finetuning.jpeg" />
-          </div>
-        </div>
+<div class="prose">
+  <h2><span class="l-en">1. Background</span><span class="l-ko">1. 배경</span></h2>
+  <p class="l-en">
+    Dentists often face difficulties identifying subtle lesions in panoramic X-rays.
+    However, the available dataset was limited (~2,000 images) and of inconsistent quality,
+    leading to segmentation errors and unreliable training.
+    To overcome this, we designed a dual approach:
+  </p>
+  <p class="l-ko">
+    치과의사들은 파노라마 X-ray에서 미묘한 병변을 식별하는 데 어려움을 겪는 경우가 많습니다.
+    그러나 사용 가능한 데이터셋은 약 2,000장으로 제한적이고 품질이 일정하지 않아
+    세그멘테이션 오류와 불안정한 학습으로 이어졌습니다.
+    이를 극복하기 위해 두 가지 접근을 병행했습니다:
+  </p>
+  <ul class="l-en">
+    <li>Enhance segmentation AI through <strong>SAM-HQ + LoRA</strong> fine-tuning</li>
+    <li>Improve the labeling tool with <strong>brush correction</strong> and <strong>mask transparency adjustment</strong></li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>SAM-HQ + LoRA</strong> 파인튜닝으로 세그멘테이션 AI 성능 향상</li>
+    <li><strong>브러시 보정</strong>과 <strong>마스크 투명도 조절</strong>로 라벨링 도구 개선</li>
+  </ul>
 
-        <div class="column">
-          <div class="content">
-            <h3 class="publication-title">SAM Fine-tuning for Medical Imaging</h3>
-            <div class="publication-authors">
-              <span class="author-block author-me">
-                <strong>H. Choi</strong> (Joint First Author)
-              </span>
-              <span class="author-block">
-                <strong><a href="#" onclick="showEmail('uyh0331@yonsei.ac.kr'); return false;" style="color: #000; text-decoration: underline; cursor: pointer;">Y. Uhm</a></strong> (Joint First Author)
-              </span>
-            </div>
-            <div class="publication-venue">
-              <span>Genoray FlexLab Internship Project (2025)</span>
-            </div>
-            <p class="publication-description">
-              This project focused on customizing the Segment Anything Model (SAM) and enhancing its performance 
-              for <strong>dental panoramic X-ray segmentation</strong>. We combined <em>LoRA-based fine-tuning</em> 
-              with an <em>iterative prompt refinement strategy</em>, and also developed user-friendly labeling tool 
-              features to improve both segmentation accuracy and clinical usability.
-            </p>
-            
-            <!-- Project Links -->
-            <div class="publication-links buttons field has-addons">
-              <a class="external-link button is-small is-ghost" href="#" disabled>
-                <span class="icon"><i class="fas fa-globe-asia"></i></span>
-                <span>Project Page (Coming Soon)</span>
-              </a>
-              <a class="external-link button is-small is-ghost" href="#" disabled>
-                <span class="icon"><i class="fab fa-github"></i></span>
-                <span>Code (Coming Soon)</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+  <h2><span class="l-en">2. Methodology</span><span class="l-ko">2. 방법론</span></h2>
+  <ul class="l-en">
+    <li><strong>Base Model:</strong> SAM-HQ (Meta AI)</li>
+    <li><strong>Tuning Strategy:</strong> Parameter-Efficient Fine-Tuning (LoRA)</li>
+    <li><strong>Prompting:</strong> From simple center-point prompts → to iterative correction prompts (up to 11 iterations)</li>
+    <li><strong>Dataset:</strong> 2,392 training + 269 test X-ray images, plus 10 challenging "bad-case" images</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>베이스 모델:</strong> SAM-HQ (Meta AI)</li>
+    <li><strong>튜닝 전략:</strong> 파라미터 효율적 파인튜닝 (LoRA)</li>
+    <li><strong>프롬프팅:</strong> 단순 중심점 프롬프트 → 반복적 보정 프롬프트 (최대 11회 반복)</li>
+    <li><strong>데이터셋:</strong> 학습 2,392장 + 테스트 269장 X-ray, 난이도 높은 "bad-case" 10장 추가</li>
+  </ul>
+  <figure class="figure">
+    <img src="{{ '/images/methodology_prompt.png' | relative_url }}" alt="Iterative Prompt Strategy">
+    <figcaption class="l-en">Iterative prompt refinement for correcting under-/over-segmentation</figcaption>
+    <figcaption class="l-ko">과소/과다 세그멘테이션 보정을 위한 반복적 프롬프트 개선</figcaption>
+  </figure>
 
-      <!-- Project Content -->
-      <div class="content mt-6">
-        <h3>1. Background</h3>
-        <p>
-          Dentists often face difficulties identifying subtle lesions in panoramic X-rays. 
-          However, the available dataset was limited (~2,000 images) and of inconsistent quality, 
-          leading to segmentation errors and unreliable training. 
-          To overcome this, we designed a dual approach:
-        </p>
-        <ul>
-          <li>Enhance segmentation AI through <strong>SAM-HQ + LoRA</strong> fine-tuning</li>
-          <li>Improve the labeling tool with <strong>brush correction</strong> and <strong>mask transparency adjustment</strong></li>
-        </ul>
-
-        <h3>2. Methodology</h3>
-        <ul>
-          <li><strong>Base Model:</strong> SAM-HQ (Meta AI)</li>
-          <li><strong>Tuning Strategy:</strong> Parameter-Efficient Fine-Tuning (LoRA)</li>
-          <li><strong>Prompting:</strong> From simple center-point prompts → to iterative correction prompts (up to 11 iterations)</li>
-          <li><strong>Dataset:</strong> 2,392 training + 269 test X-ray images, plus 10 challenging "bad-case" images</li>
-        </ul>
-        <div class="image-block">
-          <img src="../images/methodology_prompt.png" alt="Iterative Prompt Strategy" />
-          <p class="caption">Iterative prompt refinement for correcting under-/over-segmentation</p>
-        </div>
-
-        <h3>3. Results</h3>
-        <ul>
-          <li>SAM-HQ baseline Dice score: <strong>0.748</strong></li>
-          <li>SAM-HQ + LoRA + iterative prompts: <strong>0.914</strong></li>
-          <li>Decoder-only and HQ-module-only LoRA also improved, but <em>Encoder+Decoder LoRA</em> gave best results</li>
-        </ul>
-        <div class="image-block">
-          <div class="columns is-multiline">
-            <div class="column is-6">
-              <img src="../images/result_comparison_1.png" alt="Result Comparison 1" />
-              <p class="caption">Root segmentation improvement in low-quality and boundary-ambiguous environments</p>
-            </div>
-            <div class="column is-6">
-              <img src="../images/result_comparison_2.png" alt="Result Comparison 2" />
-              <p class="caption">Blurred region segmentation comparison</p>
-            </div>
-            <div class="column is-6">
-              <img src="../images/result_comparison_3.png" alt="Result Comparison 3" />
-              <p class="caption">Overlapped structure segmentation</p>
-            </div>
-            <div class="column is-6">
-              <img src="../images/result_comparison_4.png" alt="Result Comparison 4" />
-              <p class="caption">Artifact-heavy region handling</p>
-            </div>
-          </div>
-        </div>
-
-        <h3>4. Tool Customization</h3>
-        <ul>
-          <li><strong>Brush Tool:</strong> Enables intuitive "paint-and-erase" correction of masks</li>
-          <li><strong>Transparency Control:</strong> Adjustable mask overlay opacity for clearer boundary distinction</li>
-          <li><strong>Impact:</strong> Labeling time reduced by ~32% (250s → 170s per case)</li>
-        </ul>
-        <div class="image-block">
-          <video controls width="100%" style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" preload="metadata">
-            <source src="../images/tool_demo.mp4.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p class="caption">Tool customization demonstration: brush correction and transparency control features</p>
-        </div>
-
-        <h3>5. Conclusion</h3>
-        <p>
-          Through efficient fine-tuning and practical tool enhancements, we demonstrated that SAM can be 
-          effectively adapted to <strong>dental panoramic X-ray</strong> segmentation with limited data. This project 
-          lays the groundwork for <strong>dental imaging AI</strong> (e.g., structure segmentation and future pathology 
-          detection) in clinical practice, while also highlighting the importance of usability for adoption.
-        </p>
-      </div>
+  <h2><span class="l-en">3. Results</span><span class="l-ko">3. 결과</span></h2>
+  <div class="card-grid">
+    <div class="card">
+      <h4><span class="l-en">SAM-HQ Baseline</span><span class="l-ko">SAM-HQ 베이스라인</span></h4>
+      <div class="metric-number">0.748</div>
+      <div class="metric-label">Dice score</div>
     </div>
-  </section>
-</body>
+    <div class="card">
+      <h4>SAM-HQ + LoRA + <span class="l-en">iterative prompts</span><span class="l-ko">반복 프롬프트</span></h4>
+      <div class="metric-number">0.914</div>
+      <div class="metric-label">Dice score</div>
+    </div>
+  </div>
+  <ul class="l-en">
+    <li>Decoder-only and HQ-module-only LoRA also improved, but <em>Encoder+Decoder LoRA</em> gave best results</li>
+  </ul>
+  <ul class="l-ko">
+    <li>디코더 전용, HQ 모듈 전용 LoRA도 개선 효과가 있었지만 <em>인코더+디코더 LoRA</em>가 최고 성능</li>
+  </ul>
+  <div class="figure-grid">
+    <figure class="figure">
+      <img src="{{ '/images/result_comparison_1.png' | relative_url }}" alt="Result Comparison 1">
+      <figcaption class="l-en">Root segmentation improvement in low-quality and boundary-ambiguous environments</figcaption>
+      <figcaption class="l-ko">저품질·경계 모호 환경에서의 치근 세그멘테이션 개선</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="{{ '/images/result_comparison_2.png' | relative_url }}" alt="Result Comparison 2">
+      <figcaption class="l-en">Blurred region segmentation comparison</figcaption>
+      <figcaption class="l-ko">흐릿한 영역 세그멘테이션 비교</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="{{ '/images/result_comparison_3.png' | relative_url }}" alt="Result Comparison 3">
+      <figcaption class="l-en">Overlapped structure segmentation</figcaption>
+      <figcaption class="l-ko">중첩 구조 세그멘테이션</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="{{ '/images/result_comparison_4.png' | relative_url }}" alt="Result Comparison 4">
+      <figcaption class="l-en">Artifact-heavy region handling</figcaption>
+      <figcaption class="l-ko">아티팩트가 많은 영역 처리</figcaption>
+    </figure>
+  </div>
 
-</html>
+  <h2><span class="l-en">4. Tool Customization</span><span class="l-ko">4. 도구 커스터마이징</span></h2>
+  <ul class="l-en">
+    <li><strong>Brush Tool:</strong> Enables intuitive "paint-and-erase" correction of masks</li>
+    <li><strong>Transparency Control:</strong> Adjustable mask overlay opacity for clearer boundary distinction</li>
+    <li><strong>Impact:</strong> Labeling time reduced by ~32% (250s → 170s per case)</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>브러시 도구:</strong> 직관적인 "칠하고 지우기" 방식의 마스크 보정</li>
+    <li><strong>투명도 조절:</strong> 경계 구분이 쉬워지도록 마스크 오버레이 투명도 조절</li>
+    <li><strong>효과:</strong> 라벨링 시간 약 32% 단축 (케이스당 250초 → 170초)</li>
+  </ul>
+  <figure class="figure">
+    <video controls preload="metadata" style="max-width: 800px; width: 100%;">
+      <source src="{{ '/images/tool_demo.mp4.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <figcaption class="l-en">Tool customization demonstration: brush correction and transparency control features</figcaption>
+    <figcaption class="l-ko">도구 커스터마이징 시연: 브러시 보정 및 투명도 조절 기능</figcaption>
+  </figure>
+
+  <h2><span class="l-en">5. Conclusion</span><span class="l-ko">5. 결론</span></h2>
+  <p class="l-en">
+    Through efficient fine-tuning and practical tool enhancements, we demonstrated that SAM can be
+    effectively adapted to <strong>dental panoramic X-ray</strong> segmentation with limited data. This project
+    lays the groundwork for <strong>dental imaging AI</strong> (e.g., structure segmentation and future pathology
+    detection) in clinical practice, while also highlighting the importance of usability for adoption.
+  </p>
+  <p class="l-ko">
+    효율적인 파인튜닝과 실용적인 도구 개선을 통해 제한된 데이터로도 SAM을 <strong>치과 파노라마 X-ray</strong>
+    세그멘테이션에 효과적으로 적용할 수 있음을 보였습니다. 이 프로젝트는 임상에서의 <strong>치과 영상 AI</strong>
+    (구조 세그멘테이션, 향후 병변 검출 등)의 기반을 마련하는 동시에, 실제 도입에서 사용성이 얼마나 중요한지도 보여주었습니다.
+  </p>
+</div>

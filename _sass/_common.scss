@@ -1,0 +1,167 @@
+/* ============================================================
+   Shared design tokens + chrome (topbar/footer) — light/dark + KO/EN
+   ============================================================ */
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f6f7f9;
+  --text: #16181d;
+  --text-soft: #5c6370;
+  --border: #e6e8ec;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --ok: #16a34a;
+  --ok-soft: rgba(22, 163, 74, 0.1);
+  --warn: #d97706;
+}
+
+html[data-theme="dark"] {
+  --bg: #0f1115;
+  --bg-soft: #171a21;
+  --text: #e8eaf0;
+  --text-soft: #9aa3b2;
+  --border: #262b35;
+  --accent: #60a5fa;
+  --accent-soft: rgba(96, 165, 250, 0.12);
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --ok: #4ade80;
+  --ok-soft: rgba(74, 222, 128, 0.12);
+  --warn: #fbbf24;
+}
+
+/* Language switching */
+html[data-lang="en"] .l-ko { display: none !important; }
+html[data-lang="ko"] .l-en { display: none !important; }
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+html[data-lang="ko"] body {
+  font-family: 'Pretendard Variable', Pretendard, 'Inter', -apple-system, BlinkMacSystemFont,
+    'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Top bar ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  height: 56px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.brand:hover { text-decoration: none; }
+
+.topnav {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.topnav a {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.topnav a:hover { color: var(--text); text-decoration: none; }
+
+.controls { display: flex; gap: 0.4rem; }
+
+.control-btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.control-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
+.icon-btn { width: 32px; height: 32px; padding: 0; display: inline-flex; align-items: center; justify-content: center; }
+
+html[data-theme="light"] .theme-icon-light { display: none; }
+html[data-theme="dark"] .theme-icon-dark { display: none; }
+
+/* ---------- Pills ---------- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+.pill:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-1px);
+}
+
+/* ---------- Section title ---------- */
+.section-title {
+  margin: 0 0 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Footer ---------- */
+.footer { border-top: 1px solid var(--border); padding: 2.5rem 0 3rem; margin-top: 1rem; }
+.footer-inner { text-align: center; }
+.footer-links { display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 0.9rem; }
+.footer-links a { color: var(--text-soft); font-size: 1.25rem; transition: color 0.15s ease; }
+.footer-links a:hover { color: var(--text); }
+.footer-note { margin: 0; color: var(--text-soft); font-size: 0.82rem; }
+
+@media (max-width: 720px) {
+  .topnav { display: none; }
+  .controls { margin-left: auto; }
+}

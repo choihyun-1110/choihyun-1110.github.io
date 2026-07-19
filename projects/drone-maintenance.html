@@ -1,489 +1,359 @@
 ---
-layout: null
+layout: page
+title: Next-Gen Intelligent Drone Maintenance System
 ---
-<!DOCTYPE html>
-<html lang="ko">
 
-<head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>드론 자동 정비 시스템 PoC 구현 - {{ site.name }}</title>
-  
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link href="../css/fontawesome.all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
-  <link href="../css/bulma.min.css" rel="stylesheet">
-  <link href="../css/index.css" rel="stylesheet">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script defer src="../js/fontawesome.all.min.js"></script>
-  
-  <style>
-    .hero-section {
-      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-      color: white;
-      padding: 4rem 0;
-      text-align: center;
-    }
-    .hero-title {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-    .hero-subtitle {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      margin-bottom: 2rem;
-    }
-    .award-banner {
-      background: linear-gradient(45deg, #FFD700, #FFA500);
-      padding: 1.5rem;
-      border-radius: 10px;
-      margin: 2rem 0;
-      color: #333;
-      text-align: center;
-    }
-    .award-banner h3 {
-      font-size: 2rem;
-      margin: 0;
-      font-weight: bold;
-    }
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-    .feature-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      border-left: 4px solid #3498db;
-    }
-    .tech-badge {
-      display: inline-block;
-      background: #f0f0f0;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      margin: 0.25rem;
-      font-size: 0.9rem;
-    }
-    .system-diagram {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-radius: 10px;
-      margin: 2rem 0;
-      text-align: center;
-    }
-    .hardware-card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      margin: 1rem 0;
-      border-top: 3px solid #e74c3c;
-    }
-    .table-container {
-      overflow-x: auto;
-      margin: 2rem 0;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 1rem;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-    th {
-      background: #3498db;
-      color: white;
-      font-weight: bold;
-    }
-    tr:hover {
-      background: #f5f5f5;
-    }
-  </style>
-</head>
+<a href="{{ '/' | relative_url }}" class="back-link"><i class="fas fa-arrow-left"></i><span class="l-en">Back to Home</span><span class="l-ko">홈으로</span></a>
 
-<body>
-  <!-- Hero Section -->
-  <div class="hero-section">
-    <div class="container">
-      <div class="columns is-vcentered mb-6">
-        <div class="column">
-          <a href="../index.html" class="button is-light">
-            <span class="icon"><i class="fas fa-arrow-left"></i></span>
-            <span>홈으로 돌아가기</span>
-          </a>
-        </div>
-      </div>
-      
-      <h1 class="hero-title">드론 자동 정비 시스템 PoC 구현</h1>
-      <p class="hero-subtitle">MFC 내 Smart Factory 및 CMMS 구축을 위한 자동화된 드론 정비 시스템</p>
-      
-      <div class="award-banner">
-        <h3>🥈 우수상 수상</h3>
-        <p style="font-size: 1.2rem; margin: 0.5rem 0 0 0;"><strong>43개 팀 중 2등</strong></p>
-        <p style="margin: 0.5rem 0 0 0;">Robotics Course Project</p>
-      </div>
+<div class="page-hero">
+  <p class="page-eyebrow"><span class="l-en">Robotics Course Project · June 2024</span><span class="l-ko">로보틱스 수업 프로젝트 · 2024년 6월</span></p>
+  <h1 class="page-title">
+    <span class="l-en">Automated Drone Maintenance System PoC</span>
+    <span class="l-ko">드론 자동 정비 시스템 PoC 구현</span>
+  </h1>
+  <p class="page-meta">
+    <span class="author-me">H. Choi</span> (최현)<span class="dot">·</span>
+    S. Seo (서승현)<span class="dot">·</span>
+    D. Kim (김동혁)<span class="dot">·</span>
+    S. Lee (이승진)
+  </p>
+  <div class="award-line">🥈 <span class="l-en">Excellence Award — 2nd place out of 43 teams</span><span class="l-ko">우수상 수상 — 43개 팀 중 2등</span></div>
+  <p class="page-summary l-en">
+    An automated drone maintenance system for building a Smart Factory and CMMS inside an MFC
+    (Micro Fulfillment Center), built with Elephant Robotics' MyAGV2023 and Cobot320.
+  </p>
+  <p class="page-summary l-ko">
+    MFC(Micro Fulfillment Center) 내 Smart Factory 및 CMMS 구축을 위한 자동화된 드론 정비 시스템.
+    Elephant Robotics의 MyAGV2023와 Cobot320을 활용해 구현했습니다.
+  </p>
+  <figure class="page-figure">
+    <img src="{{ '/images/AGV.jpeg' | relative_url }}" alt="Automated Drone Maintenance System">
+  </figure>
+</div>
+
+<div class="prose">
+  <h2><span class="l-en">Project Overview &amp; Vision</span><span class="l-ko">프로젝트 개요 및 비전</span></h2>
+  <div class="card-grid">
+    <div class="card">
+      <h4><span class="l-en">Topic</span><span class="l-ko">프로젝트 주제</span></h4>
+      <p class="l-en">Automated drone maintenance system built with <strong>Elephant Robotics</strong>' <strong>MyAGV2023</strong> and <strong>Cobot320</strong></p>
+      <p class="l-ko"><strong>Elephant Robotics</strong>의 <strong>MyAGV2023</strong>와 <strong>Cobot320</strong>을 활용한 <strong>자동 드론 정비 시스템</strong> 구현</p>
+    </div>
+    <div class="card">
+      <h4><span class="l-en">Core Goal</span><span class="l-ko">핵심 목표</span></h4>
+      <p class="l-en">Build a <strong>Smart Factory</strong> and a <strong>CMMS</strong> (Computerized Maintenance Management System) — digitizing and automating maintenance management, a subset of ERP</p>
+      <p class="l-ko"><strong>Smart Factory</strong> 구현과 <strong>CMMS</strong>(전산화 유지보수 관리 시스템) 구성. 전사적 자원 관리(ERP)의 일부분인 유지보수 관리를 전산화 및 자동화</p>
+    </div>
+    <div class="card">
+      <h4><span class="l-en">Final Product / Concept</span><span class="l-ko">최종 제품/개념</span></h4>
+      <p class="l-en">Built an <strong>SFaaS (Smart Factory as a Service)</strong> product and proposed it to KG ICT as a next-gen business item candidate</p>
+      <p class="l-ko"><strong>SFaaS (Smart Factory as a Service)</strong> 제품을 제작하고 KG ICT에 차세대 신사업 아이템 후보 제시</p>
+    </div>
+    <div class="card">
+      <h4><span class="l-en">Future Value</span><span class="l-ko">미래 가치</span></h4>
+      <p class="l-en">As drone delivery becomes inevitable, automated maintenance offers accuracy, precision, faster operation, maximized uptime, and lower delivery costs</p>
+      <p class="l-ko">드론 배송 시스템 도입이 불가피해질 것으로 예상되는 상황에서, 자동화된 정비 시스템은 정확도, 정밀도, 빠른 작업 속도, 극대화된 업타임, 배송 원가 절감 등의 이점 제공</p>
     </div>
   </div>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Authors -->
-      <div class="content has-text-centered mb-6">
-        <div style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; padding: 1.5rem; border-radius: 15px; margin-bottom: 1rem;">
-          <h2 style="color: white; margin-bottom: 0.5rem;">프로젝트 팀</h2>
-        </div>
-        <p>
-          <strong>H. Choi</strong> (최현) • 
-          <strong>S. Seo</strong> (서승현) • 
-          <strong>D. Kim</strong> (김동혁) • 
-          <strong>S. Lee</strong> (이승진)
-        </p>
-        <p><em>2024년 6월 • Robotics Course Project</em></p>
-      </div>
+  <h3><span class="l-en">Why This PoC</span><span class="l-ko">PoC 선정 이유</span></h3>
+  <p class="l-en">
+    Considering constraints that ruled out industrial logistics drones, we implemented the PoC using a <strong>DJI Tello drone</strong> instead:
+  </p>
+  <p class="l-ko">
+    산업용 물류 드론을 사용할 수 없는 여러 제한점을 고려하여 상업용 드론 대신 <strong>DJI Tello 드론</strong>을 활용하여 PoC를 구현했습니다:
+  </p>
+  <ul class="l-en">
+    <li><strong>Payload limits:</strong> experiment constraints from industrial drone payload restrictions</li>
+    <li><strong>Indoor-only environment:</strong> no GPS signal indoors, making localization difficult</li>
+    <li><strong>Propeller turbulence:</strong> stability issues caused by propeller turbulence indoors</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>최대 적재량 제한:</strong> 산업용 물류 드론의 적재량 제한으로 인한 실험 제약</li>
+    <li><strong>실내 환경 한정:</strong> GPS 신호 수신 불가로 인한 실내 위치 추적의 어려움</li>
+    <li><strong>프로펠러 난류 문제:</strong> 실내 환경에서 프로펠러 난류로 인한 안정성 문제</li>
+  </ul>
 
-      <!-- 프로젝트 개요 -->
-      <div class="content">
-        <h2>프로젝트 개요 및 비전</h2>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <h4>프로젝트 주제</h4>
-            <p><strong>Elephant Robotics</strong>의 <strong>MyAGV2023</strong>와 <strong>Cobot320</strong>을 활용한 <strong>자동 드론 정비 시스템</strong> 구현</p>
-          </div>
-          <div class="feature-card">
-            <h4>핵심 목표</h4>
-            <p><strong>Smart Factory</strong> 구현과 <strong>CMMS (Computerized Maintenance Management System)</strong> 구성. 전사적 자원 관리(ERP)의 일부분인 유지보수 관리를 전산화 및 자동화</p>
-          </div>
-          <div class="feature-card">
-            <h4>최종 제품/개념</h4>
-            <p><strong>SFaaS (Smart Factory as a Service)</strong> 제품을 제작하고 KG ICT에 차세대 신사업 아이템 후보 제시</p>
-          </div>
-          <div class="feature-card">
-            <h4>미래 가치</h4>
-            <p>드론 배송 시스템 도입이 불가피해질 것으로 예상되는 상황에서, 자동화된 정비 시스템은 정확도, 정밀도, 빠른 작업 속도, 극대화된 업타임(가동시간), 배송 원가 절감 등의 이점 제공</p>
-          </div>
-        </div>
-
-        <h3>PoC 선정 이유</h3>
-        <p>
-          산업용 물류 드론을 사용할 수 없는 여러 제한점을 고려하여 상업용 드론 대신 <strong>DJI Tello 드론</strong>을 활용하여 PoC를 구현했습니다:
-        </p>
-        <ul>
-          <li><strong>최대 적재량 제한:</strong> 산업용 물류 드론의 적재량 제한으로 인한 실험 제약</li>
-          <li><strong>실내 환경 한정:</strong> GPS 신호 수신 불가로 인한 실내 위치 추적의 어려움</li>
-          <li><strong>프로펠러 난류 문제:</strong> 실내 환경에서 프로펠러 난류로 인한 안정성 문제</li>
-        </ul>
-      </div>
-
-      <!-- 시스템 구조 및 통신 -->
-      <div class="content">
-        <h2>시스템 구조 및 통신</h2>
-        <div class="system-diagram">
-          <h3>시스템 아키텍처</h3>
-          <div style="margin: 2rem 0;">
-            <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-              <h4 style="color: #e74c3c; margin-bottom: 1rem;">중앙 통제 장치 (PC Server)</h4>
-              <p>모든 시스템을 통합적으로 제어하며 Client의 요청을 처리하고 응답을 제공</p>
-              <div style="margin-top: 2rem;">
-                <div class="columns">
-                  <div class="column">
-                    <div class="hardware-card">
-                      <h5>🔌 Socket 통신</h5>
-                      <p>TCP/IP 및 UDP 프로토콜 기반</p>
-                      <p>PC는 드론, AGV, PLC 등의 하드웨어와 Socket 통신으로 정보 교환</p>
-                    </div>
-                  </div>
-                  <div class="column">
-                    <div class="hardware-card">
-                      <h5>📡 드론 통신</h5>
-                      <p>UDP Socket 통신 (WIFI 연결) 기반</p>
-                      <p>모든 연산 처리는 PC에서 진행</p>
-                      <p>Port 8889 (지령), 8890 (피드백), 11111 (동영상/카메라)</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="columns">
-                  <div class="column">
-                    <div class="hardware-card">
-                      <h5>📱 UI 구성</h5>
-                      <p><strong>Flutter</strong>를 활용한 사용자 인터페이스</p>
-                    </div>
-                  </div>
-                  <div class="column">
-                    <div class="hardware-card">
-                      <h5>💾 데이터 관리</h5>
-                      <p>CMMS 구현을 위한 <strong>Google Sheets</strong> 데이터베이스</p>
-                      <p>UI를 통한 현재 상황 모니터링</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 활용 장비 및 기술 -->
-      <div class="content">
-        <h2>활용 장비 및 기술</h2>
-        
-        <div class="hardware-card">
-          <h3>🤖 MyAGV2023</h3>
-          <p><strong>역할:</strong> 드론을 이/착륙장과 정비 공간(AR_7, AR_8)으로 이동시키는 자율주행 차량</p>
-          
-          <figure class="image" style="margin: 1.5rem 0;">
-            <img src="../images/MYAGV_role.GIF" alt="MyAGV2023 역할" style="border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.2); max-width: 100%;">
-          </figure>
-          
-          <h4>핵심 기술:</h4>
-          <ul>
-            <li><strong>Line Tracing:</strong> 색테이프 인식 기반 자율주행</li>
-            <li><strong>LiDAR:</strong> 장애물 대처 및 앞차 간격 유지</li>
-            <li><strong>AR Marker:</strong> 특정 동작 수행 및 위치 정보 전달</li>
-            <li><strong>Bluetooth 통신:</strong> 자동문 제어</li>
-          </ul>
-        </div>
-
-        <div class="hardware-card">
-          <h3>🦾 MyCobot320</h3>
-          <p><strong>역할:</strong> 드론의 인식 및 정비 작업을 수행하는 협동 로봇</p>
-          
-          <figure class="image" style="margin: 1.5rem 0;">
-            <video controls style="border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.2); max-width: 100%;">
-              <source src="../images/Mycobot_role.mp4" type="video/mp4">
-              브라우저가 비디오 태그를 지원하지 않습니다.
-            </video>
-          </figure>
-          
-          <h4>핵심 기술:</h4>
-          <ul>
-            <li><strong>End Effector 카메라:</strong> Yolo 및 cv2 기반 객체 인식</li>
-            <li><strong>드론 위치 및 기체 번호 파악:</strong> 컴퓨터 비전 기반 인식</li>
-            <li><strong>pymycobot API:</strong> 파이썬 코딩 기반 제어</li>
-          </ul>
-        </div>
-
-        <div class="hardware-card">
-          <h3>🚁 DJI Tello Drone</h3>
-          <p><strong>역할:</strong> PoC 구현에 사용된 소형 드론</p>
-          
-          <figure class="image" style="margin: 1.5rem 0;">
-            <video controls style="border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.2); max-width: 100%;">
-              <source src="../images/Tello_Drone_role.mp4" type="video/mp4">
-              브라우저가 비디오 태그를 지원하지 않습니다.
-            </video>
-          </figure>
-          
-          <h4>핵심 기술:</h4>
-          <ul>
-            <li><strong>UDP Socket 통신:</strong> PC와의 실시간 통신</li>
-            <li><strong>SDK (Software Development Kit):</strong> Python 기반 제어</li>
-            <li><strong>VoF 센서:</strong> 수평 유지</li>
-            <li><strong>AR Pose Estimate:</strong> 위치 보정</li>
-          </ul>
-        </div>
-
-        <div class="hardware-card">
-          <h3>⚙️ PLC + 3상 모터</h3>
-          <p><strong>역할:</strong> 드론 수리 과정 중 컨베이어 벨트 구동 및 제어</p>
-          <h4>핵심 기술:</h4>
-          <ul>
-            <li><strong>LS산전 XGB DR32H:</strong> PLC 제어기</li>
-            <li><strong>LSLV M100 Inverter:</strong> 모터 제어</li>
-            <li><strong>PyModbus 모듈:</strong> PC와의 Serial 통신</li>
-          </ul>
-        </div>
-
-        <div class="hardware-card">
-          <h3>🚪 Arduino Uno</h3>
-          <p><strong>역할:</strong> MFC 내부와 외부를 구분하는 자동문 구성</p>
-          <h4>핵심 기술:</h4>
-          <ul>
-            <li><strong>DC Motor + L298N 드라이버:</strong> 모터 제어</li>
-            <li><strong>HC06 블루투스 모듈:</strong> 접근 권한 AGV 통과</li>
-            <li><strong>폐목재 재활용:</strong> ESG/환경 고려 프레임 구성</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- AGV 상세 운행 시스템 -->
-      <div class="content">
-        <h2>AGV 상세 운행 시스템</h2>
-        <p>
-          AGV는 <strong>중앙 PC의 통제</strong>를 받으며, AR Marker 인식 시 정지하고 중앙 PC로 데이터를 보낸 후, 
-          PC로부터 Line Color 명령을 받아 다시 주행을 시작합니다.
-        </p>
-
-        <h3>AR Marker 시스템</h3>
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>AR Marker ID</th>
-                <th>위치/목적</th>
-                <th>동작</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>AR 1, 2, 3</strong></td>
-                <td>드론 이/착륙장 1, 2, 3</td>
-                <td>AR 감지 시 정지, Line 색상 'NONCOLOR' 지정, 중앙 PC로 데이터 전송</td>
-              </tr>
-              <tr>
-                <td><strong>AR 7, 8</strong></td>
-                <td>COBOT으로부터 드론을 받거나(7번) 전달하는(8번) 구역</td>
-                <td>AR 감지 시 정지, Line 색상 'NONCOLOR' 지정, 중앙 PC로 데이터 전송</td>
-              </tr>
-              <tr>
-                <td><strong>AR 4, 5</strong></td>
-                <td>입/출구 자동문에 부착</td>
-                <td>AGV 일시 정지, 중앙 PC로 데이터 전송, 블루투스 통신을 통해 자동문 작동</td>
-              </tr>
-              <tr>
-                <td><strong>AR 6</strong></td>
-                <td>AGV 자동 충전소</td>
-                <td>마커 감지 시 180도 회전, 트랙 가이드 시스템을 따라 후진하여 충전 어댑터 연결</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3>Line Color 시스템</h3>
-        <p>
-          다양한 색상의 마스킹 테이프로 트랙을 구성하며, AGV는 <strong>HSV</strong> 기반으로 라인 트레이싱을 수행합니다:
-        </p>
-        
-        <figure class="image" style="margin: 2rem 0; text-align: center;">
-          <video controls style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); max-width: 100%;">
-            <source src="../images/Line_Color_시스템.mp4" type="video/mp4">
-            브라우저가 비디오 태그를 지원하지 않습니다.
-          </video>
-        </figure>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0;">
-          <div style="background: #fff3cd; border: 2px solid #ffc107; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <div style="width: 40px; height: 40px; background: #ffc107; border-radius: 50%; margin: 0 auto 0.5rem;"></div>
-            <h4 style="margin: 0.5rem 0; color: #856404;">노란색</h4>
-            <p style="margin: 0; color: #856404; font-size: 0.9rem;">이륙장 이동</p>
-          </div>
-          <div style="background: #e2d9f3; border: 2px solid #9c27b0; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <div style="width: 40px; height: 40px; background: #9c27b0; border-radius: 50%; margin: 0 auto 0.5rem;"></div>
-            <h4 style="margin: 0.5rem 0; color: #4a148c;">보라색</h4>
-            <p style="margin: 0; color: #4a148c; font-size: 0.9rem;">착륙 드론 이동</p>
-          </div>
-          <div style="background: #cfe2ff; border: 2px solid #2196f3; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <div style="width: 40px; height: 40px; background: #2196f3; border-radius: 50%; margin: 0 auto 0.5rem;"></div>
-            <h4 style="margin: 0.5rem 0; color: #0d47a1;">파란색</h4>
-            <p style="margin: 0; color: #0d47a1; font-size: 0.9rem;">AR 1 이동</p>
-          </div>
-          <div style="background: #d1e7dd; border: 2px solid #4caf50; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <div style="width: 40px; height: 40px; background: #4caf50; border-radius: 50%; margin: 0 auto 0.5rem;"></div>
-            <h4 style="margin: 0.5rem 0; color: #1b5e20;">초록색</h4>
-            <p style="margin: 0; color: #1b5e20; font-size: 0.9rem;">AR 2 이동</p>
-          </div>
-          <div style="background: #f8d7da; border: 2px solid #f44336; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <div style="width: 40px; height: 40px; background: #f44336; border-radius: 50%; margin: 0 auto 0.5rem;"></div>
-            <h4 style="margin: 0.5rem 0; color: #b71c1c;">빨간색</h4>
-            <p style="margin: 0; color: #b71c1c; font-size: 0.9rem;">AR 3 이동</p>
-          </div>
-          <div style="background: #cff4fc; border: 2px solid #00bcd4; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <div style="width: 40px; height: 40px; background: #00bcd4; border-radius: 50%; margin: 0 auto 0.5rem;"></div>
-            <h4 style="margin: 0.5rem 0; color: #006064;">하늘색</h4>
-            <p style="margin: 0; color: #006064; font-size: 0.9rem;">충전소 이동</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 핵심 학습 목표 및 구현 결과 -->
-      <div class="content">
-        <h2>핵심 학습 목표 및 구현 결과</h2>
-        
-        <h3>교육 목표</h3>
-        <ul>
-          <li>교육 과정에서 학습한 내용을 복습하고 활용</li>
-          <li><strong>새로운 아이디어 제시</strong> (창의성, 시장성, 구현 가능성 고려)</li>
-          <li><strong>미래 트렌드 예측</strong> 및 문제점 분석/해결책 제시</li>
-        </ul>
-
-        <h3>주요 활용 기술</h3>
-        <div style="margin: 2rem 0;">
-          <span class="tech-badge">Python</span>
-          <span class="tech-badge">협동로봇/AGV 운용</span>
-          <span class="tech-badge">PLC</span>
-          <span class="tech-badge">Arduino</span>
-          <span class="tech-badge">CAD (Fusion360)</span>
-          <span class="tech-badge">Socket 통신</span>
-          <span class="tech-badge">Computer Vision (YOLO, OpenCV)</span>
-          <span class="tech-badge">Flutter</span>
-          <span class="tech-badge">Google Sheets API</span>
-        </div>
-
-        <h3>시스템 구현 결과</h3>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <h4>✅ 자동 관리 및 판단</h4>
-            <p>비어있는 착륙장 판단, 수리 중 드론 유무 확인, AGV 배터리 충전 필요 여부 자동 판단</p>
-          </div>
-          <div class="feature-card">
-            <h4>✅ 통합 제어 시스템</h4>
-            <p>중앙 PC를 통한 모든 하드웨어 통합 제어 및 모니터링</p>
-          </div>
-          <div class="feature-card">
-            <h4>✅ CMMS 구현</h4>
-            <p>Google Sheets를 활용한 데이터베이스 구축 및 유지보수 관리 시스템 구현</p>
-          </div>
-          <div class="feature-card">
-            <h4>✅ 실시간 모니터링</h4>
-            <p>Flutter UI를 통한 현재 상황 실시간 모니터링</p>
-          </div>
-        </div>
-
-        <h3>아쉬운 점</h3>
-        <p>
-          하드웨어 제한 및 성능 문제(Performance issue)로 인한 불필요한 시간 소모와 코드 테스트의 어려움이 있었습니다.
-        </p>
-      </div>
-
-      <!-- 기대 효과 -->
-      <div class="content">
-        <h2>기대 효과 및 미래 가치</h2>
-        <div style="background: #f8f9fa; border-left: 4px solid #2c3e50; padding: 2rem; border-radius: 5px; margin: 2rem 0;">
-          <h3 style="color: #2c3e50; margin-bottom: 1rem;">SFaaS (Smart Factory as a Service)</h3>
-          <p>
-            드론 배송 시스템 도입이 불가피해질 것으로 예상되는 상황에서, 본 시스템은 다음과 같은 이점을 제공합니다:
-          </p>
-          <ul style="margin-top: 1rem;">
-            <li><strong>정확도 및 정밀도</strong> 향상</li>
-            <li><strong>빠른 작업 속도</strong></li>
-            <li><strong>극대화된 업타임(가동시간)</strong></li>
-            <li><strong>배송 원가 절감</strong></li>
-            <li><strong>자동화된 정비 프로세스</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Project Image & Video -->
-      <div class="content has-text-centered">
-        <h2>프로젝트 구현 영상</h2>
-        <figure class="image" style="margin-bottom: 2rem;">
-          <img src="../images/AGV.jpeg" alt="드론 자동 정비 시스템" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); max-width: 100%;">
-        </figure>
-        <figure class="image">
-          <video controls style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); max-width: 100%;">
-            <source src="../images/프로젝트_1분티저.mp4" type="video/mp4">
-            브라우저가 비디오 태그를 지원하지 않습니다.
-          </video>
-        </figure>
-      </div>
+  <h2><span class="l-en">System Architecture &amp; Communication</span><span class="l-ko">시스템 구조 및 통신</span></h2>
+  <p class="l-en">
+    A central <strong>PC server</strong> controls the entire system, handling client requests and responses.
+  </p>
+  <p class="l-ko">
+    <strong>중앙 통제 장치(PC Server)</strong>가 모든 시스템을 통합적으로 제어하며 Client의 요청을 처리하고 응답을 제공합니다.
+  </p>
+  <div class="card-grid">
+    <div class="card">
+      <h4>🔌 <span class="l-en">Socket Communication</span><span class="l-ko">Socket 통신</span></h4>
+      <p class="l-en">TCP/IP and UDP based. The PC exchanges data with drones, AGVs, and PLCs over sockets.</p>
+      <p class="l-ko">TCP/IP 및 UDP 프로토콜 기반. PC는 드론, AGV, PLC 등의 하드웨어와 Socket 통신으로 정보를 교환합니다.</p>
     </div>
-  </section>
-</body>
+    <div class="card">
+      <h4>📡 <span class="l-en">Drone Communication</span><span class="l-ko">드론 통신</span></h4>
+      <p class="l-en">UDP sockets over Wi-Fi; all computation on the PC. Ports 8889 (commands), 8890 (feedback), 11111 (video/camera).</p>
+      <p class="l-ko">UDP Socket 통신(WIFI 연결) 기반, 모든 연산 처리는 PC에서 진행. Port 8889(지령), 8890(피드백), 11111(동영상/카메라).</p>
+    </div>
+    <div class="card">
+      <h4>📱 <span class="l-en">UI</span><span class="l-ko">UI 구성</span></h4>
+      <p class="l-en">User interface built with <strong>Flutter</strong></p>
+      <p class="l-ko"><strong>Flutter</strong>를 활용한 사용자 인터페이스</p>
+    </div>
+    <div class="card">
+      <h4>💾 <span class="l-en">Data Management</span><span class="l-ko">데이터 관리</span></h4>
+      <p class="l-en"><strong>Google Sheets</strong> database for the CMMS, with live status monitoring through the UI</p>
+      <p class="l-ko">CMMS 구현을 위한 <strong>Google Sheets</strong> 데이터베이스, UI를 통한 현재 상황 모니터링</p>
+    </div>
+  </div>
 
-</html>
+  <h2><span class="l-en">Hardware &amp; Technologies</span><span class="l-ko">활용 장비 및 기술</span></h2>
+
+  <h3>🤖 MyAGV2023</h3>
+  <p class="l-en"><strong>Role:</strong> autonomous vehicle moving drones between landing pads and maintenance zones (AR_7, AR_8)</p>
+  <p class="l-ko"><strong>역할:</strong> 드론을 이/착륙장과 정비 공간(AR_7, AR_8)으로 이동시키는 자율주행 차량</p>
+  <figure class="figure">
+    <img src="{{ '/images/MYAGV_role.GIF' | relative_url }}" alt="MyAGV2023 role">
+  </figure>
+  <ul class="l-en">
+    <li><strong>Line Tracing:</strong> autonomous driving via colored tape recognition</li>
+    <li><strong>LiDAR:</strong> obstacle handling and following-distance keeping</li>
+    <li><strong>AR Marker:</strong> triggering specific actions and reporting location</li>
+    <li><strong>Bluetooth:</strong> automatic door control</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>Line Tracing:</strong> 색테이프 인식 기반 자율주행</li>
+    <li><strong>LiDAR:</strong> 장애물 대처 및 앞차 간격 유지</li>
+    <li><strong>AR Marker:</strong> 특정 동작 수행 및 위치 정보 전달</li>
+    <li><strong>Bluetooth 통신:</strong> 자동문 제어</li>
+  </ul>
+
+  <h3>🦾 MyCobot320</h3>
+  <p class="l-en"><strong>Role:</strong> collaborative robot performing drone recognition and maintenance tasks</p>
+  <p class="l-ko"><strong>역할:</strong> 드론의 인식 및 정비 작업을 수행하는 협동 로봇</p>
+  <figure class="figure">
+    <video controls preload="metadata">
+      <source src="{{ '/images/Mycobot_role.mp4' | relative_url }}" type="video/mp4">
+    </video>
+  </figure>
+  <ul class="l-en">
+    <li><strong>End-effector camera:</strong> object recognition with YOLO and cv2</li>
+    <li><strong>Drone position &amp; ID detection:</strong> computer-vision based</li>
+    <li><strong>pymycobot API:</strong> Python-based control</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>End Effector 카메라:</strong> Yolo 및 cv2 기반 객체 인식</li>
+    <li><strong>드론 위치 및 기체 번호 파악:</strong> 컴퓨터 비전 기반 인식</li>
+    <li><strong>pymycobot API:</strong> 파이썬 코딩 기반 제어</li>
+  </ul>
+
+  <h3>🚁 DJI Tello Drone</h3>
+  <p class="l-en"><strong>Role:</strong> small drone used for the PoC</p>
+  <p class="l-ko"><strong>역할:</strong> PoC 구현에 사용된 소형 드론</p>
+  <figure class="figure">
+    <video controls preload="metadata">
+      <source src="{{ '/images/Tello_Drone_role.mp4' | relative_url }}" type="video/mp4">
+    </video>
+  </figure>
+  <ul class="l-en">
+    <li><strong>UDP socket communication:</strong> real-time link with the PC</li>
+    <li><strong>SDK:</strong> Python-based control</li>
+    <li><strong>VoF sensor:</strong> level keeping</li>
+    <li><strong>AR pose estimation:</strong> position correction</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>UDP Socket 통신:</strong> PC와의 실시간 통신</li>
+    <li><strong>SDK:</strong> Python 기반 제어</li>
+    <li><strong>VoF 센서:</strong> 수평 유지</li>
+    <li><strong>AR Pose Estimate:</strong> 위치 보정</li>
+  </ul>
+
+  <h3>⚙️ PLC + <span class="l-en">3-Phase Motor</span><span class="l-ko">3상 모터</span></h3>
+  <p class="l-en"><strong>Role:</strong> driving and controlling the conveyor belt during drone repair</p>
+  <p class="l-ko"><strong>역할:</strong> 드론 수리 과정 중 컨베이어 벨트 구동 및 제어</p>
+  <ul class="l-en">
+    <li><strong>LS Electric XGB DR32H:</strong> PLC controller</li>
+    <li><strong>LSLV M100 Inverter:</strong> motor control</li>
+    <li><strong>PyModbus:</strong> serial communication with the PC</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>LS산전 XGB DR32H:</strong> PLC 제어기</li>
+    <li><strong>LSLV M100 Inverter:</strong> 모터 제어</li>
+    <li><strong>PyModbus 모듈:</strong> PC와의 Serial 통신</li>
+  </ul>
+
+  <h3>🚪 Arduino Uno</h3>
+  <p class="l-en"><strong>Role:</strong> automatic door separating the inside and outside of the MFC</p>
+  <p class="l-ko"><strong>역할:</strong> MFC 내부와 외부를 구분하는 자동문 구성</p>
+  <ul class="l-en">
+    <li><strong>DC motor + L298N driver:</strong> motor control</li>
+    <li><strong>HC06 Bluetooth module:</strong> access-authorized AGV passage</li>
+    <li><strong>Recycled wood frame:</strong> ESG/environment-conscious construction</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>DC Motor + L298N 드라이버:</strong> 모터 제어</li>
+    <li><strong>HC06 블루투스 모듈:</strong> 접근 권한 AGV 통과</li>
+    <li><strong>폐목재 재활용:</strong> ESG/환경 고려 프레임 구성</li>
+  </ul>
+
+  <h2><span class="l-en">AGV Operation System</span><span class="l-ko">AGV 상세 운행 시스템</span></h2>
+  <p class="l-en">
+    The AGV is controlled by the <strong>central PC</strong>: it stops upon AR marker recognition, sends data to the PC,
+    then resumes driving after receiving a Line Color command.
+  </p>
+  <p class="l-ko">
+    AGV는 <strong>중앙 PC의 통제</strong>를 받으며, AR Marker 인식 시 정지하고 중앙 PC로 데이터를 보낸 후,
+    PC로부터 Line Color 명령을 받아 다시 주행을 시작합니다.
+  </p>
+
+  <h3><span class="l-en">AR Marker System</span><span class="l-ko">AR Marker 시스템</span></h3>
+  <div class="table-wrap l-en">
+    <table>
+      <thead>
+        <tr><th>AR Marker ID</th><th>Location / Purpose</th><th>Action</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>AR 1, 2, 3</strong></td><td>Drone landing pads 1, 2, 3</td><td>Stop on detection, set line color to 'NONCOLOR', send data to central PC</td></tr>
+        <tr><td><strong>AR 7, 8</strong></td><td>Zones for receiving (7) or handing over (8) drones with the cobot</td><td>Stop on detection, set line color to 'NONCOLOR', send data to central PC</td></tr>
+        <tr><td><strong>AR 4, 5</strong></td><td>Attached to entrance/exit automatic doors</td><td>Pause AGV, send data to central PC, operate the door via Bluetooth</td></tr>
+        <tr><td><strong>AR 6</strong></td><td>AGV charging station</td><td>Rotate 180° on detection, reverse along the track guide to dock with the charging adapter</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrap l-ko">
+    <table>
+      <thead>
+        <tr><th>AR Marker ID</th><th>위치/목적</th><th>동작</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>AR 1, 2, 3</strong></td><td>드론 이/착륙장 1, 2, 3</td><td>AR 감지 시 정지, Line 색상 'NONCOLOR' 지정, 중앙 PC로 데이터 전송</td></tr>
+        <tr><td><strong>AR 7, 8</strong></td><td>COBOT으로부터 드론을 받거나(7번) 전달하는(8번) 구역</td><td>AR 감지 시 정지, Line 색상 'NONCOLOR' 지정, 중앙 PC로 데이터 전송</td></tr>
+        <tr><td><strong>AR 4, 5</strong></td><td>입/출구 자동문에 부착</td><td>AGV 일시 정지, 중앙 PC로 데이터 전송, 블루투스 통신을 통해 자동문 작동</td></tr>
+        <tr><td><strong>AR 6</strong></td><td>AGV 자동 충전소</td><td>마커 감지 시 180도 회전, 트랙 가이드 시스템을 따라 후진하여 충전 어댑터 연결</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3><span class="l-en">Line Color System</span><span class="l-ko">Line Color 시스템</span></h3>
+  <p class="l-en">
+    Tracks are laid out with masking tape in multiple colors; the AGV performs line tracing based on <strong>HSV</strong>:
+  </p>
+  <p class="l-ko">
+    다양한 색상의 마스킹 테이프로 트랙을 구성하며, AGV는 <strong>HSV</strong> 기반으로 라인 트레이싱을 수행합니다:
+  </p>
+  <figure class="figure">
+    <video controls preload="metadata">
+      <source src="{{ '/images/Line_Color_시스템.mp4' | relative_url }}" type="video/mp4">
+    </video>
+  </figure>
+  <div class="table-wrap l-en">
+    <table>
+      <thead><tr><th>Color</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>🟡 Yellow</td><td>Move to takeoff pad</td></tr>
+        <tr><td>🟣 Purple</td><td>Move landed drone</td></tr>
+        <tr><td>🔵 Blue</td><td>Move to AR 1</td></tr>
+        <tr><td>🟢 Green</td><td>Move to AR 2</td></tr>
+        <tr><td>🔴 Red</td><td>Move to AR 3</td></tr>
+        <tr><td>🩵 Sky blue</td><td>Move to charging station</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrap l-ko">
+    <table>
+      <thead><tr><th>색상</th><th>의미</th></tr></thead>
+      <tbody>
+        <tr><td>🟡 노란색</td><td>이륙장 이동</td></tr>
+        <tr><td>🟣 보라색</td><td>착륙 드론 이동</td></tr>
+        <tr><td>🔵 파란색</td><td>AR 1 이동</td></tr>
+        <tr><td>🟢 초록색</td><td>AR 2 이동</td></tr>
+        <tr><td>🔴 빨간색</td><td>AR 3 이동</td></tr>
+        <tr><td>🩵 하늘색</td><td>충전소 이동</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2><span class="l-en">Learning Goals &amp; Implementation Results</span><span class="l-ko">핵심 학습 목표 및 구현 결과</span></h2>
+
+  <h3><span class="l-en">Educational Goals</span><span class="l-ko">교육 목표</span></h3>
+  <ul class="l-en">
+    <li>Review and apply what was learned throughout the course</li>
+    <li><strong>Propose new ideas</strong> (considering creativity, marketability, feasibility)</li>
+    <li><strong>Predict future trends</strong> and analyze problems / propose solutions</li>
+  </ul>
+  <ul class="l-ko">
+    <li>교육 과정에서 학습한 내용을 복습하고 활용</li>
+    <li><strong>새로운 아이디어 제시</strong> (창의성, 시장성, 구현 가능성 고려)</li>
+    <li><strong>미래 트렌드 예측</strong> 및 문제점 분석/해결책 제시</li>
+  </ul>
+
+  <h3><span class="l-en">Key Technologies</span><span class="l-ko">주요 활용 기술</span></h3>
+  <div class="tags">
+    <span class="tag">Python</span>
+    <span class="tag"><span class="l-en">Cobot/AGV Operation</span><span class="l-ko">협동로봇/AGV 운용</span></span>
+    <span class="tag">PLC</span>
+    <span class="tag">Arduino</span>
+    <span class="tag">CAD (Fusion360)</span>
+    <span class="tag"><span class="l-en">Socket Communication</span><span class="l-ko">Socket 통신</span></span>
+    <span class="tag">Computer Vision (YOLO, OpenCV)</span>
+    <span class="tag">Flutter</span>
+    <span class="tag">Google Sheets API</span>
+  </div>
+
+  <h3><span class="l-en">Implementation Results</span><span class="l-ko">시스템 구현 결과</span></h3>
+  <div class="card-grid">
+    <div class="card">
+      <h4>✅ <span class="l-en">Automated Management &amp; Decisions</span><span class="l-ko">자동 관리 및 판단</span></h4>
+      <p class="l-en">Automatically determines empty landing pads, checks for drones under repair, and detects when AGV batteries need charging</p>
+      <p class="l-ko">비어있는 착륙장 판단, 수리 중 드론 유무 확인, AGV 배터리 충전 필요 여부 자동 판단</p>
+    </div>
+    <div class="card">
+      <h4>✅ <span class="l-en">Integrated Control</span><span class="l-ko">통합 제어 시스템</span></h4>
+      <p class="l-en">All hardware controlled and monitored through the central PC</p>
+      <p class="l-ko">중앙 PC를 통한 모든 하드웨어 통합 제어 및 모니터링</p>
+    </div>
+    <div class="card">
+      <h4>✅ <span class="l-en">CMMS</span><span class="l-ko">CMMS 구현</span></h4>
+      <p class="l-en">Database built on Google Sheets with a maintenance management system on top</p>
+      <p class="l-ko">Google Sheets를 활용한 데이터베이스 구축 및 유지보수 관리 시스템 구현</p>
+    </div>
+    <div class="card">
+      <h4>✅ <span class="l-en">Real-time Monitoring</span><span class="l-ko">실시간 모니터링</span></h4>
+      <p class="l-en">Live status monitoring through the Flutter UI</p>
+      <p class="l-ko">Flutter UI를 통한 현재 상황 실시간 모니터링</p>
+    </div>
+  </div>
+
+  <h3><span class="l-en">Limitations</span><span class="l-ko">아쉬운 점</span></h3>
+  <p class="l-en">
+    Hardware constraints and performance issues caused unnecessary time loss and made code testing difficult.
+  </p>
+  <p class="l-ko">
+    하드웨어 제한 및 성능 문제(Performance issue)로 인한 불필요한 시간 소모와 코드 테스트의 어려움이 있었습니다.
+  </p>
+
+  <h2><span class="l-en">Expected Impact &amp; Future Value</span><span class="l-ko">기대 효과 및 미래 가치</span></h2>
+  <div class="callout">
+    <p><strong>SFaaS (Smart Factory as a Service)</strong></p>
+    <p class="l-en">As drone delivery systems become inevitable, this system offers:</p>
+    <p class="l-ko">드론 배송 시스템 도입이 불가피해질 것으로 예상되는 상황에서, 본 시스템은 다음과 같은 이점을 제공합니다:</p>
+    <ul class="l-en">
+      <li>Improved <strong>accuracy and precision</strong></li>
+      <li><strong>Faster operation</strong></li>
+      <li><strong>Maximized uptime</strong></li>
+      <li><strong>Reduced delivery costs</strong></li>
+      <li><strong>Automated maintenance processes</strong></li>
+    </ul>
+    <ul class="l-ko">
+      <li><strong>정확도 및 정밀도</strong> 향상</li>
+      <li><strong>빠른 작업 속도</strong></li>
+      <li><strong>극대화된 업타임(가동시간)</strong></li>
+      <li><strong>배송 원가 절감</strong></li>
+      <li><strong>자동화된 정비 프로세스</strong></li>
+    </ul>
+  </div>
+
+  <h2><span class="l-en">Project Video</span><span class="l-ko">프로젝트 구현 영상</span></h2>
+  <figure class="figure">
+    <video controls preload="metadata">
+      <source src="{{ '/images/프로젝트_1분티저.mp4' | relative_url }}" type="video/mp4">
+    </video>
+  </figure>
+</div>

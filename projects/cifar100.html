@@ -1,93 +1,69 @@
 ---
-layout: null
+layout: page
+title: CIFAR-100 Long-Tail Classification
 ---
-<!DOCTYPE html>
-<html lang="en-US">
 
-<head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>CIFAR-100 Long-Tail Classification - {{ site.name }}</title>
-  
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link href="../css/fontawesome.all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
-  <link href="../css/bulma.min.css" rel="stylesheet">
-  <link href="../css/index.css" rel="stylesheet">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script defer src="../js/fontawesome.all.min.js"></script>
-</head>
+<a href="{{ '/' | relative_url }}" class="back-link"><i class="fas fa-arrow-left"></i><span class="l-en">Back to Home</span><span class="l-ko">홈으로</span></a>
 
-<body>
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Navigation -->
-      <div class="columns is-vcentered mb-6">
-        <div class="column">
-          <a href="../index.html" class="button is-light">
-            <span class="icon"><i class="fas fa-arrow-left"></i></span>
-            <span>Back to Home</span>
-          </a>
-        </div>
-      </div>
+<div class="page-hero">
+  <p class="page-eyebrow"><span class="l-en">Deep Learning Lab Course Project</span><span class="l-ko">딥러닝 실험 수업 프로젝트</span></p>
+  <h1 class="page-title">
+    <span class="l-en">CIFAR-100 Long-Tail Classification Project</span>
+    <span class="l-ko">CIFAR-100 롱테일 분류 프로젝트</span>
+  </h1>
+  <p class="page-meta"><span class="author-me">H. Choi</span></p>
+  <p class="page-summary l-en">
+    This project addresses the long-tail classification problem on CIFAR-100 dataset. We built a hierarchical
+    scheme clustering 100 classes into 20 superclasses and applied a two-stage retraining approach with
+    class-balanced sampling and LDAM (Large Margin Cosine Loss) to improve performance on tail classes.
+  </p>
+  <p class="page-summary l-ko">
+    CIFAR-100 데이터셋의 롱테일 분류 문제를 다룬 프로젝트입니다. 100개 클래스를 20개 슈퍼클래스로 묶는
+    계층 구조를 설계하고, 클래스 균형 샘플링과 LDAM(Large Margin Cosine Loss)을 활용한 2단계 재학습으로
+    테일 클래스 성능을 개선했습니다.
+  </p>
+  <div class="page-links">
+    <a class="pill" href="https://www.notion.so/CIFAR-100-Long-Tail-Classification-Project-23f2d399f9118066b2dad938f1925249" target="_blank"><i class="fas fa-globe-asia"></i><span class="l-en">Project Page</span><span class="l-ko">프로젝트 페이지</span></a>
+  </div>
+  <figure class="page-figure">
+    <img alt="CIFAR-100 Long-Tail Classification Project" src="{{ '/images/cifar100.jpeg' | relative_url }}">
+  </figure>
+</div>
 
-      <!-- Project Header -->
-      <div class="publication-block columns">
-        <div class="column is-2">
-          <div class="publication-image">
-            <img alt="CIFAR-100 Long-Tail Classification Project" src="../images/cifar100.jpeg" />
-          </div>
-        </div>
+<div class="prose">
+  <h2><span class="l-en">Methodology</span><span class="l-ko">방법론</span></h2>
+  <ul class="l-en">
+    <li><strong>Hierarchical Clustering:</strong> 100 classes → 20 superclasses</li>
+    <li><strong>Loss Function:</strong> L_class + α·L_superclass</li>
+    <li><strong>Two-stage Training:</strong> Class-balanced sampling + LDAM</li>
+    <li><strong>Dataset:</strong> CIFAR-100 with long-tail distribution</li>
+  </ul>
+  <ul class="l-ko">
+    <li><strong>계층적 클러스터링:</strong> 100개 클래스 → 20개 슈퍼클래스</li>
+    <li><strong>손실 함수:</strong> L_class + α·L_superclass</li>
+    <li><strong>2단계 학습:</strong> 클래스 균형 샘플링 + LDAM</li>
+    <li><strong>데이터셋:</strong> 롱테일 분포의 CIFAR-100</li>
+  </ul>
 
-        <div class="column">
-          <div class="content">
-            <h3 class="publication-title">CIFAR-100 Long-Tail Classification Project</h3>
-            <div class="publication-authors">
-              <span class="author-block author-me">
-                <strong>H. Choi</strong>
-              </span>
-            </div>
-            <div class="publication-venue">
-              <span>Deep Learning Lab Course Project</span>
-            </div>
-            <p class="publication-description">
-              This project addresses the long-tail classification problem on CIFAR-100 dataset. We built a hierarchical 
-              scheme clustering 100 classes into 20 superclasses and applied a two-stage retraining approach with 
-              class-balanced sampling and LDAM (Large Margin Cosine Loss) to improve performance on tail classes.
-            </p>
-            
-            <!-- Project Links -->
-            <div class="publication-links buttons field has-addons">
-              <a class="external-link button is-small is-ghost" href="https://www.notion.so/CIFAR-100-Long-Tail-Classification-Project-23f2d399f9118066b2dad938f1925249" target="_blank">
-                <span class="icon"><i class="fas fa-globe-asia"></i></span>
-                <span>Project Page</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Additional Details -->
-      <div class="content mt-6">
-        <h3>Methodology</h3>
-        <ul>
-          <li><strong>Hierarchical Clustering:</strong> 100 classes → 20 superclasses</li>
-          <li><strong>Loss Function:</strong> L_class + α·L_superclass</li>
-          <li><strong>Two-stage Training:</strong> Class-balanced sampling + LDAM</li>
-          <li><strong>Dataset:</strong> CIFAR-100 with long-tail distribution</li>
-        </ul>
-
-        <h3>Key Results</h3>
-        <ul>
-          <li><strong>Overall Top-1 Accuracy:</strong> 48.8% → 75.7% (+26.9%)</li>
-          <li><strong>Tail Classes Performance:</strong> 36.6% → 70.3% (+33.7%)</li>
-          <li>Significant improvement in tail class recognition</li>
-          <li>Effective hierarchical learning approach</li>
-        </ul>
-      </div>
+  <h2><span class="l-en">Key Results</span><span class="l-ko">주요 결과</span></h2>
+  <div class="card-grid">
+    <div class="card">
+      <h4><span class="l-en">Overall Top-1 Accuracy</span><span class="l-ko">전체 Top-1 정확도</span></h4>
+      <div class="metric-number">48.8% → 75.7%</div>
+      <div class="metric-label"><span class="l-en">+26.9%p improvement</span><span class="l-ko">+26.9%p 향상</span></div>
     </div>
-  </section>
-</body>
-
-</html>
+    <div class="card">
+      <h4><span class="l-en">Tail Classes</span><span class="l-ko">테일 클래스</span></h4>
+      <div class="metric-number">36.6% → 70.3%</div>
+      <div class="metric-label"><span class="l-en">+33.7%p improvement</span><span class="l-ko">+33.7%p 향상</span></div>
+    </div>
+  </div>
+  <ul class="l-en">
+    <li>Significant improvement in tail class recognition</li>
+    <li>Effective hierarchical learning approach</li>
+  </ul>
+  <ul class="l-ko">
+    <li>테일 클래스 인식률의 뚜렷한 개선</li>
+    <li>계층적 학습 접근법의 효과 입증</li>
+  </ul>
+</div>

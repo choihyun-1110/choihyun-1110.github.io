@@ -1,26 +1,48 @@
 - company: Upstage AI Ambassador (2nd Cohort)
+  company_ko: Upstage AI Ambassador 2기
   description: Selected as an ambassador. Built practical AI workflows with Solar LLM and n8n, and translated experimental ideas into user-facing automation prototypes.
+  description_ko: 앰배서더로 선발되어 Solar LLM과 n8n으로 실용적인 AI 워크플로우를 구축하고, 실험적 아이디어를 사용자용 자동화 프로토타입으로 구현했습니다.
   dates: "Mar 2026 - Present"
+  dates_ko: "2026.03 - 현재"
   location: Seoul, Korea
+  location_ko: 서울
 
 - company: Genoray FlexLab (Medical Imaging Company)
+  company_ko: Genoray FlexLab (의료 영상 기업)
   description: >-
     AI Intern - Fine-tuned Segment Anything Model (SAM) in PyTorch for dental X-ray segmentation.
     Developed LoRA-based tuning strategies, validated model quality, and integrated outputs into a semi-automatic labeling tool.
+  description_ko: >-
+    AI 인턴 - 치과 X-ray 세그멘테이션을 위해 PyTorch에서 SAM을 파인튜닝했습니다.
+    LoRA 기반 튜닝 전략을 개발하고 모델 품질을 검증하여 반자동 라벨링 도구에 통합했습니다.
   dates: "Jun 2025 - Aug 2025"
+  dates_ko: "2025.06 - 2025.08"
   location: Seoul, Korea
+  location_ko: 서울
 
 - company: Reinforcement Learning Tutoring
+  company_ko: 강화학습 튜터링
   description: Tutor at Yonsei University covering key reinforcement learning algorithms and implementation techniques
+  description_ko: 연세대학교에서 주요 강화학습 알고리즘과 구현 기법을 다루는 튜터로 활동
   dates: "Mar 2025 - Jun 2025"
+  dates_ko: "2025.03 - 2025.06"
   location: Yonsei University
+  location_ko: 연세대학교
 
 - company: SK hynix Volunteer Program
+  company_ko: SK하이닉스 교육 봉사
   description: Mentored middle and high school students in basic Python programming and algorithmic thinking
+  description_ko: 중·고등학생을 대상으로 파이썬 기초 프로그래밍과 알고리즘 사고를 멘토링
   dates: "May 2024 - Dec 2024"
+  dates_ko: "2024.05 - 2024.12"
   location: Seoul, Korea
+  location_ko: 서울
 
 - company: Math Academy
+  company_ko: 수학 학원
   description: Assistant Teacher supporting teaching and student management in high school math curriculum
+  description_ko: 고등학교 수학 과정의 수업 보조 및 학생 관리를 담당한 조교
   dates: "Jan 2020 - Jun 2021, Jan 2023 - Dec 2023"
+  dates_ko: "2020.01 - 2021.06, 2023.01 - 2023.12"
   location: Seoul, Korea
+  location_ko: 서울

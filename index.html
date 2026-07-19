@@ -2,251 +2,216 @@
 layout: null
 ---
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" data-lang="en" data-theme="light">
 
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <title>{{ site.name }}</title>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+
   <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', '{{ site.google_analytics }}');
+    // Apply saved theme/language before first paint
+    (function () {
+      var root = document.documentElement;
+      var theme = localStorage.getItem('theme');
+      if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      var lang = localStorage.getItem('lang');
+      if (!lang) lang = (navigator.language || 'en').indexOf('ko') === 0 ? 'ko' : 'en';
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
+    })();
   </script>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&family=Noto+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="{{ '/css/fontawesome.all.min.css' | relative_url }}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
-  <link href="{{ '/css/bulma.min.css' | relative_url }}" rel="stylesheet">
   <link href="{{ '/css/index.css' | relative_url }}" rel="stylesheet">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script defer src="{{ '/js/fontawesome.all.min.js' | relative_url }}"></script>
-  <script src="{{ '/js/index.js' | relative_url }}"></script>
+  <script defer src="{{ '/js/index.js' | relative_url }}"></script>
 </head>
 
 <body>
 
-  <section class="hero">
-    <div class="hero-body container is-max-desktop">
-      <div class="columns">
+  <!-- Top navigation -->
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/">{{ site.name }}</a>
+      <nav class="topnav">
+        <a href="#news"><span class="l-en">News</span><span class="l-ko">소식</span></a>
+        <a href="#highlights"><span class="l-en">Highlights</span><span class="l-ko">하이라이트</span></a>
+        <a href="#projects"><span class="l-en">Projects</span><span class="l-ko">프로젝트</span></a>
+        <a href="cv.html">CV</a>
+      </nav>
+      <div class="controls">
+        <button id="lang-toggle" class="control-btn" type="button" aria-label="Switch language">
+          <span class="l-en">한국어</span><span class="l-ko">EN</span>
+        </button>
+        <button id="theme-toggle" class="control-btn icon-btn" type="button" aria-label="Toggle dark mode">
+          <i class="fas fa-moon theme-icon-dark"></i>
+          <i class="fas fa-sun theme-icon-light"></i>
+        </button>
+      </div>
+    </div>
+  </header>
 
-        <div class="column is-4">
-          <figure class="image portrait">
-            <img src="{{ '/images/portrait.jpg' | relative_url }}" />
-          </figure>
+  <!-- Hero -->
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <figure class="portrait">
+        <img src="{{ '/images/portrait.jpg' | relative_url }}" alt="{{ site.name }}">
+      </figure>
+      <div class="hero-text">
+        <p class="eyebrow">
+          <span class="l-en">{{ site.position }}</span>
+          <span class="l-ko">{{ site.position_ko | default: site.position }}</span>
+        </p>
+        <h1 class="hero-title">
+          <span class="l-en">Hello, I'm {{ site.name }}.</span>
+          <span class="l-ko">안녕하세요, 최현입니다.</span>
+        </h1>
+        <div class="hero-desc">
+          <span class="l-en">{{ site.description | markdownify }}</span>
+          <span class="l-ko">{{ site.description_ko | default: site.description | markdownify }}</span>
         </div>
-
-        <div class="column">
-          <h1 class="title">
-            <b>Hello, I'm {{ site.name }}</b>
-          </h1>
-          <div class="content has-text-justified">
-            {{ site.description | markdownify }}
-            <div class="buttons">
-              <a class="external-link button is-light" href="cv.html">
-                <span class="icon"><i class="fas fa-file"></i></span>
-                <span>CV</span>
-              </a>
-
-              <a class="external-link button is-light" href="https://github.com/{{ site.github_username }}">
-                <span class="icon"><i class="fab fa-github"></i></span>
-                <span>Github</span>
-              </a>
-
-              <a class="external-link button is-light" target="_blank" href="https://velog.io/@{{ site.velog_username }}">
-                <span class="icon"><i class="fas fa-blog"></i></span>
-                <span>Velog</span>
-              </a>
-
-              <a class="external-link button is-light" href="https://linkedin.com/in/{{ site.linkedin }}">
-                <span class="icon"><i class="fab fa-linkedin"></i></span>
-                <span>LinkedIn</span>
-              </a>
-            </div>
-
-          </div>
+        <div class="hero-links">
+          <a class="pill" href="cv.html"><i class="fas fa-file"></i><span>CV</span></a>
+          <a class="pill" href="https://github.com/{{ site.github_username }}"><i class="fab fa-github"></i><span>GitHub</span></a>
+          <a class="pill" target="_blank" href="https://velog.io/@{{ site.velog_username }}"><i class="fas fa-blog"></i><span>Velog</span></a>
+          <a class="pill" href="https://linkedin.com/in/{{ site.linkedin }}"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+          <a class="pill" href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i><span>Email</span></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- News. -->
-  <div class="hr">
-    <div class="container">
-      <hr>
-    </div>
-  </div>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-
-      <h2 class="title is-3">Highlights</h2>
-      <div class="columns is-multiline">
-        {% for highlight in site.data.highlights %}
-        <div class="column is-4">
-          <div class="card highlight-card">
-            <div class="card-image">
-              <figure class="image">
-                {% if highlight.video %}
-                <video autoplay loop muted playsinline class="highlight-media">
-                  <source src="./images/{{ highlight.video }}" type="video/mp4">
-                  <img src="./images/{{ highlight.image }}" alt="{{ highlight.title }}">
-                </video>
-                {% else %}
-                <img src="./images/{{ highlight.image }}" alt="{{ highlight.title }}">
-                {% endif %}
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <p class="title is-5 highlight-title">
-                    <a href="{{ highlight.url }}" target="_blank" rel="noopener">{{ highlight.title }}</a>
-                  </p>
-                </div>
-              </div>
-              <div class="content highlight-description">
-                {{ highlight.description }}
-              </div>
-            </div>
-          </div>
+  <!-- News -->
+  <section id="news" class="section wrap">
+    <h2 class="section-title"><span class="l-en">News</span><span class="l-ko">소식</span></h2>
+    <ul class="news-list">
+      {% for item in site.data.news %}
+      <li class="news-item">
+        <span class="news-date">
+          <span class="l-en">{{ item.date }}</span>
+          <span class="l-ko">{{ item.date_ko | default: item.date }}</span>
+        </span>
+        <div class="news-body">
+          <strong>
+            <span class="l-en">{{ item.title }}</span>
+            <span class="l-ko">{{ item.title_ko | default: item.title }}</span>
+          </strong>
+          <p>
+            <span class="l-en">{{ item.description }}</span>
+            <span class="l-ko">{{ item.description_ko | default: item.description }}</span>
+          </p>
         </div>
-        {% endfor %}
-      </div>
-    </div>
+      </li>
+      {% endfor %}
+    </ul>
   </section>
 
-  <!-- Divider between Highlights and Projects -->
-  <div class="hr">
-    <div class="container">
-      <hr>
-    </div>
-  </div>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">Projects</h2>
-
-      {% for project in site.data.projects %}
-      <div class="project-block columns">
-
-        <div class="column is-2">
-          <div class="project-image {% if project.image_mouseover %}project-mousecell{% endif %}">
-            {% if project.image %}
-            {% if project.image_mouseover contains "mp4" %}
-            <video autoplay preload playsinline class="" height="100%" loop muted width="100%">
-              <source src="./images/{{ project.image_mouseover }}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            {% endif %}
-            <img alt="{{ project.title }}" src="./images/{{ project.image }}" />
-            {% else %}
-            <div class="project-image-placeholder" style="min-height: 120px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.85rem;">이미지 추가 예정</div>
-            {% endif %}
-          </div>
+  <!-- Highlights -->
+  <section id="highlights" class="section wrap">
+    <h2 class="section-title"><span class="l-en">Highlights</span><span class="l-ko">하이라이트</span></h2>
+    <div class="highlight-grid">
+      {% for highlight in site.data.highlights %}
+      <a class="highlight-card" href="{{ highlight.url }}">
+        <div class="highlight-media">
+          {% if highlight.video %}
+          <video autoplay loop muted playsinline>
+            <source src="./images/{{ highlight.video }}" type="video/mp4">
+          </video>
+          {% else %}
+          <img src="./images/{{ highlight.image }}" alt="{{ highlight.title }}" loading="lazy">
+          {% endif %}
         </div>
-
-        <div class="column">
-          <div class="content">
-            <h3 class="project-title"><a href="{{ project.project_page }}">{{ project.title }}</a></h3>
-            <div class="project-authors">
-              {% for author_id in project.authors %}
-              {% assign author = site.data.authors[author_id] %}
-              <span class="author-block {% if author.is_me %}author-me{% endif %}">
-                {% if author.is_me %}
-                {{ author.first_name }} {{author.middle_name}} {{ author.last_name }}{% if forloop.last == false %},{%
-                endif %}
-                {% else %}
-                <a href="{{ author.website }}">{{ author.first_name }} {{ author.middle_name }} {{ author.last_name
-                  }}</a>{% if forloop.last == false %},{% endif %}
-                {% endif %}
-              </span>
-              {% endfor %}
-            </div>
-            <div class="project-venue">
-              <span>{{ project.venue }}</span>
-              {% if project.status == "in_progress" %}
-              <span class="tag is-warning is-light ml-2">
-                <span class="icon"><i class="fas fa-hammer"></i></span>
-                <span>작성 중</span>
-              </span>
-              {% endif %}
-              {% for award in project.awards %}
-              <span class="project-venue-emph">{{ award }}<span>
-                  {% endfor %}
-            </div>
-            <p class="project-description">{{ project.description }}</p>
-            <!-- Project Links. -->
-            <div class="project-links buttons field has-addons">
-              <a class="external-link button is-small is-ghost" href="{{ project.project_page }}">
-                <span class="icon"><i class="fas fa-globe-asia"></i></span>
-                <span>Project Page</span>
-              </a>
-              {% if project.report %}
-              <a class="external-link button is-small is-ghost" href="{{ project.report }}" target="_blank">
-                <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                <span>Report</span>
-              </a>
-              {% endif %}
-              {% if project.slides %}
-              <a class="external-link button is-small is-ghost" href="{{ project.slides }}" target="_blank">
-                <span class="icon"><i class="fas fa-file-powerpoint"></i></span>
-                <span>Slides</span>
-              </a>
-              {% endif %}
-              {% if project.github %}
-              <a class="external-link button is-small is-ghost" href="{{ project.github }}" target="_blank">
-                <span class="icon"><i class="fab fa-github"></i></span>
-                <span>Code</span>
-              </a>
-              {% endif %}
-            </div>
-            <!--/ Project Links. -->
-          </div>
+        <div class="highlight-body">
+          <h3>
+            <span class="l-en">{{ highlight.title }}</span>
+            <span class="l-ko">{{ highlight.title_ko | default: highlight.title }}</span>
+          </h3>
+          <p>
+            <span class="l-en">{{ highlight.description }}</span>
+            <span class="l-ko">{{ highlight.description_ko | default: highlight.description }}</span>
+          </p>
         </div>
-      </div>
+      </a>
       {% endfor %}
     </div>
   </section>
 
+  <!-- Projects -->
+  <section id="projects" class="section wrap">
+    <h2 class="section-title"><span class="l-en">Projects</span><span class="l-ko">프로젝트</span></h2>
 
-  <footer class="footer">
-    <div class="container">
-             <div class="content footer-links has-text-centered">
-         <a href="mailto:{{ site.email }}">
-           <i class="fas fa-envelope"></i>
-         </a>
-         <a class="external-link" href="https://github.com/{{ site.github_username }}">
-           <i class="fab fa-github"></i>
-         </a>
-         <a class="external-link" target="_blank" href="https://velog.io/@{{ site.velog_username }}">
-           <i class="fas fa-blog"></i>
-         </a>
-         <a class="external-link" href="https://linkedin.com/in/{{ site.linkedin }}">
-           <i class="fab fa-linkedin"></i>
-         </a>
-       </div>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              Feel free to <a href="https://github.com/keunhong/keunhong.github.io">borrow this template</a>.
-            </p>
-          </div>
+    {% for project in site.data.projects %}
+    <article class="project">
+      <div class="project-thumb {% if project.image_mouseover %}has-video{% endif %}">
+        {% if project.image %}
+        {% if project.image_mouseover contains "mp4" %}
+        <video preload="metadata" playsinline loop muted>
+          <source src="./images/{{ project.image_mouseover }}" type="video/mp4">
+        </video>
+        {% endif %}
+        <img alt="{{ project.title }}" src="./images/{{ project.image }}" loading="lazy">
+        {% else %}
+        <div class="thumb-placeholder"><span class="l-en">Image coming soon</span><span class="l-ko">이미지 추가 예정</span></div>
+        {% endif %}
+      </div>
+
+      <div class="project-body">
+        <h3 class="project-title">
+          <a href="{{ project.project_page }}">
+            <span class="l-en">{{ project.title }}</span>
+            <span class="l-ko">{{ project.title_ko | default: project.title }}</span>
+          </a>
+        </h3>
+        <div class="project-meta">
+          {% for author_id in project.authors %}
+          {% assign author = site.data.authors[author_id] %}
+          <span class="author {% if author.is_me %}author-me{% endif %}">
+            {% if author.is_me %}{{ author.first_name }} {{ author.middle_name }} {{ author.last_name }}{% else %}<a href="{{ author.website }}">{{ author.first_name }} {{ author.middle_name }} {{ author.last_name }}</a>{% endif %}{% if forloop.last == false %},{% endif %}
+          </span>
+          {% endfor %}
+        </div>
+        <div class="project-venue">
+          <span class="l-en">{{ project.venue }}</span>
+          <span class="l-ko">{{ project.venue_ko | default: project.venue }}</span>
+          {% if project.date %}<span class="dot">·</span><span>{{ project.date }}</span>{% endif %}
+          {% if project.awards %}
+          {% assign awards_ko = project.awards_ko | default: project.awards %}
+          <span class="award">
+            <span class="l-en">{% for award in project.awards %}{{ award }}{% endfor %}</span>
+            <span class="l-ko">{% for award in awards_ko %}{{ award }}{% endfor %}</span>
+          </span>
+          {% endif %}
+        </div>
+        <p class="project-desc">
+          <span class="l-en">{{ project.description }}</span>
+          <span class="l-ko">{{ project.description_ko | default: project.description }}</span>
+        </p>
+        <div class="project-links">
+          <a href="{{ project.project_page }}"><i class="fas fa-globe-asia"></i><span class="l-en">Project Page</span><span class="l-ko">프로젝트 페이지</span></a>
+          {% if project.report %}<a href="{{ project.report }}" target="_blank"><i class="fas fa-file-pdf"></i><span>Report</span></a>{% endif %}
+          {% if project.slides %}<a href="{{ project.slides }}" target="_blank"><i class="fas fa-file-powerpoint"></i><span>Slides</span></a>{% endif %}
+          {% if project.github and project.github != "" %}<a href="{{ project.github }}" target="_blank"><i class="fab fa-github"></i><span>Code</span></a>{% endif %}
         </div>
       </div>
+    </article>
+    {% endfor %}
+  </section>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-links">
+        <a href="mailto:{{ site.email }}" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a target="_blank" href="https://velog.io/@{{ site.velog_username }}" aria-label="Velog"><i class="fas fa-blog"></i></a>
+        <a href="https://linkedin.com/in/{{ site.linkedin }}" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p class="footer-note">© {{ site.name }} · <span class="l-en">Built with Jekyll</span><span class="l-ko">Jekyll로 제작</span></p>
     </div>
   </footer>
 
