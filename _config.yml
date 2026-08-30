@@ -1,13 +1,13 @@
 # Site settings
 title: Hyun Choi
 name: Hyun Choi
-position: IPS Development Team, Hanwha Aerospace · Yonsei University EE
-position_ko: 한화에어로스페이스 MRO 사업부 IPS개발팀 · 연세대학교 전기전자공학부
-email: chlgusla1@yonsei.ac.kr
+position: PE, SK hynix · Yonsei University EE
+position_ko: SK하이닉스 PE · 연세대학교 전기전자공학부
+email: choihyun.contact@gmail.com
 description: |
-  I work in the IPS Development Team of Hanwha Aerospace's MRO Business Division, with a background in Electrical and Electronic Engineering at Yonsei University. I work on deep learning, AI systems, and practical software projects, with recent interests spanning model optimization, LLM workflows, and robotics-oriented applications.
+  I am joining SK hynix as a PE in September 2026, after graduating in Electrical and Electronic Engineering from Yonsei University. I work on deep learning, AI systems, and practical software projects, with recent interests spanning model optimization, LLM workflows, and robotics-oriented applications.
 description_ko: |
-  한화에어로스페이스 MRO 사업부 IPS개발팀에서 근무하고 있으며, 연세대학교 전기전자공학부에서 공부했습니다. 딥러닝, AI 시스템, 실용적인 소프트웨어 프로젝트를 진행하며, 최근에는 모델 최적화, LLM 워크플로우, 로보틱스 응용 분야에 관심을 두고 있습니다.
+  연세대학교 전기전자공학부를 졸업하고 2026년 9월부터 SK하이닉스 PE로 근무합니다. 딥러닝, AI 시스템, 실용적인 소프트웨어 프로젝트를 진행하며, 최근에는 모델 최적화, LLM 워크플로우, 로보틱스 응용 분야에 관심을 두고 있습니다.
 baseurl: "" # leave empty since this is a user site
 url: "https://choihyun-1110.github.io" # your GitHub Pages URL
 

@@ -1,9 +1,18 @@
+- company: SK hynix
+  company_ko: SK하이닉스
+  description: PE
+  description_ko: PE
+  dates: "Starting Sep 2026"
+  dates_ko: "2026.09 입사"
+  location: Korea
+  location_ko: 대한민국
+
 - company: Hanwha Aerospace
   company_ko: 한화에어로스페이스
-  description: Engineer, IPS Development Team, MRO Business Division. Working on IPS (Integrated Product Support) development for the MRO business.
-  description_ko: MRO 사업부 IPS개발팀 엔지니어. MRO 사업을 위한 IPS(종합군수지원/통합체계지원) 개발 업무를 담당하고 있습니다.
-  dates: "Jul 2026 - Present"
-  dates_ko: "2026.07 - 현재"
+  description: Engineer, IPS Development Team, MRO Business Division. Worked on IPS (Integrated Product Support) development for the MRO business.
+  description_ko: MRO 사업부 IPS개발팀 엔지니어. MRO 사업을 위한 IPS(종합군수지원/통합체계지원) 개발 업무를 담당했습니다.
+  dates: "Jul 2026 - Aug 2026"
+  dates_ko: "2026.07 - 2026.08"
   location: Korea
   location_ko: 대한민국
 
