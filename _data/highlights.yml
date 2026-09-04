@@ -1,3 +1,10 @@
+- title: "PILLBUDDY — Smart Pill Dispenser & Adherence AI"
+  title_ko: "필버디 — 스마트 알약 디스펜서와 복약 확인 AI"
+  description: "Startup team project for chronic-disease medication adherence. Built the pill-identification model and a behavior-based ingestion-verification pipeline running on-device. Selected for Promising Student Startup Team 300+ (2026), patent filed, 2 competition awards, and a market test reaching 23,807 people."
+  description_ko: "만성질환자 복약 관리를 위한 창업 팀 프로젝트. 알약 인식 모델과 행동 기반 복용 확인 파이프라인을 온디바이스로 구현했습니다. 2026 학생 창업유망팀 300+ 선정, 특허 출원, 경진대회 우수상 2회, 23,807명 대상 시장성 테스트를 진행했습니다."
+  image: "pillbuddy.png"
+  url: "projects/pillbuddy.html"
+
 - title: "LLM Quantization Pipeline for Korean Models"
   title_ko: "한국어 LLM 양자화 파이프라인"
   description: "Built and documented a Korean LLM quantization project around morpheme-aware calibration data, low-bit PTQ experiments, and practical evaluation workflows."

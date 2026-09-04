@@ -1,0 +1,220 @@
+---
+layout: page
+title: PILLBUDDY — Smart Pill Dispenser
+---
+
+<a href="{{ '/' | relative_url }}" class="back-link"><i class="fas fa-arrow-left"></i><span class="l-en">Back to Home</span><span class="l-ko">홈으로</span></a>
+
+<div class="page-hero">
+  <p class="page-eyebrow"><span class="l-en">Startup Team Project</span><span class="l-ko">창업 팀 프로젝트</span></p>
+  <h1 class="page-title">
+    <span class="l-en">PILLBUDDY — Smart Pill Dispenser &amp; Medication-Adherence AI</span>
+    <span class="l-ko">필버디 (PILLBUDDY) — 스마트 알약 디스펜서와 복약 확인 AI</span>
+  </h1>
+  <p class="page-meta"><span class="author-me">H. Choi</span></p>
+  <p class="page-meta">
+    <span class="l-en">Sep 2025 – Jun 2026 · 3-person team · My role: AI / computer vision</span>
+    <span class="l-ko">2025년 9월 – 2026년 6월 · 3인 팀 · 담당: AI / 컴퓨터 비전</span>
+  </p>
+  <p class="page-summary l-en">
+    PILLBUDDY ONE is an automatic pill dispenser for chronic-disease patients who take many medications a day —
+    it sorts and dispenses doses on schedule, and confirms that the dose was actually swallowed.
+    I owned the AI side: a vision model that identifies pills, and an ingestion-verification model that decides
+    whether the user really took the dose, both built to run on a Raspberry Pi inside the device.
+  </p>
+  <p class="page-summary l-ko">
+    필버디(PILLBUDDY ONE)는 하루에 여러 종류의 약을 복용하는 만성질환자를 위한 자동 알약 디스펜서입니다.
+    정해진 시간에 약을 자동으로 소분·토출하고, 실제로 복용했는지까지 확인합니다.
+    저는 AI 파트를 맡아 알약을 식별하는 인식 모델과 복용 여부를 판단하는 모델을 만들었고,
+    두 모델 모두 기기 안의 라즈베리파이에서 동작하는 것을 목표로 설계했습니다.
+  </p>
+  <div class="tags">
+    <span class="tag">Computer Vision</span>
+    <span class="tag">MediaPipe</span>
+    <span class="tag">YOLOv8</span>
+    <span class="tag">ONNX Runtime</span>
+    <span class="tag">Raspberry Pi</span>
+    <span class="tag">Healthcare</span>
+  </div>
+  <div class="page-links">
+    <a class="pill" href="https://github.com/choihyun-1110/buddy" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>GitHub</span></a>
+  </div>
+  <figure class="page-figure">
+    <img alt="PILLBUDDY ONE automatic pill dispenser" src="{{ '/images/pillbuddy.png' | relative_url }}">
+  </figure>
+</div>
+
+<div class="prose">
+  <div class="callout">
+    <p class="l-en">
+      <strong>Where it ended up.</strong> Over ten months the team took PILLBUDDY from a personal problem to a
+      validated product concept: selection into <strong>Promising Student Startup Team 300+ (2026)</strong>,
+      a <strong>patent application</strong> (10-2025-0195290), two startup-competition
+      awards, and a paid market test that put three price-point MVPs in front of
+      <strong>23,807 people</strong> on Facebook and Instagram. The AI I built covered the two functions competitors
+      did not have — <strong>automatic pill identification</strong> and <strong>ingestion verification</strong>.
+    </p>
+    <p class="l-ko">
+      <strong>결과.</strong> 10개월 동안 팀은 개인적인 문제의식에서 출발해 검증된 제품 컨셉까지 도달했습니다.
+      <strong>2026 학생 창업유망팀 300+ 선정</strong>, <strong>특허 출원</strong>(10-2025-0195290),
+      창업 경진대회 수상 2건, 그리고 세 가지 가격안 MVP를
+      페이스북·인스타그램에서 <strong>23,807명</strong>에게 노출한 시장성 테스트를 진행했습니다.
+      제가 담당한 AI는 경쟁 제품에 없던 두 기능 — <strong>알약 자동 인식</strong>과
+      <strong>복용 여부 확인</strong> — 을 담당했습니다.
+    </p>
+  </div>
+
+  <h2><span class="l-en">Outcomes</span><span class="l-ko">성과</span></h2>
+  <div class="card-grid">
+    <div class="card">
+      <h4><span class="l-en">Promising Student Startup Team 300+</span><span class="l-ko">학생 창업유망팀 300+</span></h4>
+      <div class="metric-number"><span class="l-en">Selected, 2026</span><span class="l-ko">2026 선정</span></div>
+      <div class="metric-label">
+        <span class="l-en">National program run by the Ministry of Education, NRF and KoEF — entrepreneurship track</span>
+        <span class="l-ko">교육부·한국연구재단·한국청년기업가정신재단 주관 — 기업가정신 트랙</span>
+      </div>
+    </div>
+    <div class="card">
+      <h4><span class="l-en">Patent Filed</span><span class="l-ko">특허 출원</span></h4>
+      <div class="metric-number">10-2025-0195290</div>
+      <div class="metric-label">
+        <span class="l-en">Dispensing mechanism filed for IP protection, with legal review on pharmacy/medical-device law</span>
+        <span class="l-ko">토출 메커니즘 특허 출원 완료, 약사법·의료법 관련 법률 검토 병행</span>
+      </div>
+    </div>
+    <div class="card">
+      <h4><span class="l-en">Competition Awards</span><span class="l-ko">경진대회 수상</span></h4>
+      <div class="metric-number"><span class="l-en">2 Awards</span><span class="l-ko">우수상 2회</span></div>
+      <div class="metric-label">
+        <span class="l-en">MVP Sprint Demo Day (Startup-Centered University) and a national startup competition (KISED President's Award)</span>
+        <span class="l-ko">창업중심대학 MVP Sprint 데모데이 우수상, 전국 단위 창업경진대회 우수상(창업진흥원장상)</span>
+      </div>
+    </div>
+    <div class="card">
+      <h4><span class="l-en">Market Test Reach</span><span class="l-ko">시장성 테스트 도달</span></h4>
+      <div class="metric-number">23,807</div>
+      <div class="metric-label">
+        <span class="l-en">People reached across 3 price-point MVPs (Jan 2026); 2.34% click-through, 4.84% purchase-intent conversion</span>
+        <span class="l-ko">3개 가격안 MVP 기준 도달 인원 (2026년 1월) · 고객유입율 2.34%, 구매전환율 4.84%</span>
+      </div>
+    </div>
+  </div>
+
+  <figure class="page-figure" style="max-width: 320px; margin-left: auto; margin-right: auto;">
+    <img alt="Promising Student Startup Team 300+ 2026 certificate badge for PILLBUDDY" src="{{ '/images/pillbuddy_u300.png' | relative_url }}">
+  </figure>
+
+  <h2><span class="l-en">Ingestion Verification: Behavior, Not Pills</span><span class="l-ko">복용 여부 확인: 알약이 아니라 행동을 본다</span></h2>
+  <p class="l-en">
+    A dispenser that only drops the pill cannot tell whether it was actually taken. The obvious approach —
+    detect the pill on camera — fails immediately: once the pill is in a closed hand, there is nothing to detect.
+    So the model never looks for the pill. It tracks the <strong>behavioral sequence</strong> around it and only
+    accepts a dose when the whole sequence completes:
+  </p>
+  <p class="l-ko">
+    약을 토출하는 것만으로는 실제 복용 여부를 알 수 없습니다. 가장 먼저 떠오르는 접근 — 카메라로 알약을 검출하는 방식 —
+    은 바로 막힙니다. 알약이 손 안에 들어가는 순간 검출할 대상이 사라지기 때문입니다.
+    그래서 이 모델은 알약을 찾지 않습니다. 대신 알약 주변의 <strong>행동 시퀀스</strong>를 추적하고,
+    시퀀스가 끝까지 완성됐을 때만 복용으로 인정합니다.
+  </p>
+  <ol class="l-en">
+    <li><code>HAND_TO_MOUTH</code> — hand overlaps the mouth region for ≥ 3 frames (MediaPipe FaceMesh + 21-keypoint hand tracking)</li>
+    <li><code>CUP_TO_MOUTH</code> — a cup or bottle is detected near the mouth for ≥ 2 frames (YOLOv8n, ONNX Runtime)</li>
+    <li><code>VERIFY</code> — the cup leaves and the user opens their mouth wide to show the pill is gone</li>
+    <li><code>INGESTION_COMPLETE</code> — the sequence is logged as a confirmed dose</li>
+  </ol>
+  <ol class="l-ko">
+    <li><code>HAND_TO_MOUTH</code> — 손이 입 영역과 3프레임 이상 겹침 (MediaPipe FaceMesh + 21개 키포인트 손 추적)</li>
+    <li><code>CUP_TO_MOUTH</code> — 컵·물병이 입 근처에서 2프레임 이상 검출 (YOLOv8n, ONNX Runtime)</li>
+    <li><code>VERIFY</code> — 컵이 입에서 떨어진 뒤, 입을 벌려 약이 남아있지 않음을 확인</li>
+    <li><code>INGESTION_COMPLETE</code> — 복용 완료로 기록</li>
+  </ol>
+  <p class="l-en">
+    Failure modes matter more than successes here. Repeated failed attempts, a hidden face, or a skipped
+    verification step raise a suspicion score, and once it crosses a threshold the system sends a Slack alert to
+    the caregiver — the state machine is the mechanism that makes a missed dose visible to someone who can act on it.
+  </p>
+  <p class="l-ko">
+    이 문제에서는 성공보다 실패 패턴이 더 중요합니다. 반복적인 실패, 얼굴 가림, 확인 단계 건너뛰기 등은
+    의심 점수를 올리고, 임계값을 넘으면 보호자에게 Slack 알림을 전송합니다.
+    상태 머신은 결국 '놓친 복용'을 대신 조치해줄 사람에게 보이게 만드는 장치입니다.
+  </p>
+
+  <h2><span class="l-en">Pill Identification</span><span class="l-ko">알약 자동 인식</span></h2>
+  <p class="l-en">
+    The second model removes setup burden: instead of asking an elderly user to type in what each medication is,
+    the device recognizes the pills itself. I trained a YOLO detector on the MFDS public pill-image dataset
+    (22 medication classes), with a preprocessing and augmentation pipeline for the lighting and background the
+    device actually sees, then exported to ONNX for CPU inference on the device.
+  </p>
+  <p class="l-ko">
+    두 번째 모델은 설정 부담을 없애기 위한 것입니다. 고령 사용자가 약 정보를 일일이 입력하는 대신,
+    기기가 알약을 스스로 인식합니다. 식약처 공개 알약 이미지 데이터셋(22종)으로 YOLO 검출기를 학습했고,
+    기기가 실제로 마주하는 조명·배경 조건에 맞춘 전처리·증강 파이프라인을 구성한 뒤,
+    기기 CPU 추론을 위해 ONNX로 변환했습니다.
+  </p>
+  <figure class="page-figure">
+    <img alt="Pill detection output with Korean medication labels" src="{{ '/images/pillbuddy_pill_detection.png' | relative_url }}">
+  </figure>
+
+  <h2><span class="l-en">Making It Fit on a Raspberry Pi</span><span class="l-ko">라즈베리파이에 얹기</span></h2>
+  <p class="l-en">
+    The device target was a Raspberry Pi 4 (4 GB) with CPU-only inference, ≥ 5 FPS and ≤ 200 ms latency.
+    Measured on a Mac, the three models cost about 19 ms per frame; scaled to the Pi that is roughly 171 ms —
+    right at the budget. Getting there meant YOLOv8n at <code>imgsz=320</code> through ONNX Runtime, running
+    cup detection every 3rd frame and hand tracking every 2nd, and a benchmark mode to re-measure after each change.
+  </p>
+  <p class="l-ko">
+    목표 하드웨어는 라즈베리파이 4(4GB), CPU 추론만으로 5 FPS 이상·200ms 이하 지연이었습니다.
+    Mac에서 측정한 3개 모델의 프레임당 추론 시간은 약 19ms였고, 파이 기준으로 환산하면 약 171ms로 예산에 겨우 들어옵니다.
+    이를 맞추기 위해 YOLOv8n을 <code>imgsz=320</code>으로 ONNX Runtime에서 실행하고,
+    컵 검출은 3프레임마다·손 추적은 2프레임마다 수행하도록 조정했으며, 변경할 때마다 재측정할 수 있는 벤치마크 모드를 넣었습니다.
+  </p>
+  <p class="l-en">
+    I ran the same question for the voice interface. A fully local stack on the Pi (Vosk + a small local LLM + Piper)
+    answered in 10–25 s, which is unusable for a reminder that has to feel like a person speaking. A streaming
+    speech-to-speech API answered in 1–3 s, so the Pi's job shrank to recording, streaming and playback — the
+    trade-off being connectivity, per-minute cost and privacy, which is exactly the decision a medical device has to make deliberately.
+  </p>
+  <p class="l-ko">
+    음성 인터페이스도 같은 방식으로 검토했습니다. 파이에서 전부 로컬로 처리하는 구성(Vosk + 소형 로컬 LLM + Piper)은
+    응답까지 10~25초가 걸려, 사람이 말을 거는 느낌이어야 하는 복약 알림에는 쓸 수 없었습니다.
+    스트리밍 음성-음성 API는 1~3초에 응답해, 파이는 녹음·전송·재생만 담당하면 됐습니다.
+    대신 인터넷 연결·분당 과금·프라이버시를 감수해야 하는데, 의료기기라면 반드시 의식적으로 내려야 하는 결정입니다.
+  </p>
+
+  <h2><span class="l-en">Market Validation</span><span class="l-ko">시장성 검증</span></h2>
+  <p class="l-en">
+    In January 2026 the team ran a three-day market test with a startup consultancy: three MVP landing pages at
+    ₩800,000, ₩600,000 and ₩40,000/month, advertised to the same audience, with a real "buy" button measuring
+    purchase intent. The ₩600,000 one-time price converted best (6.32%), and the strongest segment was women aged
+    55–64 — not the adult children we had assumed would be buying for a parent. That result, plus a survey ranking
+    the five features, is what set the priority order for the AI work above.
+  </p>
+  <p class="l-ko">
+    2026년 1월, 팀은 창업 컨설팅사와 함께 3일간 시장성 테스트를 진행했습니다.
+    80만원 / 60만원 / 월 4만원 세 가지 MVP 랜딩페이지를 같은 타겟에 노출하고,
+    실제 '구매하기' 버튼으로 구매 의향을 측정했습니다.
+    일시불 60만원 안의 구매전환율이 6.32%로 가장 높았고, 반응이 가장 강한 세그먼트는
+    부모를 위해 구매할 것이라 가정했던 자녀 세대가 아니라 55~64세 여성이었습니다.
+    이 결과와 5개 기능에 대한 중요도 설문이 위 AI 작업의 우선순위를 정하는 근거가 됐습니다.
+  </p>
+
+  <h2><span class="l-en">What I Built</span><span class="l-ko">구현 내용</span></h2>
+  <ul class="l-en">
+    <li>Ingestion-verification pipeline: mouth-ROI tracking (FaceMesh, EMA-smoothed with fallback), hand tracking, cup detection and a swallow/mouth-open estimator feeding a finite state machine</li>
+    <li>Suspicion scoring and Slack alerting for missed or faked doses</li>
+    <li>Pill recognition: dataset preprocessing, augmentation, YOLO training and evaluation pipeline, ONNX export</li>
+    <li>On-device performance work: frame-skipping schedule, ONNX Runtime CPU inference, benchmark mode with Raspberry Pi 4 projections</li>
+    <li>Voice-interface feasibility study comparing fully local, hybrid and streaming-API stacks on a Pi 4</li>
+    <li>Test suite covering FSM transitions, mouth-ROI tracking, the swallow estimator and the alert manager</li>
+  </ul>
+  <ul class="l-ko">
+    <li>복용 확인 파이프라인: 입 ROI 추적(FaceMesh, EMA 스무딩 및 폴백), 손 추적, 컵 검출, 삼킴·입벌림 추정기를 상태 머신에 연결</li>
+    <li>복용 누락·가짜 복용에 대한 의심 점수 산정 및 Slack 알림</li>
+    <li>알약 인식: 데이터 전처리, 증강, YOLO 학습·평가 파이프라인, ONNX 변환</li>
+    <li>온디바이스 성능 최적화: 프레임 스킵 스케줄, ONNX Runtime CPU 추론, 라즈베리파이 4 환산치를 포함한 벤치마크 모드</li>
+    <li>라즈베리파이 4에서 풀 로컬 / 하이브리드 / 스트리밍 API 구성을 비교한 음성 인터페이스 타당성 검토</li>
+    <li>상태 머신 전이, 입 ROI 추적, 삼킴 추정기, 알림 매니저에 대한 테스트 코드</li>
+  </ul>
+</div>

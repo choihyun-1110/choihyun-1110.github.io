@@ -1,3 +1,17 @@
+- title: "PILLBUDDY — Smart Pill Dispenser & Medication-Adherence AI"
+  title_ko: "필버디(PILLBUDDY) — 스마트 알약 디스펜서와 복약 확인 AI"
+  authors: ["choi_hyun"]
+  venue: "Startup Team Project"
+  venue_ko: "창업 팀 프로젝트"
+  description: "Automatic pill dispenser for chronic-disease patients. Owned the AI: a YOLO pill-identification model and a behavior-based ingestion-verification pipeline (FaceMesh + hand + cup tracking driven by a state machine), both optimized for on-device Raspberry Pi inference."
+  description_ko: "만성질환자를 위한 자동 알약 디스펜서. AI 파트를 담당해 YOLO 기반 알약 인식 모델과 행동 시퀀스 기반 복용 확인 파이프라인(FaceMesh·손·컵 추적을 상태 머신으로 연결)을 만들고, 라즈베리파이 온디바이스 추론에 맞춰 최적화했습니다."
+  project_page: "projects/pillbuddy.html"
+  github: "https://github.com/choihyun-1110/buddy"
+  image: "pillbuddy.png"
+  date: "2025.09 - 2026.06"
+  awards: ["🏆 Selected: Promising Student Startup Team 300+ (2026) · Patent filed (10-2025-0195290) · 2 startup competition awards"]
+  awards_ko: ["🏆 2026 학생 창업유망팀 300+ 선정 · 특허 출원(10-2025-0195290) · 창업 경진대회 우수상 2회"]
+
 - title: "Korean LLM Quantization Pipeline Builder"
   title_ko: "한국어 LLM 양자화 파이프라인 빌더"
   authors: ["choi_hyun"]
@@ -8,7 +22,7 @@
   project_page: "projects/llm-quantization.html"
   github: "https://github.com/choihyun-1110/morpheme-aware-ptq"
   image: "LLM_quant.png"
-  date: "2025.12 - Present"
+  date: "2025.12 - 2026.06"
 
 - title: "AI Career Advisor (Upstage AI Ambassador 2nd Cohort)"
   title_ko: "AI 커리어 어드바이저 (Upstage AI Ambassador 2기)"
